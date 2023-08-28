@@ -34,6 +34,7 @@
 
 
 
+
 // int fun(int arr[], int l, int h)
 // {
 //     int min = 0; // Initialize 'min' to a large value

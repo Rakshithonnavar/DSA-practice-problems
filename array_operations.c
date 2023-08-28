@@ -5,7 +5,7 @@ int main()
 {  
     //Inserting element in an array
 
-    int a[100], pos,elem,n,i;
+    int a[100], pos,elem,n,i,search,found=0;
     char choice;
     printf("Enter the number of elements \n");
     scanf("%d",&n);
@@ -60,6 +60,24 @@ int main()
               else{
                 printf("Invalid option");
               }
+              printf("The array element to be searched \n");
+                scanf("%d",&search);
+                for(i=0;i<n;i++)
+    {
+        if(a[i]==search)
+        {
+            found=1;
+            break;
+        }
+    }
+           if(found==1)
+           {
+            printf("Element %d found in the position %d",search,i);
+           }
+        else{
+            printf("Element %d not found!!",search);
+           }
+           return 0;
 
              
              
