@@ -60,7 +60,7 @@ int main()
               else{
                 printf("Invalid option");
               }
-              printf("The array element to be searched \n");
+              printf("\nThe array element to be searched ");
                 scanf("%d",&search);
                 for(i=0;i<n;i++)
     {
