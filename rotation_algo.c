@@ -91,8 +91,9 @@
 
     int main()
     {
-      int a[100],i,n,last,temp=a[0],d;
-     printf("Enter the no of elements:");
+      
+    int a[100],i,n,last,temp=1,d;
+    printf("Enter the no of elements:");
     scanf("%d",&n);
     printf("Enter the array elements:");
         for(i=0;i<n;i++){
@@ -106,15 +107,21 @@
       {
         a[i]=a[i+1];
       }
-        // while(temp<=d)
-        // {
-        // last=a[i];
-        // }
-     //shifting elements to left
+        
       a[n-1] = last;
          temp++;
     }    
+    printf("The rotated array is:\n");
+    {
+      for(i=0;i<n;i++)
+      {
+        printf("%d\t",a[i]);
+      }
     }
+    return 0;
+    }
+    
+   
 
 
 
