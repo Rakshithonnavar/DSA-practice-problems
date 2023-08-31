@@ -50,37 +50,90 @@
 
       //Insertion Sort
 
-      void insertion_sort(int a[],int n)
-      {
-        int i,j,key;
-        for(i=1;i<n;i++)
-        {
-            key=a[i];
-            j=i-1;
+    //   void insertion_sort(int a[],int n)
+    //   {
+    //     int i,j,key;
+    //     for(i=1;i<n;i++)
+    //     {
+    //         key=a[i];
+    //         j=i-1;
 
-            while(j>=0 &&a[j]>key)
-            {
-                  a[j+1] = a[j];
-                  j=j-1;
-            }
-             a[j+1]=key;
-        }
-      }
+    //         while(j>=0 &&a[j]>key)
+    //         {
+    //               a[j+1] = a[j];
+    //               j=j-1;
+    //         }
+    //          a[j+1]=key;
+    //     }
+    //   }
 
-      int main()
-      {
-        int a[100],n,i;
-    printf("Enter size of array");
-    scanf("%d",&n);
-    printf("Enter the array elements");
-      for(i=0;i<n;i++){
-      scanf("%d",&a[i]);
-      }
-      insertion_sort(a,n);
-      printf("The array elements after sorting are \n");
-      for(i=0;i<n;i++){
-      printf("%d\t",a[i]);
-      }
-     return 0;
+    //   int main()
+    //   {
+    //     int a[100],n,i;
+    // printf("Enter size of array");
+    // scanf("%d",&n);
+    // printf("Enter the array elements");
+    //   for(i=0;i<n;i++){
+    //   scanf("%d",&a[i]);
+    //   }
+    //   insertion_sort(a,n);
+    //   printf("The array elements after sorting are \n");
+    //   for(i=0;i<n;i++){
+    //   printf("%d\t",a[i]);
+    //   }
+    //  return 0;
+    //  }
+
+     //Sorting alternate  array
+     void swap(int *a,int *b )
+     {
+      int temp;
+      temp =*a;
+      *a= *b;
+      *b = temp;
      }
-      
+   void sort(int a[],int n)
+      {
+        int i,j;
+         for(i=0;i<n;i++)
+            for(j=0;j<n-i-1;j++)
+            if(a[j]>a[j+1])
+            {
+              swap(&a[j],&a[j+1]); 
+            }
+      }
+
+      void alternate_sort(int a[],int n)
+      {
+          int i=0,j=n-1;
+          sort(a,n);
+
+         while (i<j)
+         {
+          printf("%d\t",a[j--]);
+          printf("%d\t",a[i++]);
+         }
+         if (n % 2 != 0) {
+          printf("%d\t", a[i]);
+    }
+    //printf("\n");
+  }
+
+int main()
+{
+  int a[100],i,n;
+  printf("Enter the array size");
+  scanf("%d",&n);
+  printf("Enter the array elems");
+   for(i=0;i<n;i++)
+   {
+    scanf("%d",&a[i]);
+   }
+    alternate_sort(a,n);
+    printf("Array elements after sorting are ");
+      {
+        for(i=0;i<n;i++)
+        printf("%d\t",a[i]);
+      }
+      return 0;
+}
