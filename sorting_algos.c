@@ -107,7 +107,7 @@
       {
           int i=0,j=n-1;
           sort(a,n);
-
+        printf("The array elements after sorting are\n");
          while (i<j)
          {
           printf("%d\t",a[j--]);
@@ -121,7 +121,7 @@
 
 int main()
 {
-  int a[100],i,n;
+  int a[100],i,n,j;
   printf("Enter the array size");
   scanf("%d",&n);
   printf("Enter the array elems");
@@ -130,10 +130,8 @@ int main()
     scanf("%d",&a[i]);
    }
     alternate_sort(a,n);
-    printf("Array elements after sorting are ");
-      {
-        for(i=0;i<n;i++)
-        printf("%d\t",a[i]);
-      }
       return 0;
 }
+
+
+//+ve 
