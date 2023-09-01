@@ -2,9 +2,12 @@
 #include<stdio.h>
 #include<stdlib.h>
 # define N 4
+// void rotate(int arr[][N], int n) 
+// # define R 4
+// # define C 4
 
 void rotate_matrix(int a[N][N])
-{
+    {
      int i,j,temp;
      for(i=0;i<N/2;i++){
        for(j=i;j<N-i-1;j++){
@@ -19,7 +22,7 @@ void rotate_matrix(int a[N][N])
 int main()
 {
      int a[N][N] ,i ,j;
-     printf("Enter the Matrix elements");
+     printf("Enter the Matrix elements");                         //    t=a   a=b   b=c  c =d     d=t
      for (i=0 ; i < N ; ++i){
           for(j=0;j<N;j++){
           scanf("%d",&a[i][j]);  
@@ -34,10 +37,26 @@ int main()
      }
         printf("\n");
     }
-        return 0;
+        
+     return 0;
 }
-                                                                 //    t=a
-                                                                 //   a=b
-                                                                 //    b=c
-                                                                 //    c=d
-                                                                 //    d=t
+
+
+// Rotate matrix in spiral order
+  int spiral_print(int[N][N],int n,int m)
+  {
+   
+          int i,k=0,l=0;
+          while(k<m && l<n)
+          {
+               for(i=1;i<n;i++)
+               {
+                    printf("%d",a[k][i]);
+               }
+               k++;
+          }
+        
+  }
+
+
+                                                                
