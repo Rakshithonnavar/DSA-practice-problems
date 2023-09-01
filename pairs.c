@@ -1,27 +1,32 @@
 #include<stdio.h>
 #include<stdlib.h>
-int pairsum(int a[], int n, int sum)
-{
-	int count = 0;
-	for (int i = 0; i < n; i++)
-		for (int j = i + 1; j < n; j++)
-			if (a[i] + a[j] == sum){
-          printf("The pair is :(%d,%d)\n",a[i],a[j]);
-}
-  printf("Their sum is : %d",sum);
-}
-
-
 int main()
 {
-   
-	int a[] = { 2,-1,4,1,-5,8,0,67 };
-	int n = sizeof(a) / sizeof(a[0]);
-	int sum = 3;
-	pairsum(a, n, sum);
-	return 0;
+    printf("hi");
 }
+// int pairsum(int a[], int n, int sum)
+// {
+// 	int count = 0;
+// 	for (int i = 0; i < n; i++)
+// 		for (int j = i + 1; j < n; j++)
+// 			if (a[i] + a[j] == sum){
+//           printf("The pair is :(%d,%d)\n",a[i],a[j]);
+// }
+//   printf("Their sum is : %d",sum);
+// }
 
+
+// int main()
+// {
+   
+// 	int a[] = { 2,-1,4,1,-5,8,0,67 };
+// 	int n = sizeof(a) / sizeof(a[0]);
+// 	int sum = 3;
+// 	pairsum(a, n, sum);
+// 	return 0;
+// }
+  
+   
 
 
 
