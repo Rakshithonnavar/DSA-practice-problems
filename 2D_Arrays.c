@@ -3,8 +3,8 @@
 #include<stdlib.h>
 # define N 4
 // void rotate(int arr[][N], int n) 
-// # define R 4
-// # define C 4
+# define R 4
+# define C 4
 
 void rotate_matrix(int a[N][N])
     {
@@ -43,10 +43,11 @@ int main()
 
 
 // Rotate matrix in spiral order
-  int spiral_print(int[N][N],int n,int m)
+
+  void spiral_print(int a[N][N])
   {
    
-          int i,k=0,l=0;
+          int i,k=0,l=0,m,n;
           while(k<m && l<n)
           {
                for(i=1;i<n;i++)
@@ -55,7 +56,43 @@ int main()
                }
                k++;
           }
-        
+
+          for(i=k;i<m;i++)
+          {
+               printf("%d",a[i][n-1]);
+          }
+           n--;
+
+           if(k<m){
+               for(i=n-1;i>=l;--i)
+               {
+                    printf("%d",a[m-1][i]);
+               }
+               m--;
+           }
+
+           if(l<n)
+           {
+               for(i=m-1;i>=k;--i)
+               {
+                    printf("%d",a[i][l]);
+               }
+               l++;
+           }
+  }
+
+  int main()
+  {
+     int a[N][N] ,i ,j;
+     printf("Enter the Matrix elements");                         
+     for (i=0 ; i < N ; ++i){
+          for(j=0;j<N;j++){
+          scanf("%d",&a[i][j]);  
+     }
+     }
+     printf("The Matrix elements after performing spiral rotation are:");
+      spiral_print(a);
+    return 0;
   }
 
 
