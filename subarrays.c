@@ -1,34 +1,36 @@
+
+//sum of contigious subarray using KADANE ALGORITHM
 #include <stdio.h>
 #include <stdlib.h>
 #include<limits.h>
 
-int  contigious_array(int a[],int n)
-{
-  int max_so_far=INT_MIN,max_ending_here=0;
-  for(int i=0;i<n;i++)
-  {
-     max_ending_here = max_ending_here+a[i];
-          if(max_ending_here>max_so_far)
-           max_so_far = max_ending_here ;
-  }
-       if(max_ending_here<0)
-           max_ending_here=0;
-    printf("The contigious sum of arrays:",max_so_far);
-}
+// int  contigious_array(int a[],int n)
+// {
+//   int max_so_far=INT_MIN,max_ending_here=0;
+//   for(int i=0;i<n;i++)
+//   {
+//      max_ending_here = max_ending_here+a[i];
+//           if(max_ending_here>max_so_far)
+//            max_so_far = max_ending_here ;
+//   }
+//        if(max_ending_here<0)
+//            max_ending_here=0;
+//     printf("The contigious sum of arrays:",max_so_far);
+// }
 
-int main()
-{
-  int a[100],n,i,max_so_far;
-  printf("Enter the array size:");
-  scanf("%d",&n);
-  printf("Enter the array elements");
-    for(i=0;i<n;i++)
-    {
-      scanf("%d",&a[i]);
-    }
-    int max_sum = contigious_array(a,n);
-        return 0;
-}
+// int main()
+// {
+//   int a[100],n,i,max_so_far;
+//   printf("Enter the array size:");
+//   scanf("%d",&n);
+//   printf("Enter the array elements");
+//     for(i=0;i<n;i++)
+//     {
+//       scanf("%d",&a[i]);
+//     }
+//     int max_sum = contigious_array(a,n);
+//         return 0;
+// }
 
 // int find_maximum_subarray(int array[], int n, int k) {
 //   int i, j, max_sum = INT_MIN;
@@ -58,3 +60,27 @@ int main()
 
 //   return 0;
 // }
+
+int contigious_subarray(int a_prefixSum[],int a_msum[],int a[20])
+   
+{
+     int n,i,j,msum[n];
+    int prefix_sum[0]= {0};
+     for(int i=1;i<n;i++)
+     {
+       prefix_sum[i]= prefix_sum[i-1]+a[i];
+     }
+
+     for(i=0;i<n;i++)
+     {
+        int max_so_far = INT_MIN;
+        for(j=0;j<n-i;j++)
+        {
+            max_so_far = MAX(max_so_far,prefix_sum[j+i+1]-prefix_sum[j]);
+        }
+       msum[i]=max_so_far;
+     }
+     
+}
+
+   
