@@ -62,9 +62,8 @@
 // }
 
 int contigious_subarray(int a_prefixSum[],int a_msum[],int a[20])
-   
 {
-     int n,i,j,msum[n];
+     int n,i,j,msum[n],s;
     int prefix_sum[0]= {0};
      for(int i=1;i<n;i++)
      {
@@ -80,7 +79,31 @@ int contigious_subarray(int a_prefixSum[],int a_msum[],int a[20])
         }
        msum[i]=max_so_far;
      }
+     for(int k=0;k<=n;k++)
+     {
+      int max_so_far=0;
+      for(i=0;i<n;i++)
+      {
+        max_so_far = (max_so_far,msum[i]+min(i+1,k)*s);
+      }
+     }
      
 }
+
+int main()
+{
+  int a[100],i,j,n,max_so_far;
+  printf("Enter array size");
+  scanf("%d",&n);
+  printf("Enter the array elements ");
+    for(i=0;i<n;i++)
+    {
+      scanf("%d",&a[i]);
+    }
+    printf("The sum of maximum array elements is %d",max_so_far); 
+    return 0;
+}
+
+
 
    
