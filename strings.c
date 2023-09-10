@@ -164,10 +164,10 @@
 //     return 0;
 // }
 
-int min_dist(char str[10],int n,char *word1,char *word2)
+int min_dist(char str[10][10],int n,char *word1,char *word2)
 {
     int d1=-1,d2=-1;
-    int ans = __INT_MAX__,n;
+    int ans = __INT_MAX__;
       for(int i=0;i<n;i++)
       {
         if(strcmp(str[i],word1 ==0))
@@ -183,12 +183,14 @@ int min_dist(char str[10],int n,char *word1,char *word2)
 
 int main()
 {
-    char str[100],n;
+    char str[100][100];
+    int word1,word2,n;
     printf("Enter the size of array elements:");
     scanf("%d",&n);
     printf("Enter the elements");
     scanf("%s",str);
-    int result = min_dist(str,n,);
+    int result = min_dist(str,n,word1,word2);
+    printf("the minimum distance between given two words is %d",result);
 }
 
 
