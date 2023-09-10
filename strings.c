@@ -103,67 +103,93 @@
 
 //     return 0;
 // }
-int romanTodecimal(char str[])
-{
-int sum=0;
-int len = strlen(str);
+// int romanTodecimal(char str[])
+// {
+// int sum=0;
+// int len = strlen(str);
 
-for(int i=0;i<len;i++)
-{
-    switch(str[i])
-    {
-        case 'I': if(i<len-1 && ( str[i+1]=='V'||str[i+1]=='X'))
-                    {
-                        sum-=1;
-                    }
-                    else{
-                        sum+=1;
-                    }
-                    break;
-        case 'V' : sum+=5;
-                    break;
-        case 'X' :if(i<len-1 &&  (str[i+1]=='L'||str[i+1]=='C'))
-                    {
-                        sum-=10;
-                    }
-                    else{
-                        sum+=10;
-                    }
-                    break;
-        case 'L': sum+=50;
-                   break;
-        case 'C': if(i<len-1 &&  (str[i+1]=='D'||str[i+1]=='M'))
-                    {
-                        sum-=100;
-                    }
-                    else{
-                        sum+=100;
-                    }
-                    break;
-        case  'D': sum+=500;
-                   break;
-        case  'M': sum+=1000;
-                    break;
-        default:printf("Invalid case!!");
-        return -1;
-    }       
-    }
+// for(int i=0;i<len;i++)
+// {
+//     switch(str[i])
+//     {
+//         case 'I': if(i<len-1 && ( str[i+1]=='V'||str[i+1]=='X'))
+//                     {
+//                         sum-=1;
+//                     }
+//                     else{
+//                         sum+=1;
+//                     }
+//                     break;
+//         case 'V' : sum+=5;
+//                     break;
+//         case 'X' :if(i<len-1 &&  (str[i+1]=='L'||str[i+1]=='C'))
+//                     {
+//                         sum-=10;
+//                     }
+//                     else{
+//                         sum+=10;
+//                     }
+//                     break;
+//         case 'L': sum+=50;
+//                    break;
+//         case 'C': if(i<len-1 &&  (str[i+1]=='D'||str[i+1]=='M'))
+//                     {
+//                         sum-=100;
+//                     }
+//                     else{
+//                         sum+=100;
+//                     }
+//                     break;
+//         case  'D': sum+=500;
+//                    break;
+//         case  'M': sum+=1000;
+//                     break;
+//         default:printf("Invalid case!!");
+//         return -1;
+//     }       
+//     }
 
-return sum;
+// return sum;
+// }
+// int main()
+// {
+//     char str[100];
+//     printf("Enter the Roman Number:");
+//     scanf("%s", str);
+//     int result = romanTodecimal(str);
+    
+//      if(result!=-1){
+//     printf("The roman to decimal conversion is:%d",result);
+//      }
+//     return 0;
+// }
+
+int min_dist(char str[10],int n,char *word1,char *word2)
+{
+    int d1=-1,d2=-1;
+    int ans = __INT_MAX__,n;
+      for(int i=0;i<n;i++)
+      {
+        if(strcmp(str[i],word1 ==0))
+           d1=i;
+         if(strcmp(str[i],word2 ==0))
+           d2=i;
+           if(d1!=-1 && d2!=-1)
+             ans = ans<abs(d1-d2)? ans: abs(d1-d2);
+
+      }
+       return ans;
 }
+
 int main()
 {
-    char str[100];
-    printf("Enter the Roman Number:");
-    scanf("%s", str);
-    int result = romanTodecimal(str);
-    
-     if(result!=-1){
-    printf("The roman to decimal conversion is:%d",result);
-     }
-    return 0;
+    char str[100],n;
+    printf("Enter the size of array elements:");
+    scanf("%d",&n);
+    printf("Enter the elements");
+    scanf("%s",str);
+    int result = min_dist(str,n,);
 }
-
 
 
 
