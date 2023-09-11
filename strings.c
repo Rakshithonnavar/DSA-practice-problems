@@ -164,35 +164,61 @@
 //     return 0;
 // }
 
-int min_dist(char str[10][10],int n,char *word1,char *word2)
+// int min_dist(char str[10][10],int n,char *word1,char *word2)
+// {
+//     int d1=-1,d2=-1;
+//     int ans = __INT_MAX__;
+//       for(int i=0;i<n;i++)
+//       {
+//         if(strcmp(str[i],word1 ==0))
+//            d1=i;
+//          if(strcmp(str[i],word2 ==0))
+//            d2=i;
+//            if(d1!=-1 && d2!=-1)
+//              ans = ans<abs(d1-d2)? ans: abs(d1-d2);
+
+
+//       }
+//        return ans;
+// }
+
+// int main()
+// {
+//     char str[100][100];
+//     int word1,word2,n;
+//     printf("Enter the size of array elements:");
+//     scanf("%d",&n);
+//     printf("Enter the elements");
+//     scanf("%s",str);
+//     int result = min_dist(str,n,word1,word2);
+//     printf("the minimum distance between given two words is %d",result);
+// }
+
+/*************************************************************************************************************/
+//reverse string
+void swap(char *a,char*b)
 {
-    int d1=-1,d2=-1;
-    int ans = __INT_MAX__;
-      for(int i=0;i<n;i++)
-      {
-        if(strcmp(str[i],word1 ==0))
-           d1=i;
-         if(strcmp(str[i],word2 ==0))
-           d2=i;
-           if(d1!=-1 && d2!=-1)
-             ans = ans<abs(d1-d2)? ans: abs(d1-d2);
-
-      }
-       return ans;
-}
-
+      char temp;
+      temp = *a;
+       *a=*b;
+       *b=temp;
+   }
 int main()
 {
-    char str[100][100];
-    int word1,word2,n;
-    printf("Enter the size of array elements:");
-    scanf("%d",&n);
-    printf("Enter the elements");
-    scanf("%s",str);
-    int result = min_dist(str,n,word1,word2);
-    printf("the minimum distance between given two words is %d",result);
-}
+char str[100];
 
+printf("Enter the String:");
+scanf("%s",str);
+int len = strlen(str);
+int n = len-1;
+for (int i = 0 ; i <len/2; i++)
+{
+  swap(&str[i],&str[n]);
+  n-=1;
+}
+printf("The reversed string is :%s\n",str);
+return 0;
+}
 
 
 
