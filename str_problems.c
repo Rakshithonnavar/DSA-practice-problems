@@ -80,49 +80,78 @@
 //   }
 // }
 
-int  panagram(char str[])
-{
-  int  mark[26];
-    for(int i=0;i<26;i++)
-      mark[i] = 0;
 
-      int index;
+/***************************PANAGRAM********************************8*/
+// int  panagram(char str[])
+// {
+//   int  mark[26];
+//     for(int i=0;i<26;i++)
+//       mark[i] = 0;
+
+//       int index;
 
 
-  int len= strlen(str);
-  for(int i=0;i<len;i++)
-  {
-       if(str[i]>='A' && str[i]<='Z')
-         index = str[i]-'A';
+//   int len= strlen(str);
+//   for(int i=0;i<len;i++)
+//   {
+//        if(str[i]>='A' && str[i]<='Z')
+//          index = str[i]-'A';
         
-      else if(str[i]>='a'&& str[i]<='z')
-         index = str[i]-'a';
+//       else if(str[i]>='a'&& str[i]<='z')
+//          index = str[i]-'a';
 
-     else
-        continue;
-    mark[index] = 1;
-  }
+//      else
+//         continue;
+//     mark[index] = 1;
+//   }
 
-  for(int i=0;i<=25;i++)
-     if(mark[i]==0)
-        return 0;
-        return 1;
+//   for(int i=0;i<=25;i++)
+//      if(mark[i]==0)
+//         return 0;
+//         return 1;
+// }
+
+// int main()
+// {
+// char str[100];
+// printf("\n Enter a string: ");
+// scanf("%s",str);
+// if (panagram(str)==1)
+//    {
+//     printf("its a panagram");
+//    } 
+// else{
+//   printf("not a panagram");
+// }
+// }
+//
+void subsequences(char *s[],char op[],int i,int j)
+{
+  if(s[i]=='\0'){
+    op[j]='\0';
+
+    s.insert(op);
+   
 }
-
+else{
+  op[j]=s[i];
+  subsequences(s,op,i+1,j+1);
+  subsequences(s,op,i+1,j);
+}
+}
 int main()
 {
-char str[100];
-printf("\n Enter a string: ");
-scanf("%s",str);
-if (panagram(str)==1)
-   {
-    printf("its a panagram");
-   } 
-else{
-  printf("not a panagram");
-}
-}
+  char s[100];
+  printf("Enter the string:");
+  scanf("%s",s);
+  int m=sizeof(s);
+  int n=sizeof(char);
+  char op[m+1];
+  subsequences(s,op,0,0);
+  printf(s.size);
 
+
+}
 
 
 
