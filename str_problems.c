@@ -149,8 +149,6 @@ int main()
   char op[m+1];
   subsequences(s,op,0,0);
   printf(s.size);
-
-
 }
 
 
