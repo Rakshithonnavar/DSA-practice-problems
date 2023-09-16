@@ -125,32 +125,102 @@
 // }
 // }
 //
-void subsequences(char *s[],char op[],int i,int j)
-{
-  if(s[i]=='\0'){
-    op[j]='\0';
 
-    s.insert(op);
+
+// void subsequences(char *s[],char op[],int i,int j)
+// {
+//   if(s[i]=='\0'){
+//     op[j]='\0';
+
+//     s.insert(op);
    
+// }
+// else{
+//   op[j]=s[i];
+//   subsequences(s,op,i+1,j+1);
+//   subsequences(s,op,i+1,j);
+// }
+// }
+// int main()
+// {
+//   char s[100];
+//   printf("Enter the string:");
+//   scanf("%s",s);
+//   int m=sizeof(s);
+//   int n=sizeof(char);
+//   char op[m+1];
+//   subsequences(s,op,0,0);
+//   printf(s.size);
+// }
+
+
+// ROTATING 2ND STR  TWICE TO GET SAME SEQUENCES AS LIKE OF 1 ST OME
+
+// int isRotated(char str1[],char str2[])
+// {
+//   int n1= strlen(str1);
+//   int n2 =strlen(str2);
+//   if(n1!=n2){
+//     return 0;
+//   }
+  
+//   char rotate_clock=" ";
+//   char anti_clock=" ";
+
+//   anti_clock = anti_clock+substr(n2-2,2)+substr(0,n2);
+//   rotate_clock = rotate_clock+substr(2)+substr(0,2);
+      
+//        if(strcmp((n1==0)||(n2==0)))
+//        {
+//         return 1;
+//        }
+
+// }
+// int main()
+// {
+//   char str1[100],str2[100];
+//   printf("Enter string one");
+//   scanf("%s",str1);
+//   printf("Enter string two");
+//   scanf("%s",str2);
+//   if((isRotated(str1,str2))){
+//   printf("\nStrings are rotated\n");
+//   }
+//   else
+//   {
+//     printf("\nString not rotated \n");
+//   }
+// }
+
+
+//Printing subsequences of string
+
+int subsequences(char inp[],char oup[],int i)
+{
+  if(inp[i]=='\0')
+  {
+    printf("the result is:%s",oup);
+    return;
+  }
+  oup[i]=inp[i];
+   oup[i + 1] = '\0';
+    subsequences(inp, oup, i + 1);
+
+    oup[i] = '\0';
+    subsequences(inp, oup, i + 1);
+     
 }
-else{
-  op[j]=s[i];
-  subsequences(s,op,i+1,j+1);
-  subsequences(s,op,i+1,j);
-}
-}
+
 int main()
 {
   char s[100];
+  char inp,oup;
   printf("Enter the string:");
   scanf("%s",s);
-  int m=sizeof(s);
-  int n=sizeof(char);
-  char op[m+1];
-  subsequences(s,op,0,0);
-  printf(s.size);
+  int result =  subsequence(inp,oup);
+  printf("The subsequences are :",result);
+  return 0;
 }
-
 
 
 
