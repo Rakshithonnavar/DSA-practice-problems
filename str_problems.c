@@ -195,31 +195,54 @@
 
 //Printing subsequences of string
 
-int subsequences(char inp[],char oup[],int i)
-{
-  if(inp[i]=='\0')
-  {
-    printf("the result is:%s",oup);
-    return;
-  }
-  oup[i]=inp[i];
-   oup[i + 1] = '\0';
-    subsequences(inp, oup, i + 1);
+// int subsequences(char inp[],char oup[],int i)
+// {
+//   if(inp[i]=='\0')
+//   {
+//     printf("the result is:%s",oup);
+//     return;
+//   }
+//   oup[i]=inp[i];
+//    oup[i + 1] = '\0';
+//     subsequences(inp, oup, i + 1);
 
-    oup[i] = '\0';
-    subsequences(inp, oup, i + 1);
+//     oup[i] = '\0';
+//     subsequences(inp, oup, i + 1);
      
-}
+// }
 
+
+//Longest palindromic subsequences 
+int max(int x,int y)
+{
+  return (x>y)?  x:y;
+}
+ int lps(char *seq,int i,int j)
+ {
+  if(i==j)
+  {
+    return 1;
+  }
+  if(seq[i]==seq[j] && i+1==j)
+  {
+    return 2;
+  }
+
+  if(seq[i]==seq[j]){
+  return lps(seq,i+1,j-1)+2;
+  }
+  return max (lps(seq,i,j-1),lps(seq,i+1,j));
+  
+ }
 int main()
 {
-  char s[100];
-  char inp,oup;
+  char s[100],*seq;
+  int i,j;
   printf("Enter the string:");
   scanf("%s",s);
-  int result =  subsequence(inp,oup);
-  printf("The subsequences are :",result);
-  return 0;
+  int result = lps(seq,i,j);
+  printf("The longest palindromic subsequence:%s",result);
+   return 0;
 }
 
 
@@ -240,11 +263,4 @@ int main()
 
 
 
-// int encrypt(char str[],int n )
-// {
-//     int len = strlen(str);
-//     for(int i=0;i<len;i++)
-//     {
-       
-//     }
-// }
+
