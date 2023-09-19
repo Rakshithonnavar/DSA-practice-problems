@@ -213,37 +213,77 @@
 
 
 //Longest palindromic subsequences 
-int max(int x,int y)
-{
-  return (x>y)?  x:y;
-}
- int lps(char *seq,int i,int j)
- {
-  if(i==j)
-  {
-    return 1;
-  }
-  if(seq[i]==seq[j] && i+1==j)
-  {
-    return 2;
-  }
 
-  if(seq[i]==seq[j]){
-  return lps(seq,i+1,j-1)+2;
-  }
-  return max (lps(seq,i,j-1),lps(seq,i+1,j));
+
+// int max(int x,int y)
+// {
+//   return (x>y)?  x:y;
+// }
+//  int lps(char *seq,int i,int j)
+//  {
+//   if(i==j)
+//   {
+//     return 1;
+//   }
+//   if(seq[i]==seq[j] && i+1==j)
+//   {
+//     return 2;
+//   }
+
+//   if(seq[i]==seq[j]){
+//   return lps(seq,i+1,j-1)+2;
+//   }
+//   return max (lps(seq,i,j-1),lps(seq,i+1,j));
   
- }
+//  }
+// int main()
+// {
+//   char s[100],*seq;
+//   int i,j;
+//   printf("Enter the string:");
+//   scanf("%s",s);
+//   int result = lps(seq,i,j);
+//   printf("The longest palindromic subsequence:%s",result);
+//    return 0;
+// }
+
+
+//Longest Common  Anagram subsequence
+
+int lcas(char str1[],char str2[],int n1,int n2)
+{
+    char MAX_CHAR;
+    int freq1[MAX_CHAR];
+    int freq2[MAX_CHAR];
+
+     int len=0,i;
+     for(i=0;i<n1;i++)
+     {
+        freq1[str1[i]- 'a']++;
+     }
+     for(i=0;i<n1;i++)
+     {
+        freq1[str1[i]- 'A']++;
+     }
+     for(i=0;i<n2;i++)
+     {
+        freq2[str2[i] - 'a']++;
+     }
+      for(i=0;i<n2;i++)
+     {
+        freq2[str2[i] - 'A']++;
+     }
+         for(int i=0;i<MAX_CHAR;i++)
+         {
+           return len+= min(freq1,freq2);
+         }
+}
+
 int main()
 {
-  char s[100],*seq;
-  int i,j;
-  printf("Enter the string:");
-  scanf("%s",s);
-  int result = lps(seq,i,j);
-  printf("The longest palindromic subsequence:%s",result);
-   return 0;
+    
 }
+
 
 
 
