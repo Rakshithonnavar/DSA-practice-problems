@@ -248,7 +248,7 @@
 // }
 
 
-//Longest Common  Anagram subsequence
+Longest Common  Anagram subsequence
 
 int lcas(char str1[],char str2[],int n1,int n2)
 {
@@ -279,9 +279,15 @@ int lcas(char str1[],char str2[],int n1,int n2)
          }
 }
 
+//usage of strdup function
+
 int main()
 {
-    
+    char src[] = "rakshit";
+    char * dest = strdup(src);
+    printf("%s\t",src);
+    printf("%s",dest);
+    return 0;
 }
 
 
