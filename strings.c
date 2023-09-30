@@ -220,6 +220,29 @@ printf("The reversed string is :%s\n",str);
 return 0;
 }
 
+//print fibbonacci using recursion:
+ 
+static int fibonacci(int n,int n1,int n2,int n3)
+{
+  if(n==0){
+    return 1;
+  }
+  else
+  {
+    n3=n1+n2;
+    n1=n2;
+    n2=n3;
+  }
+  fibonacci(n-2,n1,n2,n3); 
+}
+
+int main()
+{
+  //printf("Enter the count");
+  printf("%d%d",0,1);
+  printf("The numbers are:%d",fibonacci);
+}
+
 
 
 
