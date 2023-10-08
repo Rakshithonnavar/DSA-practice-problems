@@ -222,7 +222,7 @@ return 0;
 
 //print fibbonacci using recursion:
  
-static int fibonacci(int n,int n1,int n2,int n3)
+ int fibonacci(int n,int n1,int n2,int n3)
 {
   if(n==0){
     return 1;
@@ -239,10 +239,46 @@ static int fibonacci(int n,int n1,int n2,int n3)
 
 int main()
 {
-  int n,n1,n2,n3;
+    int n,n1,n2,n3;
   //printf("Enter the count");
-  printf("The numbers are:");
-  printf("%d%d",0,1);
+   printf("The numbers are:");
+   printf("%d%d",0,1);
    fibonacci(n-2,n1,n2,n3);
 }
+//palindrome check
+int main()
+{
+    char str[100];
+    int start =0;
+    int end = strlen(str)-1;
+    printf("Enter the string");
+    scanf("%s",&str);
+    if(str[start]==str[end])
+    {
+        printf("Palindrome string");
+    }
+    else{
+        printf("Not palindrome");
+    }
+    return 0;
+}
+//Multiply 2 numbers using russian peasant algorithm
+int main()
+{
+     int a,b,res=0;
+     printf("Enter the numbers ");
+     scanf("%d%d",a,b);
+      while(b>0)
+      {
+         if(b&1)
+         res+=a;
+         a=a<<1;
+         b=b>>1;
+      }
+    printf("The product of two numbers",res);
+    return 0;
+}
+
+
+
 

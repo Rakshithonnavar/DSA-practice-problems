@@ -1,6 +1,7 @@
 #include<stdlib.h>
 #include<string.h>
 #include<stdio.h>
+#include<stdbool.h>
 
 // int divisibleby7(int n)
 // {
@@ -248,7 +249,7 @@
 // }
 
 
-Longest Common  Anagram subsequence
+//Longest Common  Anagram subsequence
 
 int lcas(char str1[],char str2[],int n1,int n2)
 {
@@ -316,6 +317,23 @@ int main()
    scanf("%d",&r);
    int result = sOfErath(n);
    return 0;   
+}
+
+bool XOR(int x,int y)
+{
+   int res=0;
+    
+    for(int i=31;i>=0;i--)
+    {
+      bool b1 = x &(1<<i);
+      bool b2 = y &(1<<i);
+
+      bool xoredBit = (b1&b2)?0:(b1|b2);
+
+      res<<=1;
+      res|= xoredBit;
+    }
+    return  res;
 }
 
 
