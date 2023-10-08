@@ -220,7 +220,7 @@ void mergeSort(int a[],int l,int r)
     int m = l+(r-1)/2;
       mergeSort(a,l,m); //left array
       mergeSort(a,m+1,r);//right array
-       
+      
        merge(a,l,m,r);
   }
 }

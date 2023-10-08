@@ -290,6 +290,34 @@ int main()
     return 0;
 }
 
+int  sOfErath(int n)
+{
+int prime[n+1];
+memset(prime,1,sizeof(prime));
+
+for(int p=2;p<=n;p++)
+   {
+      if(prime[p]==1)
+      {
+         for(int i=p;p*p<=n;i++)
+           prime[i]=0;
+      }
+   }
+
+ for(int p=2;p<=n;p++)
+   if(prime[p])
+      printf("The numbers are :%d",p);
+}
+
+int main()
+{
+   int r,n;
+   printf("Enter the range:");
+   scanf("%d",&r);
+   int result = sOfErath(n);
+   return 0;   
+}
+
 
 
 
