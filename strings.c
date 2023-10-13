@@ -263,22 +263,40 @@ int main()
     return 0;
 }
 //Multiply 2 numbers using russian peasant algorithm
-int main()
+// int main()
+// {
+//      int a,b,res=0;
+//      printf("Enter the numbers ");
+//      scanf("%d%d",a,b);
+//       while(b>0)
+//       {
+//          if(b&1)
+//          res+=a;
+//          a=a<<1;
+//          b=b>>1;
+//       }
+//     printf("The product of two numbers",res);
+//     return 0;
+// }
+
+int compare(int p1,int p2)
 {
-     int a,b,res=0;
-     printf("Enter the numbers ");
-     scanf("%d%d",a,b);
-      while(b>0)
-      {
-         if(b&1)
-         res+=a;
-         a=a<<1;
-         b=b>>1;
-      }
-    printf("The product of two numbers",res);
-    return 0;
+    int first,second,p1,p2;
+
+    if(p1.second==p2.second)
+       return p1.first>p2.first;
+    
+    return p1.second>p2.second;
 }
 
+
+void most freq_Number(int a[],int N,int K)
+{
+    int map;
+    for(int i=0;i<N;i++)
+          map[a[i]]++;
+      
+}
 
 
 
