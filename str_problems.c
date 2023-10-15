@@ -337,16 +337,43 @@ int main()
 // }
 
 
-unsigned int swap_nibble(int x)
+// unsigned int swap_nibble(int x)
+// {
+//     return((x & 0x0F)<<4 | (x & 0xF0)>>4);
+// }
+// int main()
+// {
+//    unsigned char x=100;
+//    printf("%u",swap_nibble(x));
+//    return 0;
+// }
+
+int lcs(char *s1,char*s2)
 {
-    return((x & 0x0F)<<4 | (x & 0xF0)>>4);
+  int n1 =  strlen(s1);
+  int n2 =  strlen(s2); 
+   int sum = n1 + n2;
+
+     //find lcs
 }
-int main()
+
+int lcs(char *s1,char *s2,int n1,int n2)
 {
-   unsigned char x=100;
-   printf("%u",swap_nibble(x));
-   return 0;
-}
+   int n[n1+1][n2+1];
+   int i,j;
+  for(i=0;i<=n1;i++){
+     for(j=0;j<=n2;j++)
+     {
+      if(i==0||j==0)
+       {
+         n[i][j]=0;
+       }
+       else if()
+  
+  
+
+
+} 
 
 
 
