@@ -357,25 +357,39 @@ int lcs(char *s1,char*s2)
      //find lcs
 }
 
-int lcs(char *s1,char *s2,int n1,int n2)
+int lcs(char *s1,char *s2)
 {
+   int n1,n2;
    int n[n1+1][n2+1];
    int i,j;
   for(i=0;i<=n1;i++){
-     for(j=0;j<=n2;j++)
-     {
+     for(j=0;j<=n2;j++){
       if(i==0||j==0)
        {
          n[i][j]=0;
        }
-       else if()
-  
-  
+       else if(s1[i-1] == s2[j-1])
+         n[i][j] = n[i-1][j-1]+1;
 
+      else
+        n[i][j] = max(n[i-1][j],n[i][j-1]);
+}
+  }
+  return n[n1][n2];
+}
 
-} 
+int main()
+{
+  char s1[100],s2[100];
+  int sum,n,n1,n2;
+  printf("Enter the two strings:");
+  scanf("%s%s",s1,s2);
+  int result =  sum - (lcs(s1,s2));
+  prinf("The length of smallest sequence is:",result);
+  return 0;
+}
 
-
+ 
 
 
 
