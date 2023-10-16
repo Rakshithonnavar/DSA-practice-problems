@@ -384,9 +384,38 @@ int main()
   int sum,n,n1,n2;
   printf("Enter the two strings:");
   scanf("%s%s",s1,s2);
-  int result =  sum - (lcs(s1,s2));
+  int result =  sum - lcs(s1,s2);
   prinf("The length of smallest sequence is:",result);
   return 0;
+}
+
+//to find length of smallest substring for a givenj pattern in a string 
+
+int substring(int n,char *str)
+{
+   int len =  strlen(str);
+    
+     int hash[256] = {0};
+       for(int i=0;i<len;i++)
+       {
+         hash[str[i]]++;
+       }
+       int start = 0;
+           while(hash[str[start]]!=1)
+           {
+            start++;
+           }
+      int end = len-1;
+       while(hash[str[end]]!=1)
+       {
+         end--;
+       }
+
+       return strndup(str+start,end-start+1);   
+}
+int main()
+{
+   
 }
 
  
