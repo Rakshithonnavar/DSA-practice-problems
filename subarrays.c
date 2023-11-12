@@ -65,6 +65,7 @@ int contigious_subarray(int a_prefixSum[],int a_msum[],int a[20])
 {
      int n,i,j,msum[n],s;
     int prefix_sum[0]= {0};
+    int min,int max;
      for(int i=1;i<n;i++)
      {
        prefix_sum[i]= prefix_sum[i-1]+a[i];
@@ -89,7 +90,6 @@ int contigious_subarray(int a_prefixSum[],int a_msum[],int a[20])
      }
      
 }
-
 int main()
 {
   int a[100],i,j,n,max_so_far;
