@@ -83,48 +83,48 @@
 
 
 /***************************PANAGRAM********************************8*/
-int  panagram(char str[])
-{
-  int  mark[26];
-    for(int i=0;i<26;i++)
-      mark[i] = 0;
+// int  panagram(char str[])
+// {
+//   int  mark[26];
+//     for(int i=0;i<26;i++)
+//       mark[i] = 0;
 
-      int index;
+//       int index;
 
 
-  int len= strlen(str);
-  for(int i=0;i<len;i++)
-  {
-       if(str[i]>='A' && str[i]<='Z')
-         index = str[i]-'A';
+//   int len= strlen(str);
+//   for(int i=0;i<len;i++)
+//   {
+//        if(str[i]>='A' && str[i]<='Z')
+//          index = str[i]-'A';
         
-      else if(str[i]>='a'&& str[i]<='z')
-         index = str[i]-'a';
+//       else if(str[i]>='a'&& str[i]<='z')
+//          index = str[i]-'a';
 
-     else
-        continue;
-    mark[index] = 1;
-  }
+//      else
+//         continue;
+//     mark[index] = 1;
+//   }
 
-  for(int i=0;i<=25;i++)
-     if(mark[i]==0)
-        return 0;
-        return 1;
-}
+//   for(int i=0;i<=25;i++)
+//      if(mark[i]==0)
+//         return 0;
+//         return 1;
+// }
 
-int main()
-{
-char str[100];
-printf("\n Enter a string: ");
-scanf("%s",str);
-if (panagram(str)==1)
-   {
-    printf("its a panagram");
-   } 
-else{
-  printf("not a panagram");
-}
-}
+// int main()
+// {
+// char str[100];
+// printf("\n Enter a string: ");
+// scanf("%s",str);
+// if (panagram(str)==1)
+//    {
+//     printf("its a panagram");
+//    } 
+// else{
+//   printf("not a panagram");
+// }
+// }
 
 
 
@@ -177,22 +177,21 @@ int isRotated(char str1[],char str2[])
        }
 }
 
-// }
-// int main()
-// {
-//   char str1[100],str2[100];
-//   printf("Enter string one");
-//   scanf("%s",str1);
-//   printf("Enter string two");
-//   scanf("%s",str2);
-//   if((isRotated(str1,str2))){
-//   printf("\nStrings are rotated\n");
-//   }
-//   else
-//   {
-//     printf("\nString not rotated \n");
-//   }
-// }
+int main()
+{
+  char str1[100],str2[100];
+  printf("Enter string one");
+  scanf("%s",str1);
+  printf("Enter string two");
+  scanf("%s",str2);
+  if((isRotated(str1,str2))){
+  printf("\nStrings are rotated\n");
+  }
+  else
+  {
+    printf("\nString not rotated \n");
+  }
+}
 
 
 //Printing subsequences of string
