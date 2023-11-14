@@ -83,49 +83,49 @@
 
 
 /***************************PANAGRAM********************************8*/
-// int  panagram(char str[])
-// {
-//   int  mark[26];
-//     for(int i=0;i<26;i++)
-//       mark[i] = 0;
+int  panagram(char str[])
+{
+  int  mark[26];
+    for(int i=0;i<26;i++)
+      mark[i] = 0;
 
-//       int index;
+      int index;
 
 
-//   int len= strlen(str);
-//   for(int i=0;i<len;i++)
-//   {
-//        if(str[i]>='A' && str[i]<='Z')
-//          index = str[i]-'A';
+  int len= strlen(str);
+  for(int i=0;i<len;i++)
+  {
+       if(str[i]>='A' && str[i]<='Z')
+         index = str[i]-'A';
         
-//       else if(str[i]>='a'&& str[i]<='z')
-//          index = str[i]-'a';
+      else if(str[i]>='a'&& str[i]<='z')
+         index = str[i]-'a';
 
-//      else
-//         continue;
-//     mark[index] = 1;
-//   }
+     else
+        continue;
+    mark[index] = 1;
+  }
 
-//   for(int i=0;i<=25;i++)
-//      if(mark[i]==0)
-//         return 0;
-//         return 1;
-// }
+  for(int i=0;i<=25;i++)
+     if(mark[i]==0)
+        return 0;
+        return 1;
+}
 
-// int main()
-// {
-// char str[100];
-// printf("\n Enter a string: ");
-// scanf("%s",str);
-// if (panagram(str)==1)
-//    {
-//     printf("its a panagram");
-//    } 
-// else{
-//   printf("not a panagram");
-// }
-// }
-//
+int main()
+{
+char str[100];
+printf("\n Enter a string: ");
+scanf("%s",str);
+if (panagram(str)==1)
+   {
+    printf("its a panagram");
+   } 
+else{
+  printf("not a panagram");
+}
+}
+
 
 
 // void subsequences(char *s[],char op[],int i,int j)
@@ -157,24 +157,25 @@
 
 // ROTATING 2ND STR  TWICE TO GET SAME SEQUENCES AS LIKE OF 1 ST OME
 
-// int isRotated(char str1[],char str2[])
-// {
-//   int n1= strlen(str1);
-//   int n2 =strlen(str2);
-//   if(n1!=n2){
-//     return 0;
-//   }
+int isRotated(char str1[],char str2[])
+{
+  int n1= strlen(str1);
+  int n2 =strlen(str2);
+  if(n1!=n2){
+    return 0;
+  }
   
-//   char rotate_clock=" ";
-//   char anti_clock=" ";
+  char rotate_clock=" ";
+  char anti_clock=" ";
 
-//   anti_clock = anti_clock+substr(n2-2,2)+substr(0,n2);
-//   rotate_clock = rotate_clock+substr(2)+substr(0,2);
+  anti_clock = anti_clock+substr(n2-2,2)+substr(0,n2);
+  rotate_clock = rotate_clock+substr(2)+substr(0,2);
       
-//        if(strcmp((n1==0)||(n2==0)))
-//        {
-//         return 1;
-//        }
+       if(strcmp((n1==0)||(n2==0)))
+       {
+        return 1;
+       }
+}
 
 // }
 // int main()
@@ -251,73 +252,73 @@
 
 //Longest Common  Anagram subsequence
 
-int lcas(char str1[],char str2[],int n1,int n2)
-{
-    char MAX_CHAR;
-    int freq1[MAX_CHAR];
-    int freq2[MAX_CHAR];
+// int lcas(char str1[],char str2[],int n1,int n2)
+// {
+//     char MAX_CHAR;
+//     int freq1[MAX_CHAR];
+//     int freq2[MAX_CHAR];
 
-     int len=0,i;
-     for(i=0;i<n1;i++)
-     {
-        freq1[str1[i]- 'a']++;
-     }
-     for(i=0;i<n1;i++)
-     {
-        freq1[str1[i]- 'A']++;
-     }
-     for(i=0;i<n2;i++)
-     {
-        freq2[str2[i] - 'a']++;
-     }
-      for(i=0;i<n2;i++)
-     {
-        freq2[str2[i] - 'A']++;
-     }
-         for(int i=0;i<MAX_CHAR;i++)
-         {
-           return len+= min(freq1,freq2);
-         }
-}
+//      int len=0,i;
+//      for(i=0;i<n1;i++)
+//      {
+//         freq1[str1[i]- 'a']++;
+//      }
+//      for(i=0;i<n1;i++)
+//      {
+//         freq1[str1[i]- 'A']++;
+//      }
+//      for(i=0;i<n2;i++)
+//      {
+//         freq2[str2[i] - 'a']++;
+//      }
+//       for(i=0;i<n2;i++)
+//      {
+//         freq2[str2[i] - 'A']++;
+//      }
+//          for(int i=0;i<MAX_CHAR;i++)
+//          {
+//            return len+= min(freq1,freq2);
+//          }
+// }
 
 //usage of strdup function
 
-int main()
-{
-    char src[] = "rakshit";
-    char * dest = strdup(src);
-    printf("%s\t",src);
-    printf("%s",dest);
-    return 0;
-}
+// int main()
+// {
+//     char src[] = "rakshit";
+//     char * dest = strdup(src);
+//     printf("%s\t",src);
+//     printf("%s",dest);
+//     return 0;
+// }
 
-int  sOfErath(int n)
-{
-int prime[n+1];
-memset(prime,1,sizeof(prime));
+// int  sOfErath(int n)
+// {
+// int prime[n+1];
+// memset(prime,1,sizeof(prime));
 
-for(int p=2;p<=n;p++)
-   {
-      if(prime[p]==1)
-      {
-         for(int i=p;p*p<=n;i++)
-           prime[i]=0;
-      }
-   }
+// for(int p=2;p<=n;p++)
+//    {
+//       if(prime[p]==1)
+//       {
+//          for(int i=p;p*p<=n;i++)
+//            prime[i]=0;
+//       }
+//    }
 
- for(int p=2;p<=n;p++)
-   if(prime[p])
-      printf("The numbers are :%d",p);
-}
+//  for(int p=2;p<=n;p++)
+//    if(prime[p])
+//       printf("The numbers are :%d",p);
+// }
 
-int main()
-{
-   int r,n;
-   printf("Enter the range:");
-   scanf("%d",&r);
-   int result = sOfErath(n);
-   return 0;   
-}
+// int main()
+// {
+//    int r,n;
+//    printf("Enter the range:");
+//    scanf("%d",&r);
+//    int result = sOfErath(n);
+//    return 0;   
+// }
 
 // bool XOR(int x,int y)
 // {
@@ -348,75 +349,94 @@ int main()
 //    return 0;
 // }
 
-int lcs(char *s1,char*s2)
-{
-  int n1 =  strlen(s1);
-  int n2 =  strlen(s2); 
-   int sum = n1 + n2;
+// int lcs(char *s1,char*s2)
+// {
+//   int n1 =  strlen(s1);
+//   int n2 =  strlen(s2); 
+//    int sum = n1 + n2;
 
-     //find lcs
-}
+     
+// }
 
-int lcs(char *s1,char *s2)
-{
-   int n1,n2;
-   int n[n1+1][n2+1];
-   int i,j;
-  for(i=0;i<=n1;i++){
-     for(j=0;j<=n2;j++){
-      if(i==0||j==0)
-       {
-         n[i][j]=0;
-       }
-       else if(s1[i-1] == s2[j-1])
-         n[i][j] = n[i-1][j-1]+1;
+// int lcs(char *s1,char *s2)
+// {
+//    int n1,n2;
+//    int n[n1+1][n2+1];
+//    int i,j;
+//   for(i=0;i<=n1;i++){
+//      for(j=0;j<=n2;j++){
+//       if(i==0||j==0)
+//        {
+//          n[i][j]=0;
+//        }
+//        else if(s1[i-1] == s2[j-1])
+//          n[i][j] = n[i-1][j-1]+1;
 
-      else
-        n[i][j] = max(n[i-1][j],n[i][j-1]);
-}
-  }
-  return n[n1][n2];
-}
+//       else
+//         n[i][j] = max(n[i-1][j],n[i][j-1]);
+// }
+//   }
+//   return n[n1][n2];
+// }
 
-int main()
-{
-  char s1[100],s2[100];
-  int sum,n,n1,n2;
-  printf("Enter the two strings:");
-  scanf("%s%s",s1,s2);
-  int result =  sum - lcs(s1,s2);
-  prinf("The length of smallest sequence is:",result);
-  return 0;
-}
+// int main()
+// {
+//   char s1[100],s2[100];
+//   int sum,n,n1,n2;
+//   printf("Enter the two strings:");
+//   scanf("%s%s",s1,s2);
+//   int result =  sum - lcs(s1,s2);
+//   prinf("The length of smallest sequence is:",result);
+//   return 0;
+// }
 
-//to find length of smallest substring for a givenj pattern in a string 
 
-int substring(int n,char *str)
-{
-   int len =  strlen(str);
-    
-     int hash[256] = {0};
-       for(int i=0;i<len;i++)
-       {
-         hash[str[i]]++;
-       }
-       int start = 0;
-           while(hash[str[start]]!=1)
-           {
-            start++;
-           }
-      int end = len-1;
-       while(hash[str[end]]!=1)
-       {
-         end--;
-       }
 
-       return strndup(str+start,end-start+1);   
-}
-int main()
-{
-   
-}
+// int swap(char *a,char *b)
+// {
+// int t=*a;
+//  *a=*b;
+//  *b=t;
+// }
+// int main()
+// {
+// char str[100];
+// printf("Enter the String:");
+// scanf("%s",str);
+// int end = strlen(str);
+//  int n = end-1;
+// for (int i = 0; i< end/2; i++)
+// {
+//  swap(&str[i],&str[n]);
+//   n-=1;
+// }
+// printf("The reversed string is%s:",str);
+// return 0;
+// }
+// int main()
+// {
+// char str[100];
+// printf("Enter the String:");
+// scanf("%s",str);
+  
+// int start=0;
+// int end = strlen(str)-1;
+// while(start<end)
+// {
+//   if (str[start]==str[end])
+//     {
+//       printf("Palindrome"); 
+//     }
+
+//   else{
+//     printf("Not Palindrome");
+//   }
+//   break;
+// }
+//   return 0;
+// }
+
+
 
  
 
