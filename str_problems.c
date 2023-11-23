@@ -157,41 +157,41 @@
 
 // ROTATING 2ND STR  TWICE TO GET SAME SEQUENCES AS LIKE OF 1 ST OME
 
-int isRotated(char str1[],char str2[])
-{
-  int n1= strlen(str1);
-  int n2 =strlen(str2);
-  if(n1!=n2){
-    return 0;
-  }
+// int isRotated(char str1[],char str2[])
+// {
+//   int n1= strlen(str1);
+//   int n2 =strlen(str2);
+//   if(n1!=n2){
+//     return 0;
+//   }
   
-  char rotate_clock=" ";
-  char anti_clock=" ";
+//   char rotate_clock=" ";
+//   char anti_clock=" ";
 
-  anti_clock = anti_clock+substr(n2-2,2)+substr(0,n2);
-  rotate_clock = rotate_clock+substr(2)+substr(0,2);
+//   anti_clock = anti_clock+substr(n2-2,2)+substr(0,n2);
+//   rotate_clock = rotate_clock+substr(2)+substr(0,2);
       
-       if(strcmp((n1==0)||(n2==0)))
-       {
-        return 1;
-       }
-}
+//        if(strcmp((n1==0)||(n2==0)))
+//        {
+//         return 1;
+//        }
+// }
 
-int main()
-{
-  char str1[100],str2[100];
-  printf("Enter string one");
-  scanf("%s",str1);
-  printf("Enter string two");
-  scanf("%s",str2);
-  if((isRotated(str1,str2))){
-  printf("\nStrings are rotated\n");
-  }
-  else
-  {
-    printf("\nString not rotated \n");
-  }
-}
+// int main()
+// {
+//   char str1[100],str2[100];
+//   printf("Enter string one");
+//   scanf("%s",str1);
+//   printf("Enter string two");
+//   scanf("%s",str2);
+//   if((isRotated(str1,str2))){
+//   printf("\nStrings are rotated\n");
+//   }
+//   else
+//   {
+//     printf("\nString not rotated \n");
+//   }
+// }
 
 
 //Printing subsequences of string
