@@ -28,6 +28,8 @@ int MissingNum(int a[], int n) {
     return n + 1;
 }
 
+
+
 int main() {
     int a[100],N;
     printf("Enter the no of  elements");
