@@ -3,8 +3,6 @@
 #include<string.h>
 int main()
 {
-
-  
 // int a[100],i,n,low,high,key,mid,pos=-1;
 // printf("Enter the number of elements ");
 // scanf("%d",&n);
@@ -91,24 +89,41 @@ int main()
 //   else{
 //     printf("Element not found!");
 //   }
-int a[100],n,i,key,found=0;
-printf("Enter no of elems");
+
+//---------Linear Search----//
+// int a[100],n,i,key,found=0,pos=-1;
+// printf("Enter no of elems");
+// scanf("%d",&n);
+// printf("Enter array elems");
+//  for(i=0;i<n;i++)
+//   {
+//      scanf("%d",&a[i]);
+//   }
+// printf("Enter key elem");
+// scanf("%d",&key);
+//  for(i=0;i<n;i++)
+//  {
+//     if(a[i]==key){
+//       found=1;
+//       pos=i;
+//       break;
+//     } 
+// }
+// if(found==1)
+// {
+//   printf("Element found!! in position %d\n",pos);
+// }
+// else{
+//   printf("element not found!!");
+// }
+int a[100],n,i;
+printf("Enter the number of elems");
 scanf("%d",&n);
-printf("Enter arrya elems");
- for(i=0;i<n;i++)
-  {
-     scanf("%d",&a[i]);
-  }
-printf("Enter key elem");
-scanf("%d",&key);
- for(i=0;i<n;i++)
- {
-    if(a[i]==key){
-      found=1;
-    }
-    break;
-}
-if(found==1)
+printf("Enter arrays elems ");
+for(i=0;i<n;i++)
 {
-  
+  scanf("%d",&n);
+}
+printf("");
+return 0;
 }
