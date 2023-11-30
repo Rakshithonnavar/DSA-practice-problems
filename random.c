@@ -1,8 +1,7 @@
 #include<stdlib.h>
 #include<stdio.h>
 #include<string.h>
-int main()
-{
+
 // int a[100],i,n,low,high,key,mid,pos=-1;
 // printf("Enter the number of elements ");
 // scanf("%d",&n);
@@ -116,7 +115,52 @@ int main()
 // else{
 //   printf("element not found!!");
 // }
-int a[100],n,i;
+
+int  merge_sort(int a[100],int start,int end,int mid)
+{
+  int i,j,k;
+  int n1=mid-end+1;
+  int n2 = end-mid;
+
+int L[n1],R[n2];
+  for(i=0;i<n1;i++)
+    L[i]=a[start+i];
+    for(int j=0;j<n2;j++)
+    R[i]=a[mid+1+j];
+    i=0;
+    j=0;
+    k=start;
+
+while(i<n1 && j<n2)
+{
+  if(L[i]<=R[j])
+  {
+    a[k]=L[i];
+    i++;
+  }
+  else{
+      a[k]=R[j];
+      j++;
+  }
+  k++;
+  while(i<n1)
+  {
+    a[k]=L[i];
+    i++;
+    k++;
+  }
+  while(j<n2)
+  {
+    a[k]=R[i];
+    j++;
+    k++;
+  }
+} 
+}
+
+int main()
+{
+int a[100],n,i,start,end,mid;
 printf("Enter the number of elems");
 scanf("%d",&n);
 printf("Enter arrays elems ");
@@ -124,6 +168,11 @@ for(i=0;i<n;i++)
 {
   scanf("%d",&n);
 }
-printf("");
+int result = merge_sort(a,start,end,mid);
+printf("The array elements after sorting are :");
+for(i=0;i<n;i++)
+{
+  printf("%d\t",result);
+}
 return 0;
 }
