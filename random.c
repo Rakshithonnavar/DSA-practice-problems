@@ -116,63 +116,117 @@
 //   printf("element not found!!");
 // }
 
-int  merge_sort(int a[100],int start,int end,int mid)
-{
-  int i,j,k;
-  int n1=mid-end+1;
-  int n2 = end-mid;
+// int  merge_sort(int a[100],int start,int end,int mid)
+// {
+//   int i,j,k;
+//   int n1=mid-end+1;
+//   int n2 = end-mid;
 
-int L[n1],R[n2];
-  for(i=0;i<n1;i++)
-    L[i]=a[start+i];
-    for(int j=0;j<n2;j++)
-    R[i]=a[mid+1+j];
-    i=0;
-    j=0;
-    k=start;
+// int L[n1],R[n2];
+//   for(i=0;i<n1;i++)
+//     L[i]=a[start+i];
+//     for(int j=0;j<n2;j++)
+//     R[i]=a[mid+1+j];
+//     i=0;
+//     j=0;
+//     k=start;
 
-while(i<n1 && j<n2)
+// while(i<n1 && j<n2)
+// {
+//   if(L[i]<=R[j])
+//   {
+//     a[k]=L[i];
+//     i++;
+//   }
+//   else{
+//       a[k]=R[j];
+//       j++;
+//   }
+//   k++;
+//   while(i<n1)
+//   {
+//     a[k]=L[i];
+//     i++;
+//     k++;
+//   }
+//   while(j<n2)
+//   {
+//     a[k]=R[i];
+//     j++;
+//     k++;
+//   }
+// } 
+// }
+
+// int main()
+// {
+// int a[100],n,i,start,end,mid;
+// printf("Enter the number of elems");
+// scanf("%d",&n);
+// printf("Enter arrays elems ");
+// for(i=0;i<n;i++)
+// {
+//   scanf("%d",&a[i]);
+// }
+// merge_sort(a,0,n-1,mid); 
+// printf("The array elements after sorting are :");
+// for(i=0;i<n;i++)
+// {
+//   printf("%d\t",a[i]);
+// }
+// return 0;
+// }
+
+//Quick sort
+
+void swap(int *a,int *b)
 {
-  if(L[i]<=R[j])
-  {
-    a[k]=L[i];
-    i++;
-  }
-  else{
-      a[k]=R[j];
-      j++;
-  }
-  k++;
-  while(i<n1)
-  {
-    a[k]=L[i];
-    i++;
-    k++;
-  }
-  while(j<n2)
-  {
-    a[k]=R[i];
-    j++;
-    k++;
-  }
-} 
+   int temp= *a;
+    *a=*b;
+    *b=temp;
 }
 
+int partition(int a[],int low,int high)
+{
+ 
+ int pivot = a[high];
+ int i=low-1;
+  for(int j=low;j<=high;j++)
+  {
+    if(a[i]<pivot)
+    {
+      i++;
+      swap(&a[i],&a[j]);
+    }
+  }  
+  swap(&a[i+1],&a[high]);
+  return i+1;
+}
+
+void quickSort(int a[],int low,int high)
+{
+  if(low<high)
+  {
+    int pi=partition(a,low,high);
+     quickSort(a,low,pi-1);
+     quickSort(a,pi+1,high);
+  }
+}
 int main()
 {
-int a[100],n,i,start,end,mid;
-printf("Enter the number of elems");
-scanf("%d",&n);
-printf("Enter arrays elems ");
-for(i=0;i<n;i++)
-{
-  scanf("%d",&n);
-}
-int result = merge_sort(a,start,end,mid);
-printf("The array elements after sorting are :");
-for(i=0;i<n;i++)
-{
-  printf("%d\t",result);
-}
-return 0;
+  int a[100], i,n;
+  printf("Enter no elements: ");
+   scanf("%d",&n);
+  printf("Enter array elements");
+   for(i=0;i<n;i++)
+   {
+     scanf("%d",&a[i]);
+   }
+   quickSort(a,0,n-1);
+  printf("Then elements after sorting are:");
+    for(i=0;i<n;i++)
+    {
+      printf("%d\t",a[i]);
+    }
+    return 0;
 }
