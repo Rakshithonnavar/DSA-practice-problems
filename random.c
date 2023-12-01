@@ -193,7 +193,7 @@ int partition(int a[],int low,int high)
  int i=low-1;
   for(int j=low;j<=high;j++)
   {
-    if(a[i]<pivot)
+    if(a[j]<pivot)
     {
       i++;
       swap(&a[i],&a[j]);
@@ -214,7 +214,7 @@ void quickSort(int a[],int low,int high)
 }
 int main()
 {
-  int a[100], i,n;
+  int a[100],i,n;
   printf("Enter no elements: ");
    scanf("%d",&n);
   printf("Enter array elements");
