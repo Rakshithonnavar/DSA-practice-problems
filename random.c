@@ -179,54 +179,119 @@
 
 //Quick sort
 
+// void swap(int *a,int *b)
+// {
+//    int temp= *a;
+//     *a=*b;
+//     *b=temp;
+// }
+
+// int partition(int a[],int low,int high)
+// {
+ 
+//  int pivot = a[high];
+//  int i=low-1;
+//   for(int j=low;j<=high;j++)
+//   {
+//     if(a[j]<pivot)
+//     {
+//       i++;
+//       swap(&a[i],&a[j]);
+//     }
+//   }  
+//   swap(&a[i+1],&a[high]);
+//   return i+1;
+// }
+
+// void quickSort(int a[],int low,int high)
+// {
+//   if(low<high)
+//   {
+//     int pi=partition(a,low,high);
+//      quickSort(a,low,pi-1);
+//      quickSort(a,pi+1,high);
+//   }
+// }
+// int main()
+// {
+//   int a[100],i,n;
+//   printf("Enter no elements: ");
+//    scanf("%d",&n);
+//   printf("Enter array elements");
+//    for(i=0;i<n;i++)
+//    {
+//      scanf("%d",&a[i]);
+//    }
+//    quickSort(a,0,n-1);
+//   printf("Then elements after sorting are:");
+//     for(i=0;i<n;i++)
+//     {
+//       printf("%d\t",a[i]);
+//     }
+//     return 0;
+// }
+
+//insertion Sort
+// void swap(int *a,int *b)
+// {
+//  int temp= *a;
+//  *a=*b;
+//  *b=temp;
+// }
+
+// int insertion_sort(int a[100],int n)
+// {
+//   for(int i=0;i<n;i++)
+//   {
+//     for(int j=0;j<n-i-1;j++)
+//     {
+//       if(a[j]>a[j+1])
+//       {
+//         swap(&a[j],&a[j+1]);
+//       }
+//     }
+// }
+// }
+
+//selection sort alogorithm
 void swap(int *a,int *b)
 {
-   int temp= *a;
-    *a=*b;
-    *b=temp;
+  int temp= *a;
+   *a=*b;
+   *b=temp;
 }
 
-int partition(int a[],int low,int high)
+int selection_sort(int a[100],int n)
 {
- 
- int pivot = a[high];
- int i=low-1;
-  for(int j=low;j<=high;j++)
-  {
-    if(a[j]<pivot)
+ int i,j;
+ for(i=0;i<n-1;i++)
+ {
+  int min_index=i;
+    for( j=i+1;j<n;j++)
     {
-      i++;
-      swap(&a[i],&a[j]);
+      if(a[j]<a[min_index])
+      {
+        min_index=j;
+      }
     }
-  }  
-  swap(&a[i+1],&a[high]);
-  return i+1;
-}
-
-void quickSort(int a[],int low,int high)
-{
-  if(low<high)
-  {
-    int pi=partition(a,low,high);
-     quickSort(a,low,pi-1);
-     quickSort(a,pi+1,high);
-  }
+    swap(&a[i],&a[min_index]);
+ }  
 }
 int main()
 {
-  int a[100],i,n;
-  printf("Enter no elements: ");
-   scanf("%d",&n);
-  printf("Enter array elements");
+  int a[100],n,i,j;
+  printf("Enter the no of elems");
+  scanf("%d",&n);
+  printf("Enter the elements");
    for(i=0;i<n;i++)
    {
-     scanf("%d",&a[i]);
+    scanf("%d",&a[i]);
    }
-   quickSort(a,0,n-1);
-  printf("Then elements after sorting are:");
-    for(i=0;i<n;i++)
-    {
-      printf("%d\t",a[i]);
-    }
-    return 0;
+   selection_sort(a,n);
+   printf("\nThe sorted elements are:\n");
+   for(i=0;i<n;i++)
+   {
+    printf("%d ",a[i]);
+}
+return 0;
 }
