@@ -254,44 +254,49 @@
 // }
 
 //selection sort alogorithm
-void swap(int *a,int *b)
-{
-  int temp= *a;
-   *a=*b;
-   *b=temp;
-}
+// void swap(int *a,int *b)
+// {
+//   int temp= *a;
+//    *a=*b;
+//    *b=temp;
+// }
 
-int selection_sort(int a[100],int n)
-{
- int i,j;
- for(i=0;i<n-1;i++)
- {
-  int min_index=i;
-    for( j=i+1;j<n;j++)
-    {
-      if(a[j]<a[min_index])
-      {
-        min_index=j;
-      }
-    }
-    swap(&a[i],&a[min_index]);
- }  
-}
+// int selection_sort(int a[100],int n)
+// {
+//  int i,j;
+//  for(i=0;i<n-1;i++)
+//  {
+//   int min_index=i;
+//     for( j=i+1;j<n;j++)
+//     {
+//       if(a[j]<a[min_index])
+//       {
+//         min_index=j;
+//       }
+//     }
+//     swap(&a[i],&a[min_index]);
+//  }  
+// }
+// int main()
+// {
+//   int a[100],n,i,j;
+//   printf("Enter the no of elems");
+//   scanf("%d",&n);
+//   printf("Enter the elements");
+//    for(i=0;i<n;i++)
+//    {
+//     scanf("%d",&a[i]);
+//    }
+//    selection_sort(a,n);
+//    printf("\nThe sorted elements are:\n");
+//    for(i=0;i<n;i++)
+//    {
+//     printf("%d ",a[i]);
+//    }
+// return 0;
+// }
 int main()
 {
-  int a[100],n,i,j;
-  printf("Enter the no of elems");
-  scanf("%d",&n);
-  printf("Enter the elements");
-   for(i=0;i<n;i++)
-   {
-    scanf("%d",&a[i]);
-   }
-   selection_sort(a,n);
-   printf("\nThe sorted elements are:\n");
-   for(i=0;i<n;i++)
-   {
-    printf("%d ",a[i]);
-}
-return 0;
+printf("****Printing pattern***\n"); 
+  
 }
