@@ -295,8 +295,27 @@
 //    }
 // return 0;
 // }
+
+
 int main()
 {
-printf("****Printing pattern***\n"); 
-  
+int n;
+printf("****Printing pattern***\n");
+printf("Enter the count!");
+ scanf("%d",&n);
+  for(int i=1;i<=n;i++)
+  {
+    for(int j=1;j<=i;j++)
+    { 
+       printf(" ");
+    }
+    for(int k=1;k<=n;k++)
+{
+      printf("*");
 }
+ printf("\n");
+}
+ 
+  return 0;
+  }
+
