@@ -296,26 +296,49 @@
 // return 0;
 // }
 
+//********Pattren printing******?
+// int main()
+// {
+// int n;
+// printf("****Printing pattern***\n");
+// printf("Enter the count!");
+//  scanf("%d",&n);
+//   for(int i=1;i<=n;i++)
+//   {
+//     for(int j=1;j<=i;j++)
+//     { 
+//        printf(" ");
+//     }
+//     for(int k=1;k<=n;k++)
+// {
+//       printf("*");
+// }
+//  printf("\n");
+// }
+//   return 0;
+// }
 
-int main()
+
+int  large_small(int a[100],int n)
 {
-int n;
-printf("****Printing pattern***\n");
-printf("Enter the count!");
- scanf("%d",&n);
-  for(int i=1;i<=n;i++)
+  int large=a[0];
+  for(int i=0;i<n;i++ )
   {
-    for(int j=1;j<=i;j++)
-    { 
-       printf(" ");
-    }
-    for(int k=1;k<=n;k++)
-{
-      printf("*");
-}
- printf("\n");
-}
- 
-  return 0;
+     if(a[i]>large)
+       large= a[i];
   }
+  return large;
+
+  int small=a[0];
+     for(int i=0;i<n;i++){
+        if(a[i]<small)
+          small=a[i];
+     }
+     return small;
+}
+
+
+
+
+
 
