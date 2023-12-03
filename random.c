@@ -239,7 +239,7 @@
 //  *b=temp;
 // }
 
-// int insertion_sort(int a[100],int n)
+// int bubble_sort(int a[100],int n)
 // {
 //   for(int i=0;i<n;i++)
 //   {
@@ -318,25 +318,166 @@
 //   return 0;
 // }
 
+  //Largest and smmalest elements in array
+// int  large(int a[100],int n)
+// {
+//   int large=a[0];
+//   for(int i=0;i<n;i++ ){
+//      if(a[i]>large)
+//        large= a[i];
+//   }
+//   return large;
+// }
+// int small(int a[100],int n)
+// {
+//   int small=a[0];
+//      for(int i=0;i<n;i++){
+//         if(a[i]<small)
+//           small=a[i];
+//      }
+//      return small;
+// }
+// void swap(int *a,int *b)
+// {
+//   int temp= *a;
+//    *a=*b;
+//    *b=temp;
+// }
 
-int  large_small(int a[100],int n)
-{
-  int large=a[0];
-  for(int i=0;i<n;i++ )
-  {
-     if(a[i]>large)
-       large= a[i];
-  }
-  return large;
+// int bubble_sort(int a[100],int n)
+// {
+//   for(int i=0;i<n;i++)
+//   {
+//     for(int j=0;j<n-i-1;j++)
+//     {
+//       if(a[j]>a[j+1])
+//       {
+//         swap(&a[j],&a[j+1]);
+//       }
+//     }
+// }
+// }
+// int distinct(int a[100],int n)
+// {
+//     if(n==0)
+//        return 0;
+// int distinct[1000];
+//  int count =0;
+//  distinct[count++]=a[0];
+//     for(int i=1;i<n;i++){
+//           if(a[i]!=a[i-1])
+//           {
+//             distinct[count++]=a[i];
+//           }
+//     }
+//     return count;
+// }  
+// int main()
+// {
+//   int a[100],n,i,j;
+//   printf("Enter the no of elems");
+//   scanf("%d",&n);
+//   printf("enter elements");
+//    for(i=0;i<n;i++)
+//    {
+//     scanf("%d",&a[i]);
+//    }
+//   int result = distinct(a,n);
+//   printf("The elements are :");
+//      for(i=0;i<result;i++ )
+//      {
+//       printf("%d\t",a[i]);
+//      }
+//     return 0;
+// }
 
-  int small=a[0];
-     for(int i=0;i<n;i++){
-        if(a[i]<small)
-          small=a[i];
-     }
-     return small;
+
+
+
+// int distinct(int a[100],int n)
+// {
+//     if(n==0)
+//        return 0;
+//  int distinct[1000];
+//  int count =0;
+//  distinct[count++]=a[0];
+//     for(int i=1;i<n;i++){
+//           if(a[i]!=a[i-1])
+//           {
+//             distinct[count++]=a[i];
+//           }
+//     }
+//     return count;
+// }  
+// int main()
+// {
+//  int a[100],n,i,j;
+//  printf("Enter the no of elems: ");
+//  scanf("%d",&n);
+//  printf("Enter elements: ");
+//    for(i=0;i<n;i++)
+//    {
+//     scanf("%d",&a[i]);
+//    }
+//  int result = distinct(a,n);
+//     int dist[result];
+//     for(i=0;i<result;i++)
+//     {
+//       dist[i]=a[i];
+//     }
+//  printf("The elements are :");
+//      for(i=0;i<result;i++ )
+//      {
+//       printf("%d\t",dist[i]);
+//      }
+//     return 0;
+// }
+
+
+
+
+int distinct(int a[100], int n) {
+    if (n == 0)
+        return 0;
+
+    int distinct[1000];
+    int count = 0;
+    distinct[count++] = a[0];
+
+    for (int i = 1; i < n; i++) {
+        if (a[i] != a[i - 1]) {
+            distinct[count++] = a[i];
+        }
+    }
+
+    return count;
 }
 
+int main() {
+    int a[100], n, i, j;
+
+    printf("Enter the number of elements: ");
+    scanf("%d", &n);
+
+    printf("Enter elements: ");
+    for (i = 0; i < n; i++) {
+        scanf("%d", &a[i]);
+    }
+
+    int result = distinct(a, n);
+    int dist[result];  // Declare dist array with the correct size
+
+    for (i = 0; i < result; i++) {
+        dist[i] = a[i];
+    }
+
+    printf("The distinct elements are: ");
+    for (i = 0; i < result; i++) {
+        printf("%d\t", dist[i]);
+    }
+
+    return 0;
+}
 
 
 
