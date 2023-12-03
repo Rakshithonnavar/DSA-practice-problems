@@ -436,48 +436,103 @@
 
 
 
-int distinct(int a[100], int n) {
-    if (n == 0)
-        return 0;
+// int distinct(int a[100], int n) {
+//     if (n == 0)
+//         return 0;
 
-    int distinct[1000];
-    int count = 0;
-    distinct[count++] = a[0];
+//     int distinct[1000];
+//     int count = 0;
+//     distinct[count++] = a[0];
 
-    for (int i = 1; i < n; i++) {
-        if (a[i] != a[i - 1]) {
-            distinct[count++] = a[i];
+//     for (int i = 1; i < n; i++) {
+//         if (a[i] != a[i - 1]) {
+//             distinct[count++] = a[i];
+//         }
+//     }
+
+//     return count;
+// }
+
+// int main() {
+//     int a[100], n, i, j;
+
+//     printf("Enter the number of elements: ");
+//     scanf("%d", &n);
+
+//     printf("Enter elements: ");
+//     for (i = 0; i < n; i++) {
+//         scanf("%d", &a[i]);
+//     }
+
+//     int result = distinct(a, n);
+//     int dist[result];  // Declare dist array with the correct size
+
+//     for (i = 0; i < result; i++) {
+//         dist[i] = a[i];
+//     }
+
+//     printf("The distinct elements are: ");
+//     for (i = 0; i < result; i++) {
+//         printf("%d\t", dist[i]);
+//     }
+
+//     return 0;
+// }
+  //count of distinct elements in array 
+// int main()
+// {
+//     int a[100],i,n,j,count=0;
+//     printf("Enter the no of elements");
+//     scanf("%d",&n);
+//     printf("Enter array elements:\n");
+//      for(i=0;i<n;i++)
+//      {
+//         scanf("%d",&a[i]);
+//      }
+//     for(i=0;i<n;i++)
+//     {
+//         for(j=0;j<i;j++)
+//         {
+//             if(a[i]==a[j])
+//             {
+//                 break;
+//             }
+//         }
+//         if(i==j)
+//           count++;
+//     }
+//     printf("The no distinct elements in array are %d\t",count);
+//     return 0;
+// }
+
+//Largest and smallest element in array
+
+void swap(int *a,int *b)
+{
+     int temp = *a;
+     *a=*b;
+     *b=temp;
+}
+int bubble_sort(int a[100],int n)
+{
+    int i,j,n;
+    for(i=0;i<n;i++)
+    {
+        for(j=0;j<n-i-1;j++)
+        {
+            if(a[j]>a[j+1])
+            swap(&a[j],&a[j+1]);
         }
     }
-
-    return count;
-}
-
-int main() {
-    int a[100], n, i, j;
-
-    printf("Enter the number of elements: ");
-    scanf("%d", &n);
-
-    printf("Enter elements: ");
-    for (i = 0; i < n; i++) {
-        scanf("%d", &a[i]);
+    return a[0];
+    }
+    void minmax(int a[100],int n)
+    {
+        int max=bubble_sort(a,n),min=a[0];
+        printf("\nMinimum value is: %d \nMaximum Value is :%d ",min,max);
     }
 
-    int result = distinct(a, n);
-    int dist[result];  // Declare dist array with the correct size
 
-    for (i = 0; i < result; i++) {
-        dist[i] = a[i];
-    }
-
-    printf("The distinct elements are: ");
-    for (i = 0; i < result; i++) {
-        printf("%d\t", dist[i]);
-    }
-
-    return 0;
-}
 
 
 
