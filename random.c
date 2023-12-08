@@ -507,31 +507,108 @@
 
 //Largest and smallest element in array
 
-void swap(int *a,int *b)
-{
-     int temp = *a;
-     *a=*b;
-     *b=temp;
-}
-int bubble_sort(int a[100],int n)
-{
-    int i,j,n;
-    for(i=0;i<n;i++)
-    {
-        for(j=0;j<n-i-1;j++)
-        {
-            if(a[j]>a[j+1])
-            swap(&a[j],&a[j+1]);
-        }
-    }
-    return a[0];
-    }
-    void minmax(int a[100],int n)
-    {
-        int max=bubble_sort(a,n),min=a[0];
-        printf("\nMinimum value is: %d \nMaximum Value is :%d ",min,max);
-    }
+// void swap(int *a,int *b)
+// {
+//      int temp = *a;
+//      *a=*b;
+//      *b=temp;
+// }
+// int bubble_sort(int a[100],int n)
+// {
+//     int i,j;
+//     for(i=0;i<n;i++)
+//     {
+//         for(j=0;j<n-i-1;j++)
+//         {
+//             if(a[j]>a[j+1])
+//             swap(&a[j],&a[j+1]);
+//         }
+//     }
+//     return a[0];
+// }
 
+  // int main()
+  // {
+  //   int a[100],n,i,j;
+  //   printf("Enter the no of elements:");
+  //    scanf("%d",&n);
+  //    printf("Enter the array:");
+  //     for(i=0;i<n;i++)
+  //     {
+  //        scanf("%d",&a[i]);
+  //      }
+  //    bubble_sort(a,n);
+  //   int min=a[0];
+  //   int max=a[n-1];
+  //   printf("\nMinimum value is: %d \nMaximum Value is :%d ",min,max);
+  //      return 0;
+  // }
+  
+
+  //Alternate sort
+//   void swap(int *a,int *b)
+//   {
+//     int temp = *a;
+//      *a=*b;
+//      *b=temp;
+//   }
+// void sort(int *a,int n)
+// {
+//   for(int i=0;i<n;i++)
+//   {
+//      for(int j=0;j<n-i-1;j++)
+//      {
+//        if(a[j]>a[j+1])
+//           swap(&a[j],&a[j+1]);
+//      }
+//   }
+// }
+
+// int alternate_sort(int a[],int n){
+//       sort(a,n);
+
+//       int i=0,j=n-1;
+//       int var1=a[j--];
+//       int var2=a[i++];
+//         while(i<=j)
+//         {
+//           printf("%d %d",var1,var2);
+          
+//         }
+//         if(n%2!=0)
+//         {
+//           printf("%d\t",a[i]);
+//         }
+// }
+
+// int main()
+// {
+//   int a[100],i,n;
+//   printf("Enter the no of elems:");
+//   scanf("%d",&n);
+//   printf("Enter array elems:");
+//      for(i=0;i<n;i++)
+//      {
+//        scanf("%d",&a[i]);
+//      }
+//       alternate_sort(a,n);
+//      return 0;
+// }
+
+//swap 2 nos using Xor operator
+
+int main()
+{
+  int a,b;
+  printf("Enter the digits:");
+   scanf("%d %d",&a,&b);
+printf("The previous numbers are :a=%d and b=%d \n",a,b);
+   a=a^b;
+   b=a^b;
+   a=a^b;
+printf("The swapped numbers are a=%d and b=%d",a,b);
+ return 0;  
+}
 
 
 
