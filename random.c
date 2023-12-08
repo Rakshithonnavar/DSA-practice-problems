@@ -597,23 +597,28 @@
 
 //swap 2 nos using Xor operator
 
+// int main()
+// {
+//   int a,b;
+//   printf("Enter the digits:");
+//    scanf("%d %d",&a,&b);
+//  printf("The previous numbers are :a=%d and b=%d \n",a,b);
+// //    a=a^b;
+// //    b=a^b;
+// //    a=a^b;
+//  a=a+b;
+//  a=b-a;
+//   b=a-b;
+// printf("The swapped numbers are a=%d and b=%d",a,b);
+//  return 0;  
+// }
+
 int main()
 {
-  int a,b;
-  printf("Enter the digits:");
-   scanf("%d %d",&a,&b);
- printf("The previous numbers are :a=%d and b=%d \n",a,b);
-//    a=a^b;
-//    b=a^b;
-//    a=a^b;
- a=a+b;
- b=a-b;
-  a=b-a;
-printf("The swapped numbers are a=%d and b=%d",a,b);
- return 0;  
+  int x = printf("Rakshit");
+   printf("%d",x);
+   return 0;
 }
-
-
 
 
 
