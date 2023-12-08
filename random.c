@@ -602,13 +602,18 @@ int main()
   int a,b;
   printf("Enter the digits:");
    scanf("%d %d",&a,&b);
-printf("The previous numbers are :a=%d and b=%d \n",a,b);
-   a=a^b;
-   b=a^b;
-   a=a^b;
+ printf("The previous numbers are :a=%d and b=%d \n",a,b);
+//    a=a^b;
+//    b=a^b;
+//    a=a^b;
+ a=a+b;
+ b=a-b;
+  a=b-a;
 printf("The swapped numbers are a=%d and b=%d",a,b);
  return 0;  
 }
+
+
 
 
 
