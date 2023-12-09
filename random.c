@@ -597,55 +597,55 @@
 
 //swap 2 nos using Xor operator
 
-int main()
-{
-  int a,b;
-  printf("Enter the digits:");
-   scanf("%d %d",&a,&b);
- printf("The previous numbers are :a=%d and b=%d \n",a,b);
-  //  a=a^b;
-  //   b=a^b;
-  //  a=a^b;
- a=a+b;
- b=a-b;
-a=a-b;
-printf("The swapped numbers are a=%d and b=%d",a,b);
- return 0;  
-}
-
-
-
 // int main()
 // {
-//   int a[50][50],n,col[0]=0,m,n;
-//   for(int i=0;i<=n;i++)
-//   {
-//      for(int j=0;j<=n;j++)
-//      {
-//         if(a[i][j]==0)
-//          {
-//           a[i][0]=0;
-//           a[0][j]=0;
-//          }
-//          if(i==0)
-//          {
-//           a[0][0]=0;
-//          }
-//          else if(j==0)
-//          {
-//             col[0]=0;
-//          }
-
-//         if(inti=1;i<=m-1;i++)
-//         {
-//            if(j=1;j<=n-1;j++)
-//            {
-              
-//            }
-//         }
-//      }
-//   }
+//   int a,b;
+//   printf("Enter the digits:");
+//    scanf("%d %d",&a,&b);
+//  printf("The previous numbers are :a=%d and b=%d \n",a,b);
+//   //  a=a^b;
+//   //   b=a^b;
+//   //  a=a^b;
+//  a=a+b;
+//  b=a-b;
+// a=a-b;
+// printf("The swapped numbers are a=%d and b=%d",a,b);
+//  return 0;  
 // }
+
+
+
+int mai-n()
+{
+  int a[50][50],n,col[0]=0,m,n;
+  for(int i=0;i<=n;i++)
+  {
+     for(int j=0;j<=n;j++)
+     {
+        if(a[i][j]==0)
+         {
+          a[i][0]=0;
+          a[0][j]=0;
+         }
+         if(i==0)
+         {
+          a[0][0]=0;
+         }
+         else if(j==0)
+         {
+            col[0]=0;
+         }
+
+        if(i=1;i<=m-1;i++)
+        {
+           if(j=1;j<=n-1;j++)
+           {
+              
+           }
+        }
+     }
+  }
+}
 
 
 
