@@ -613,12 +613,12 @@
 //  return 0;  
 // }
 
-int main()
-{
-  int x = printf("Rakshit");
-   printf("%d",x);
-   return 0;
-}
+// int main()
+// {
+//   int x = printf("Rakshit");
+//    printf("%d",x);
+//    return 0;
+// }
 
 
 
