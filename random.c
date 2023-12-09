@@ -603,22 +603,16 @@ int main()
   printf("Enter the digits:");
    scanf("%d %d",&a,&b);
  printf("The previous numbers are :a=%d and b=%d \n",a,b);
-   a=a^b;
-    b=a^b;
-   a=a^b;
+  //  a=a^b;
+  //   b=a^b;
+  //  a=a^b;
  a=a+b;
- a=b-a;
-  b=a-b;
+ b=a-b;
+a=a-b;
 printf("The swapped numbers are a=%d and b=%d",a,b);
  return 0;  
 }
 
-int main()
-{
-  int x = printf("Rakshit");
-   printf("%d",x);
-   return 0;
-}
 
 
 // int main()
