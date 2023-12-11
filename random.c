@@ -614,38 +614,35 @@
 // }
 
 
-
-int mai-n()
+int ncr(int n,int r)
 {
-  int a[50][50],n,col[0]=0,m,n;
-  for(int i=0;i<=n;i++)
-  {
-     for(int j=0;j<=n;j++)
-     {
-        if(a[i][j]==0)
-         {
-          a[i][0]=0;
-          a[0][j]=0;
-         }
-         if(i==0)
-         {
-          a[0][0]=0;
-         }
-         else if(j==0)
-         {
-            col[0]=0;
-         }
-
-        if(i=1;i<=m-1;i++)
-        {
-           if(j=1;j<=n-1;j++)
-           {
-              
-           }
-        }
+   int  result =1;
+     for(int i=0;i<r;i++){
+         result*=(n-i);
+         result/=(i+1);
      }
-  }
+     return result;
 }
+
+
+int pascal(int r,int c)
+{ 
+  return ncr(r-1,c-1);
+}
+
+
+int main()
+{
+ int r,n,c;
+ printf("Enter the row number");
+ scanf("%d",&r);
+ printf("Enter the column number"); 
+ scanf("%d",&c);
+ int result = pascal(r,c);
+ printf("The pascal's triangle is: %d\n",result);
+ return 0;
+}
+
 
 
 
