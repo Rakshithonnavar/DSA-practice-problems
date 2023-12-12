@@ -614,35 +614,44 @@
 // }
 
 
-int ncr(int n,int r)
+// int ncr(int n,int r)
+// {
+//    int  result =1;
+//      for(int i=0;i<r;i++){
+//          result*=(n-i);
+//          result/=(i+1);
+//      }
+//      return result;
+// }
+
+
+// int pascal(int r,int c)
+// { 
+//   return ncr(r-1,c-1);
+// }
+
+
+// int main()
+// {
+//  int r,n,c;
+//  printf("Enter the row number");
+//  scanf("%d",&r);
+//  printf("Enter the column number"); 
+//  scanf("%d",&c);
+//  int result = pascal(r,c);
+//  printf("The pascal's triangle is: %d\n",result);
+//  return 0;
+// }
+
+
+int lexicographical(int n)
 {
-   int  result =1;
-     for(int i=0;i<r;i++){
-         result*=(n-i);
-         result/=(i+1);
-     }
-     return result;
+    
 }
-
-
-int pascal(int r,int c)
-{ 
-  return ncr(r-1,c-1);
-}
-
-
 int main()
 {
- int r,n,c;
- printf("Enter the row number");
- scanf("%d",&r);
- printf("Enter the column number"); 
- scanf("%d",&c);
- int result = pascal(r,c);
- printf("The pascal's triangle is: %d\n",result);
- return 0;
+  
 }
-
 
 
 
