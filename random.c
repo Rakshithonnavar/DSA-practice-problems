@@ -643,17 +643,39 @@
 //  return 0;
 // }
 
-
-int lexicographical(int n)
-{
-    
+int max_sum(int a[100],int n)
+{  
+  int sum=0;
+  int max;
+   for(int i=0;i<n;i++)
+   {
+     sum+=a[i]; 
+       if(sum>0)
+         {
+           max=sum;
+           break;
+         } 
+         else{
+          sum=0;
+         }  
+   } 
+   return sum; 
 }
+
 int main()
 {
-  
+  int a[100],i,n;
+  printf("Enter the size of array \n");
+  scanf("%d",&n);
+  printf("Enter the array elements");
+   for(i=0;i<n;i++)
+   {
+    scanf("%d",&a[i]);
+   }
+  int result = max_sum(a,n);
+  printf("The maximum sum of the subarray  is:%d\n",result);
+  return 0;
 }
-
-
 
 
 
