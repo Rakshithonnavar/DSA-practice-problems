@@ -643,38 +643,95 @@
 //  return 0;
 // }
 
-int max_sum(int a[100],int n)
-{  
-  int sum=0;
-  int max;
-   for(int i=0;i<n;i++)
-   {
-     sum+=a[i]; 
-       if(sum>0)
-         {
-           max=sum;
-           break;
-         } 
-         else{
-          sum=0;
-         }  
-   } 
-   return sum; 
+
+//Kadane's algorothm (optimal approach)
+// int max_sum(int a[100],int n)
+// {  
+//   int sum=0;
+//   int max;
+//    for(int i=0;i<n;i++)
+//    {
+//      sum+=a[i]; 
+//        if(sum>0)
+//          {
+//            max=sum;
+//            break;
+//          } 
+//          else{
+//           sum=0;
+//          }  
+//    } 
+//    return sum; 
+// }
+
+// int main()
+// {
+//   int a[100],i,n;
+//   printf("Enter the size of array \n");
+//   scanf("%d",&n);
+//   printf("Enter the array elements");
+//    for(i=0;i<n;i++)
+//    {
+//     scanf("%d",&a[i]);
+//    }
+//   int result = max_sum(a,n);
+//   printf("The maximum sum of the subarray  is:%d\n",result);
+//   return 0;
+// }
+
+
+//Dutch national flag alogorithm
+void swap(int a,int b)
+{
+   int temp=a;
+     a=b; 
+     b=temp;
 }
+
+int max(int a[100],int n)
+{  
+   int mid,high,low;
+   while(mid<=high)
+   {
+       for(int i=0;i<n;i++)
+   {
+       if(a[mid==0])
+       {
+         swap(a[low],a[mid]);
+         low++;
+         mid++;
+       }
+       else if(a[mid]==1)
+       {
+         mid++;
+       }
+       else if(a[mid]==2)
+       {
+         swap(a[mid],a[high]);
+          high--;
+       }
+       }
+       //returning middle element as it will be in sorted order.
+       return a[mid];
+   }
+   }
 
 int main()
 {
-  int a[100],i,n;
-  printf("Enter the size of array \n");
-  scanf("%d",&n);
-  printf("Enter the array elements");
-   for(i=0;i<n;i++)
+   int a[100],n,i;
+   printf("Eneter number of elements");
+   scanf("%d",&n);
+   printf("Enter  the array elements:");
+    for(i=0;i<n;i++)
+    {
+       scanf("%d",&a[i]);
+    }
+    int result = max(a,n);
+   printf("The sorted array elements are:",result);
    {
-    scanf("%d",&a[i]);
+     printf("%d",&a[i]);
    }
-  int result = max_sum(a,n);
-  printf("The maximum sum of the subarray  is:%d\n",result);
-  return 0;
+   return 0;
 }
 
 
