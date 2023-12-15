@@ -681,58 +681,58 @@
 
 
 //Dutch national flag alogorithm
-void swap(int a,int b)
-{
-   int temp=a;
-     a=b; 
-     b=temp;
-}
+// void swap(int a,int b)
+// {
+//    int temp=a;
+//      a=b; 
+//      b=temp;
+// }
 
-int max(int a[100],int n)
-{  
-   int mid,high,low;
-   while(mid<=high)
-   {
-       for(int i=0;i<n;i++)
-   {
-       if(a[mid==0])
-       {
-         swap(a[low],a[mid]);
-         low++;
-         mid++;
-       }
-       else if(a[mid]==1)
-       {
-         mid++;
-       }
-       else if(a[mid]==2)
-       {
-         swap(a[mid],a[high]);
-          high--;
-       }
-       }
-       //returning middle element as it will be in sorted order.
-       return a[mid];
-   }
-   }
+// int max(int a[100],int n)
+// {  
+//    int mid=0,high=n-2,low=0;
+//    while(mid<=high)
+//    {
+    
+//        if(a[mid==0])
+//        {
+//          swap(a[low],a[mid]);
+//          low++;
+//          mid++;
+//        }
+//        else if(a[mid]==1)
+//        {
+//          mid++;
+//        }
+//        else 
+//        {
+//          swap(a[mid],a[high]);
+//           high--;
+//        }
+//        }
+//        //returning middle element as it will be in sorted order.
+//       //  return a[mid];
+//    }
+   
 
-int main()
-{
-   int a[100],n,i;
-   printf("Eneter number of elements");
-   scanf("%d",&n);
-   printf("Enter  the array elements:");
-    for(i=0;i<n;i++)
-    {
-       scanf("%d",&a[i]);
-    }
-    int result = max(a,n);
-   printf("The sorted array elements are:",result);
-   {
-     printf("%d",&a[i]);
-   }
-   return 0;
-}
+// int main()
+// {
+//    int a[100],n,i;
+//    printf("Eneter number of elements");
+//    scanf("%d",&n);
+//    printf("Enter  the array elements:");
+//     for(i=0;i<n;i++)
+//     {
+//        scanf("%d",&a[i]);
+//     }
+//     int result = max(a,n);
+//    printf("The sorted array elements are:%d\t",result);
+//    {
+//      printf("%d",a[i]);
+//    }
+//    return 0;
+// }
+
 
 
 
