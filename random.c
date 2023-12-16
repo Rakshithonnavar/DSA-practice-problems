@@ -734,6 +734,8 @@
 //    return 0;
 // }
 
+
+//buy and sell
 int profit(int a[100],int n)
 {
    int max_profit=0;
@@ -759,5 +761,42 @@ int main()
   printf("The maximum profit is %d\n",result);
   return 0;
 }
+
+//Rotating matrix by 90 degree
+void swap(int a,int b)
+{
+   int temp =a;
+    a=b;
+    b=temp;
+}
+int reverse(int a[100][100])
+ {
+    int m,n;
+    for(int i=0;i<n/2;i++)
+    {
+      for(int j=0;j<m;j++)
+      {
+      int temp = a[i][j];
+      a[i][j] = a[n-i-1][j];
+      a[n-i-1][j] =  temp;
+    }
+    }
+ }
+int rotate(int mat[100][100],int n)
+{
+   int n = sizeof(mat);
+   int i,j;
+     for(i=0;i<n-1;i++)
+     {
+       for(j=i+1;j<n;j++)
+       {
+         swap(mat[i][j],mat[j][i]);
+       }
+     }
+
+     reverse(mat);
+}
+
+
 
 
