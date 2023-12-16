@@ -1,6 +1,7 @@
 #include<stdlib.h>
 #include<stdio.h>
 #include<string.h>
+#include<limits.h>
 
 // int a[100],i,n,low,high,key,mid,pos=-1;
 // printf("Enter the number of elements ");
@@ -733,6 +734,30 @@
 //    return 0;
 // }
 
+int profit(int a[100],int n)
+{
+   int max_profit=0;
+   int min_price= INT_MIN;
+   int len = sizeof(a);
+   for(int i=0;i<len;i++)
+   {
+     min_price= _min(min_price,len);
+     max_profit = _max(max_profit,len-min_price);
+   }
+   return max_profit;
 
+}
+int main()
+{
+  int a[100],n;
+  scanf("%d",&n);
+  for(int i=0;i<n;i++)
+  {
+    scanf("%d",&a[i]);
+  }
+  int result  = profit(a,n);
+  printf("The maximum profit is %d\n",result);
+  return 0;
+}
 
 
