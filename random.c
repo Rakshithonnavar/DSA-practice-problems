@@ -838,3 +838,17 @@ int main()
   return 0;
 }
 
+
+int repeating(int a[100],int n)
+{
+   int s=n*(n+1)/2;
+   int s2 = n*(n+1)*(2*n+1)/6;
+   int s1=0,s2=0;
+    for(int i=0;i<n;i++)
+    {
+        s1+= a[i];
+        s2+= a[i]*a[i];    
+    }
+   
+}
+
