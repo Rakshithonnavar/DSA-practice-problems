@@ -736,67 +736,105 @@
 
 
 //buy and sell
-int profit(int a[100],int n)
-{
-   int max_profit=0;
-   int min_price= INT_MIN;
-   int len = sizeof(a);
-   for(int i=0;i<len;i++)
-   {
-     min_price= _min(min_price,len);
-     max_profit = _max(max_profit,len-min_price);
-   }
-   return max_profit;
+// int profit(int a[100],int n)
+// {
+//    int max_profit=0;
+//    int min_price= INT_MIN;
+//    int len = sizeof(a);
+//    for(int i=0;i<len;i++)
+//    {
+//      min_price= _min(min_price,len);
+//      max_profit = _max(max_profit,len-min_price);
+//    }
+//    return max_profit;
 
-}
-int main()
-{
-  int a[100],n;
-  scanf("%d",&n);
-  for(int i=0;i<n;i++)
-  {
-    scanf("%d",&a[i]);
-  }
-  int result  = profit(a,n);
-  printf("The maximum profit is %d\n",result);
-  return 0;
-}
+// }
+// int main()
+// {
+//   int a[100],n;
+//   scanf("%d",&n);
+//   for(int i=0;i<n;i++)
+//   {
+//     scanf("%d",&a[i]);
+//   }
+//   int result  = profit(a,n);
+//   printf("The maximum profit is %d\n",result);
+//   return 0;
+// }
 
 //Rotating matrix by 90 degree
-void swap(int a,int b)
+// void swap(int a,int b)
+// {
+//    int temp =a;
+//     a=b;
+//     b=temp;
+// }
+// int reverse(int a[100][100])
+//  {
+//     int m,n;
+//     for(int i=0;i<n/2;i++)
+//     {
+//       for(int j=0;j<m;j++)
+//       {
+//       int temp = a[i][j];
+//       a[i][j] = a[n-i-1][j];
+//       a[n-i-1][j] =  temp;
+//     }
+//     }
+//  }
+// int rotate(int mat[100][100],int n)
+// {
+//    int n = sizeof(mat);
+//    int i,j;
+//      for(i=0;i<n-1;i++)
+//      {
+//        for(j=i+1;j<n;j++)
+//        {
+//          swap(mat[i][j],mat[j][i]);
+//        }
+//      }
+
+//      reverse(mat);
+// }
+void swap(int *a,int *b)
 {
-   int temp =a;
-    a=b;
-    b=temp;
+   int temp = *a;
+   *a = *b;
+   *b =temp;
 }
-int reverse(int a[100][100])
- {
-    int m,n;
-    for(int i=0;i<n/2;i++)
-    {
-      for(int j=0;j<m;j++)
-      {
-      int temp = a[i][j];
-      a[i][j] = a[n-i-1][j];
-      a[n-i-1][j] =  temp;
-    }
-    }
- }
-int rotate(int mat[100][100],int n)
+
+int sort(int a[100],int n)
 {
-   int n = sizeof(mat);
-   int i,j;
+  int i,j;
+   for(i=0;i<n;i++)
+   {
+     for(j=0;j<n-i-1;j++)
+     {
+      if(a[j]>a[j+1])
+      {
+        swap(&a[j],&a[j+1]);
+      }
+     }
+   }
      for(i=0;i<n-1;i++)
      {
-       for(j=i+1;j<n;j++)
-       {
-         swap(mat[i][j],mat[j][i]);
-       }
-     }
-
-     reverse(mat);
+       if(a[i]==a[i+1])
+         return a[i];
+     } 
 }
 
-
-
+int main()
+{
+   int a[100],i,n,j;
+  printf("Enter the no of elements");
+   scanf("%d",&n);
+  printf("Enter the array elements:");
+    for(i=0;i<n;i++)
+    {
+       scanf("%d",&a[i]);
+    }
+    int result=sort(a,n);
+  printf("The duplicate element in the array is :%d",result);
+  return 0;
+}
 
