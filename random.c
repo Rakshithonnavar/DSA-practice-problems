@@ -839,35 +839,52 @@
 // }
 
 
-int repeating(int a[100],int n)
-{
-  int val1,val2;
-   int sn=n*(n+1)/2;
-   int s2n = n*(n+1)*(2*n+1)/6;
-   int s1=0,s2=0;
-    for(int i=0;i<n;i++)
-    {
-        s1+= a[i];
-        s2+= a[i]*a[i];    
-    }
-       val1 =s1-sn;
-       val2 = s2-s2n;
-       int x = val2/=val1; 
-       int y = x-val1;
-       return (int)x,(int)y;
- }
- int main()
- {
-  int a[100],n;
-  printf("Enter the number of elemensts:");
-  scanf("%d",&n);
-  printf("Enter the array elems:");
-  for(int i=0;i<n;i++)
-  {
-  scanf("%d",&a[i]);
-  }
-  int result = repeating(a,n);
-    printf("The repeating and missing numbers are: %d and %d",result);
-  return 0;
- }
+// int repeating(int a[100],int n)
+// {
+//   int val1,val2;
+//    int sn=n*(n+1)/2;
+//    int s2n = n*(n+1)*(2*n+1)/6;
+//    int s1=0,s2=0;
+//     for(int i=0;i<n;i++)
+//     {
+//         s1+= a[i];
+//         s2+= a[i]*a[i];    
+//     }
+//        val1 =s1-sn;
+//        val2 = s2-s2n;
+//        int x = val2/=val1; 
+//        int y = x-val1;
+//        return (int)x,(int)y;
+//  }
 
+int overlapping(int a[100],int n)
+{
+  int store[100];
+  for(int i=0;i<n-1;i++)
+  {
+     if(a[i]<a[i+1])
+     {
+       =a[i]+a[i+1];
+     }
+  }
+  return store;
+
+}
+
+
+
+//  int main()
+//  {
+//   int a[100],n;
+//   printf("Enter the number of elemensts:");
+//   scanf("%d",&n);
+//   printf("Enter the array elems:");
+//   for(int i=0;i<n;i++)
+//   {
+//   scanf("%d",&a[i]);
+//   }
+//   int result = repeating(a,n);
+//     printf("The repeating and missing numbers are: %d and %d",result);
+//   return 0;
+//  }
+ 
