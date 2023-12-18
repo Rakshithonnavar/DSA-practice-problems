@@ -796,59 +796,78 @@
 
 //      reverse(mat);
 // }
-void swap(int *a,int *b)
-{
-   int temp = *a;
-   *a = *b;
-   *b =temp;
-}
+// void swap(int *a,int *b)
+// {
+//    int temp = *a;
+//    *a = *b;
+//    *b =temp;
+// }
 
-int sort(int a[100],int n)
-{
-  int i,j;
-   for(i=0;i<n;i++)
-   {
-     for(j=0;j<n-i-1;j++)
-     {
-      if(a[j]>a[j+1])
-      {
-        swap(&a[j],&a[j+1]);
-      }
-     }
-   }
-     for(i=0;i<n-1;i++)
-     {
-       if(a[i]==a[i+1])
-         return a[i];
-     } 
-}
+// int sort(int a[100],int n)
+// {
+//   int i,j;
+//    for(i=0;i<n;i++)
+//    {
+//      for(j=0;j<n-i-1;j++)
+//      {
+//       if(a[j]>a[j+1])
+//       {
+//         swap(&a[j],&a[j+1]);
+//       }
+//      }
+//    }
+//      for(i=0;i<n-1;i++)
+//      {
+//        if(a[i]==a[i+1])
+//          return a[i];
+//      } 
+// }
 
-int main()
-{
-   int a[100],i,n,j;
-  printf("Enter the no of elements");
-   scanf("%d",&n);
-  printf("Enter the array elements:");
-    for(i=0;i<n;i++)
-    {
-       scanf("%d",&a[i]);
-    }
-    int result=sort(a,n);
-  printf("The duplicate element in the array is :%d",result);
-  return 0;
-}
+// int main()
+// {
+//    int a[100],i,n,j;
+//   printf("Enter the no of elements");
+//    scanf("%d",&n);
+//   printf("Enter the array elements:");
+//     for(i=0;i<n;i++)
+//     {
+//        scanf("%d",&a[i]);
+//     }
+//     int result=sort(a,n);
+//   printf("The duplicate element in the array is :%d",result);
+//   return 0;
+// }
 
 
 int repeating(int a[100],int n)
 {
-   int s=n*(n+1)/2;
-   int s2 = n*(n+1)*(2*n+1)/6;
+  int val1,val2;
+   int sn=n*(n+1)/2;
+   int s2n = n*(n+1)*(2*n+1)/6;
    int s1=0,s2=0;
     for(int i=0;i<n;i++)
     {
         s1+= a[i];
         s2+= a[i]*a[i];    
     }
-   
-}
+       val1 =s1-sn;
+       val2 = s2-s2n;
+       int x = val2/=val1; 
+       int y = x-val1;
+       return (int)x,(int)y;
+ }
+ int main()
+ {
+  int a[100],n;
+  printf("Enter the number of elemensts:");
+  scanf("%d",&n);
+  printf("Enter the array elems:");
+  for(int i=0;i<n;i++)
+  {
+  scanf("%d",&a[i]);
+  }
+  int result = repeating(a,n);
+    printf("The repeating and missing numbers are: %d and %d",result);
+  return 0;
+ }
 
