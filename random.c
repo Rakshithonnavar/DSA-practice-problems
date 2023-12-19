@@ -857,19 +857,7 @@
 //        return (int)x,(int)y;
 //  }
 
-int overlapping(int a[100],int n)
-{
-  int store[100];
-  for(int i=0;i<n-1;i++)
-  {
-     if(a[i]<a[i+1])
-     {
-       =a[i]+a[i+1];
-     }
-  }
-  return store;
 
-}
 
 
 
@@ -887,4 +875,41 @@ int overlapping(int a[100],int n)
 //     printf("The repeating and missing numbers are: %d and %d",result);
 //   return 0;
 //  }
- 
+
+//seraching in 2d matrix
+
+// int search(int row[100],int col[100],int target,int m,int n)
+// {
+
+//     for(int i=0;i<n;i++)
+//     {
+//        for(int j=0;j<m;j++)
+//        {
+//            if(row[i]*m +col[j] == target){
+//             return 1;
+//        }
+//     }  
+// }
+//  return 0;
+// }
+
+
+int main()
+{  float n,x;
+   float ans =1.0;
+   printf("Enter the value of x: ");
+   scanf("%f", &x);
+   printf("Enter the value of n: ");
+   scanf("%f", &n);
+       if(n<0)
+       { 
+         x= 1.0/x; //for -ve exponent value
+         n=-n;
+       }
+       for(int i=0;i<n;i++){
+        ans*=x;
+       }
+    printf("\n The value of (%f,%f) is : %.4f\n ",x,n,ans);
+    return 0;
+
+}
