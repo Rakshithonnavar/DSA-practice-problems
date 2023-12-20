@@ -894,22 +894,103 @@
 // }
 
 
-int main()
-{  float n,x;
-   float ans =1.0;
-   printf("Enter the value of x: ");
-   scanf("%f", &x);
-   printf("Enter the value of n: ");
-   scanf("%f", &n);
-       if(n<0)
-       { 
-         x= 1.0/x; //for -ve exponent value
-         n=-n;
-       }
-       for(int i=0;i<n;i++){
-        ans*=x;
-       }
-    printf("\n The value of (%f,%f) is : %.4f\n ",x,n,ans);
-    return 0;
 
+ //power(x,n)
+
+// int main()
+// {  float n,x;
+//    float ans =1.0;
+//    printf("Enter the value of x: ");
+//    scanf("%f", &x);
+//    printf("Enter the value of n: ");
+//    scanf("%f", &n);
+//        if(n<0)
+//        { 
+//          x= 1.0/x; //for -ve exponent value
+//          n=-n;
+//        }
+//        for(int i=0;i<n;i++){
+//         ans*=x;
+//        }
+//     printf("\n The value of (%f,%f) is : %.4f\n ",x,n,ans);
+//     return 0;
+
+// }
+
+
+#include<math.h>
+//Majority of element apparing graeter thean n/2 elements
+// int majority(int a[100],int n)
+// {
+//   int count=0;
+//   int i,j;
+//   double store = floor(n/2);
+//   for( i=0;i<n;i++)
+//   {
+//     count=0; //checking for occurrences
+//      for( j=0;j<n;j++)
+//      {
+//        if(a[i]==a[j]) //chekcing if matching elem in found
+//        {
+//         count++; //incremnt the count of element if found.
+//        }
+//        if(count>store) //returning the element found in larger number if condition satisfies
+//         return a[i];
+//      }         
+// }
+// }
+
+//Majority of elements appering than n/3 times
+// int majority(int a[100],int n)
+// {
+//   int count;
+//   int i,j;
+//   int store= floor(n/3);
+//   for(i=0;i<n;i++)
+//   {
+//       count=0;
+//      for(j=0;j<n;j++)
+//      {
+//         if(a[i]==a[j])
+//          count++;
+//   }
+//      if(count>store)
+//       return a[i];
+// }
+//   return  -1;
+// }
+
+// int main() {
+//     int a[100], n;
+
+//     printf("Enter the number of elements: ");
+//     scanf("%d", &n);
+
+//     printf("Enter the array elements:\n");
+//     for (int i = 0; i < n; i++) {
+//         scanf("%d", &a[i]);
+//     }
+
+//     int result = majority(a, n);
+
+//     if (result != -1) {
+//         printf("The majority element is: %d\n", result);
+//     } else {
+//         printf("No majority element found.\n");
+//     }
+//     return 0;
+// }
+
+
+//Unquie paths in matrix 
+
+int unique(int a[100],int m,int n)
+{
+   for(int i=0;i<n;i++)
+     { 
+       for(int j=0;j<m;j++)
+       {
+           
+       }
+     }
 }
