@@ -994,3 +994,28 @@ int unique(int a[100],int m,int n)
        }
      }
 }
+int grid_paths(int i,int j,int m,int n)
+{  
+   if((i==m-1)&&(j==n-1))
+   return 1;
+   if((i>=m)&&(j>=n))
+   return 0;
+   else 
+   return 
+   grid_paths(i+1,j,m,n)+grid_paths(i,j+1,m,n);
+}
+
+// int uniquePaths(int m,int n)
+// {
+//   return grid_paths(0,0,m,n);
+// }
+
+int main()
+{
+   int m,n;
+   printf("Enter number of rows and columns : \n");
+   scanf("%d%d",&m,&n);
+   int result= grid_paths(0,0,m,n);
+   printf("\nNumber of Unique Paths are:%d",result);
+   return 0;
+}
