@@ -1019,3 +1019,71 @@
 //    printf("\nNumber of Unique Paths are:%d",result);
 //    return 0;
 //
+
+//Reverse pairs Brute force approach
+
+// int reverse_pairs(int a[100],int n)
+// {
+//    int count=0;
+//        for(int i=0;i<n;i++)
+//        {
+//          for(int j=0;j<n;j++)
+//          {
+//              if((i<j)&&(a[i]>2*a[j]))
+//              count++;
+//          }
+//        }
+//        return count;
+// }
+
+// int main()
+// {
+//    int a[100],i,j,n;
+//    scanf("%d",&n);
+//    for(i=0;i<n;i++)
+//    {
+//      scanf("%d",&a[i]);
+//    }
+//    int result = reverse_pairs(a,n);
+//    printf(" The no of pairs available are:%d\n",result);
+//    return 0;
+// }
+
+
+//Pair with given sum exists ion array
+char pairs(int a[100],int n){
+    int target;
+    CHAR YES,FALSE;
+    for(int i=0;i<n;i++)
+    {
+      for(int j=i+1;j<n;j++){
+       if(a[i]+a[i+1]==target){
+         return YES;
+    }   
+}
+}
+return FALSE;
+}
+
+int main()
+{
+   int a[100],n,target;
+   printf("Enter the target");
+   scanf("%d",&target);
+   printf("Enter the number of elements:");
+   scanf("%d",&n);
+   printf("Enter number of elements in an array:");
+   for(int i=0;i<n;i++)
+   {
+     scanf("%d",&a[i]);
+   }
+   int result = pairs(a,n);
+     if (result)
+       printf("YES");
+    else{
+        printf("NO");
+    }
+    return 0;
+}
+
+
