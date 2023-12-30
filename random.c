@@ -1067,37 +1067,39 @@
 // }
 
 //triplets woth given pair
-int triplets(int a[100],int n)
-{
-  int k,target=0;
-  int arr[k];
-  for(int i=0;i<n;i++)
-  {
-     for(int j=0;j<n;j++)
-     {
-       arr[k]=target-(a[i]+a[j]+arr[k]);
-     }
-  }
-}
-int main()
-{
-   int a[100],n,target;
-   printf("Enter the target");
-   scanf("%d",&target);
-   printf("Enter the number of elements:");
-   scanf("%d",&n);
-   printf("Enter number of elements in an array:");
-   for(int i=0;i<n;i++)
-   {
-     scanf("%d",&a[i]);
-   }
-   int result = pairs(a,n);
-     if (result)
-       printf("YES");
-    else{
-        printf("NO");
-    }
-    return 0;
-}
+// int triplets(int a[100],int n)
+// {
+//   int k,target=0;
+//   int arr[k];
+//   for(int i=0;i<n;i++)
+//   {
+//      for(int j=0;j<n;j++)
+//      {
+//        arr[k]=target-(a[i]+a[j]+arr[k]);
+//      }
+//   }
+// }
+// int main()
+// {
+//    int a[100],n,target;
+//    printf("Enter the target");
+//    scanf("%d",&target);
+//    printf("Enter the number of elements:");
+//    scanf("%d",&n);
+//    printf("Enter number of elements in an array:");
+//    for(int i=0;i<n;i++)
+//    {
+//      scanf("%d",&a[i]);
+//    }
+//    int result = pairs(a,n);
+//      if (result)
+//        printf("YES");
+//     else{
+//         printf("NO");
+//     }
+//     return 0;
+// }
+
+
 
 
