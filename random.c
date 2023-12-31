@@ -1100,6 +1100,36 @@
 //     return 0;
 // }
 
+//Longest Common Subsequence
+// #include<unordered_set>
 
+// int lcs(int a[100],int n)
+// {
+//    if(n==0)
+//      return 0;
+//     int longest =1;
+//       for(int i=0;i<n;i++)
+//       {
+          
+//       }
+
+    
+// }
+// int main()
+// {
+//   return 0;
+// }
+// }
+
+
+//K Largest sum element of array
+
+int kthlargest(int arr[100],int n)
+{
+   int sum=0;
+   std::unordered_set <int> s;
+   for(int i=0;i<n;i++)
+   
+}
 
 
