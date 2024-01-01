@@ -646,39 +646,39 @@
 
 
 // Kadane's algorothm (optimal approach)
-int max_sum(int a[100],int n)
-{  
-  int sum=0;
-  int max;
-   for(int i=0;i<n;i++)
-   {
-     sum+=a[i]; 
-       if(sum>0)
-         {
-           max=sum;
-           break;
-         } 
-         else{
-          sum=0;
-         }  
-   } 
-   return sum; 
-}
+// int max_sum(int a[100],int n)
+// {  
+//   int sum=0;
+//   int max;
+//    for(int i=0;i<n;i++)
+//    {
+//      sum+=a[i]; 
+//        if(sum>0)
+//          {
+//            max=sum;
+//            break;
+//          } 
+//          else{
+//           sum=0;
+//          }  
+//    } 
+//    return sum; 
+// }
 
-int main()
-{
-  int a[100],i,n;
-  printf("Enter the size of array \n");
-  scanf("%d",&n);
-  printf("Enter the array elements");
-   for(i=0;i<n;i++)
-   {
-    scanf("%d",&a[i]);
-   }
-  int result = max_sum(a,n);
-  printf("The maximum sum of the subarray  is:%d\n",result);
-  return 0;
-}
+// int main()
+// {
+//   int a[100],i,n;
+//   printf("Enter the size of array \n");
+//   scanf("%d",&n);
+//   printf("Enter the array elements");
+//    for(i=0;i<n;i++)
+//    {
+//     scanf("%d",&a[i]);
+//    }
+//   int result = max_sum(a,n);
+//   printf("The maximum sum of the subarray  is:%d\n",result);
+//   return 0;
+// }
 
 
 //Dutch national flag alogorithm
@@ -1124,9 +1124,63 @@ int main()
 
 //K Largest sum element of array
 
-int kthlargest(int arr[100],int n)
-{
+// int kthlargest(int arr[100],int n)
+// {
     
-}
+// }
+
+
+//Length of Longest Substring without repeating character using C code.
+
+#include <stdio.h>
+#include <stdlib.h>
+void printSubStr(char *str, int start, int end)
+{
+  while (start <= end)
+  {
+    printf("%c", str[start]);
+    start++;
+    }
+    }
+    int lengthOfLongestSubstring(char *str)
+    {
+      char *res = NULL;
+      int n = strlen(str);
+      int maxLen = 0, len = 0, start = 0;
+      while (start < n && res != NULL)
+      {
+        len = 0;
+        res = strchr(str+ start, str[start]);
+        if (!res)
+
+        break;
+        else
+        start = res - str + 1;
+        if ((len + (res - str)) > maxLen)
+        {
+          maxLen = len + (res - str);
+          }
+          len++;
+          }
+          return maxLen;
+          }
+
+         int main()
+         {
+           int a[100], n;
+           char *str[100];
+           scanf("%s",str);
+           for(int i=0;i<n;i++)
+           {
+             scanf("%d",&a[i]);
+           }
+           int result =  lengthOfLongestSubstring(*str);
+           printf("The length of longest subarray is:%d",result);
+           return 0;
+         }
+
+
+
+
 
 
