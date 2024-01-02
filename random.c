@@ -1134,6 +1134,8 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include<string.h>
+// #include<unordered_set>
 void printSubStr(char *str, int start, int end)
 {
   while (start <= end)
@@ -1144,40 +1146,39 @@ void printSubStr(char *str, int start, int end)
     }
     int lengthOfLongestSubstring(char *str)
     {
-      char *res = NULL;
+      
       int n = strlen(str);
       int maxLen = 0, len = 0, start = 0;
-      while (start < n && res != NULL)
+      while (start < n)
       {
-        len = 0;
-        res = strchr(str+ start, str[start]);
-        if (!res)
+        len = 1;
+        char *res = strchr(str + start+1,str[start]);
 
-        break;
-        else
+        if(res!=NULL){
         start = res - str + 1;
-        if ((len + (res - str)) > maxLen)
-        {
-          maxLen = len + (res - str);
-          }
-          len++;
-          }
+        }
+         else{
+          start = n;
+         }
+         if(len>maxLen)
+         {
+           maxLen=len;
+         }
+      }
+        
           return maxLen;
-          }
+}
 
          int main()
          {
-           int a[100], n;
-           char *str[100];
+           char str[100];
            scanf("%s",str);
-           for(int i=0;i<n;i++)
-           {
-             scanf("%d",&a[i]);
-           }
-           int result =  lengthOfLongestSubstring(*str);
+           int result =  lengthOfLongestSubstring(str);
            printf("The length of longest subarray is:%d",result);
            return 0;
          }
+
+
 
 
 
