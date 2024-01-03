@@ -1132,51 +1132,77 @@
 
 //Length of Longest Substring without repeating character using C code.
 
-#include <stdio.h>
-#include <stdlib.h>
-#include<string.h>
-// #include<unordered_set>
-void printSubStr(char *str, int start, int end)
-{
-  while (start <= end)
-  {
-    printf("%c", str[start]);
-    start++;
-    }
-    }
-    int lengthOfLongestSubstring(char *str)
-    {
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include<string.h>
+// // #include<unordered_set>
+// void printSubStr(char *str, int start, int end)
+// {
+//   while (start <= end)
+//   {
+//     printf("%c", str[start]);
+//     start++;
+//     }
+//     }
+//     int lengthOfLongestSubstring(char *str)
+//     {
       
-      int n = strlen(str);
-      int maxLen = 0, len = 0, start = 0;
-      while (start < n)
-      {
-        len = 1;
-        char *res = strchr(str + start+1,str[start]);
+//       int n = strlen(str);
+//       int maxLen = 0, len = 0, start = 0;
+//       while (start < n)
+//       {
+//         len = 1;
+//         char *res = strchr(str + start+1,str[start]);
 
-        if(res!=NULL){
-        start = res - str + 1;
-        }
-         else{
-          start = n;
-         }
-         if(len>maxLen)
-         {
-           maxLen=len;
-         }
-      }
+//         if(res!=NULL){
+//         start = res - str + 1;
+//         }
+//          else{
+//           start = n;
+//          }
+//          if(len>maxLen)
+//          {
+//            maxLen=len;
+//          }
+//       }
         
-          return maxLen;
-}
+//           return maxLen;
+// }
 
-         int main()
-         {
-           char str[100];
-           scanf("%s",str);
-           int result =  lengthOfLongestSubstring(str);
-           printf("The length of longest subarray is:%d",result);
+//          int main()
+//          {
+//            char str[100];
+//            scanf("%s",str);
+//            int result =  lengthOfLongestSubstring(str);
+//            printf("The length of longest subarray is:%d",result);
+//            return 0;
+//          }
+
+         //2sum
+        int twosum(int a[100],int n)
+        {
+           for(int i=0;i<n;i++)
+           {
+            for(int j=i+1;j<n;j++)
+            {
+               if(a[i]+a[j]==0)
+                 return  1;
+            }
+           }
            return 0;
-         }
+        }
+       int main()
+       {
+        int a[100],n;
+         scanf("%d",&n);
+        for(int i=0;i<n;i++)
+        {
+           scanf("%d",&a[i]);
+        }
+        int result = twosum(a,n);
+        printf("%d\n",result);
+        return 0;
+       }
 
 
 
