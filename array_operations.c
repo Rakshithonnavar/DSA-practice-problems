@@ -127,14 +127,14 @@
 //      }
 
 //     int main()
-//     {
-//         int n,a[100],min,max;
-//         printf("Enter size");
-//         scanf("%d",&n);
-//         printf("Enter array elements");
-//         for (int i = 0; i < n; i++) {
-//         scanf("%d", &a[i]);
-//     }
+    // {
+    //     int n,a[100],min,max;
+    //     printf("Enter size");
+    //     scanf("%d",&n);
+    //     printf("Enter array elements");
+    //     for (int i = 0; i < n; i++) {
+    //     scanf("%d", &a[i]);
+    // }
 //           min = getmin(a,n);
 //           max = getmax(a,n);
 //        printf("Minimum value in the array: %d\n", min);
@@ -144,38 +144,76 @@
 
 //Second largest element in an array.
 
-void swap(int* a,int* b)
-{
-    int temp=*a;
-    *a=*b;
-    *b=temp;
-}
+// void swap(int* a,int* b)
+// {
+//     int temp=*a;
+//     *a=*b;
+//     *b=temp;
+// }
 
-void sort(int  a[],int n)
-{
-    for(int i=0;i<n;i++){
-       for(int j=0;j<n-i-1;j++)
-       {
-        if(a[j]>a[j+1]){
-         swap(a[j],a[j+1]);
-        }
-       }
-    }
-}
-  int pLarge(int n,int a[])
-  {
-    int a;
-    if(n>2)
-    {
-        sort(a,n);
-         return a[n-2];
-    }
-    else{
-        return 0;
-    }
-  }
+// void sort(int  a[],int n)
+// {
+//     for(int i=0;i<n;i++){
+//        for(int j=0;j<n-i-1;j++)
+//        {
+//         if(a[j]>a[j+1]){
+//          swap(a[j],a[j+1]);
+//         }
+//        }
+//     }
+// }
+//   int pLarge(int n,int a[])
+//   {
+//     int a;
+//     if(n>2)
+//     {
+//         sort(a,n);
+//          return a[n-2];
+//     }
+//     else{
+//         return 0;
+//     }
+//   }
       
+//Reversing array elements from  the given index position
 
+
+int reverse_array(int a[100],int n,int pos)
+{
+     int n = sizeof(a);
+     if(pos<0||pos>=n-1)
+       return -1;
+
+
+int start = pos+1;
+int end = n-1;
+
+
+while(start<end)
+{
+     
+}
+}
+
+int main()
+{
+        
+        int n,a[100],min,max,pos;
+        printf("Enter size");
+        scanf("%d",&n);
+        printf("Enter array elements");
+        for (int i = 0; i < n; i++) {
+        scanf("%d", &a[i]);
+        }
+        int result = reverse_array(a,n,pos);
+        if(result==-1)
+        printf("Invalid Position\n");
+        else
+        printf("Reverse Array is %d ",result);
+        
+        return 0;
+    
+}
 
 
 
