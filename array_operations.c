@@ -215,6 +215,23 @@ int main()
     
 }
 
+//Subarry with sum k
+int subarray(int a[100],int k)
+ { 
+  int sum=0;
+  int len=0;
+  int n = sizeof(a);
+   for(int i=0;i<n;i++)
+   {
+     for(int j=0;j<n;j++){
+     sum+=a[k];
+   len = max(len,i-j+1);  
+ }
+ }
+ return len;
+ }
+ 
+
 
 
       
