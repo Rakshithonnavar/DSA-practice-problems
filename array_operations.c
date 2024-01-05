@@ -178,59 +178,81 @@
 //Reversing array elements from  the given index position
 
 
-int reverse_array(int a[100],int n,int pos)
-{
-     int n = sizeof(a);
-     if(pos<0||pos>=n-1)
-       return -1;
+// int reverse_array(int a[100],int n,int pos)
+// {
+//      int n = sizeof(a);
+//      if(pos<0||pos>=n-1)
+//        return -1;
 
 
-int start = pos+1;
-int end = n-1;
+// int start = pos+1;
+// int end = n-1;
 
 
-while(start<end)
-{
+// while(start<end)
+// {
      
-}
-}
+// }
+// }
 
-int main()
-{
+// int main()
+// {
         
-        int n,a[100],min,max,pos;
-        printf("Enter size");
-        scanf("%d",&n);
-        printf("Enter array elements");
-        for (int i = 0; i < n; i++) {
-        scanf("%d", &a[i]);
-        }
-        int result = reverse_array(a,n,pos);
-        if(result==-1)
-        printf("Invalid Position\n");
-        else
-        printf("Reverse Array is %d ",result);
+//         int n,a[100],min,max,pos;
+//         printf("Enter size");
+//         scanf("%d",&n);
+//         printf("Enter array elements");
+//         for (int i = 0; i < n; i++) {
+//         scanf("%d", &a[i]);
+//         }
+//         int result = reverse_array(a,n,pos);
+//         if(result==-1)
+//         printf("Invalid Position\n");
+//         else
+//         printf("Reverse Array is %d ",result);
         
-        return 0;
+//         return 0;
     
-}
+// }
 
-//Subarry with sum k
-int subarray(int a[100],int k)
+//Subarray with sum k
+int max(int a,int b)
+ {
+   return (a>b)? a:b;
+ }
+int subarray(int a[100],int k,int n)
  { 
-  int sum=0;
+
   int len=0;
-  int n = sizeof(a);
    for(int i=0;i<n;i++)
    {
-     for(int j=0;j<n;j++){
-     sum+=a[k];
+      int sum=0;
+   
+     for(int j=i;j<n;j++){
+      sum+=a[j];
+
+      if(sum==k)
+      {
    len = max(len,i-j+1);  
  }
  }
+   }
  return len;
  }
- 
+
+ int main()
+ {
+   int a[100],n,k;
+   scanf("%d",&n);
+   for(int i=0;i<n;i++)
+   {
+     scanf("%d",&a[i]);
+   }
+   scanf("%d",&k);
+   int result = subarray(a,k,n);
+   printf("The longest subarray with sum k is:%d",result);
+   return 0 ;
+ }
 
 
 
