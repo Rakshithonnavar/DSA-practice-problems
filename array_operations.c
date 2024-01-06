@@ -216,42 +216,77 @@
 // }
 
 //Subarray with sum k
-int max(int a,int b)
- {
-   return (a>b)? a:b;
- }
-int subarray(int a[100],int k,int n)
- { 
+// int max(int a,int b)
+//  {
+//    return (a>b)? a:b;
+//  }
+// int subarray(int a[100],int k,int n)
+//  { 
 
-  int len=0;
-   for(int i=0;i<n;i++)
-   {
-      int sum=0;
+//   int len=0;
+//    for(int i=0;i<n;i++)
+//    {
+//       int sum=0;
    
-     for(int j=i;j<n;j++){
-      sum+=a[j];
+//      for(int j=i;j<n;j++){
+//       sum+=a[j];
 
-      if(sum==k)
-      {
-   len = max(len,i-j+1);  
- }
- }
-   }
- return len;
- }
+//       if(sum==k)
+//       {
+//    len = max(len,i-j+1);  
+//  }
+//  }
+//    }
+//  return len;
+//  }
 
+//  int main()
+//  {
+//    int a[100],n,k;
+//    scanf("%d",&n);
+//    for(int i=0;i<n;i++)
+//    {
+//      scanf("%d",&a[i]);
+//    }
+//    scanf("%d",&k);
+//    int result = subarray(a,k,n);
+//    printf("The longest subarray with sum k is:%d",result);
+//    return 0 ;
+//  }
+
+
+//missing and repeating number
+ int  missing_repeating(int a[100],int n)
+ {
+  // int result;
+   int sn= (n*(n+1))/2;
+   int s2n = (n*(n+1)*(2*n+1))/6;
+   int s1=0,s2=0;
+       for(int i=0;i<n;i++)
+       {
+             s1+=a[i];
+             s2+=a[i]*a[i];    
+       }
+       int val1=s1-sn;
+       int val2=s2-s2n;
+         int x= (val1+val2)/2;
+         int y=x-val1;
+         static int result[2];
+         int result[0] = x;
+         int result[1] = y;
+         return result;
+ }
  int main()
  {
-   int a[100],n,k;
+   int a[100],n;
    scanf("%d",&n);
    for(int i=0;i<n;i++)
    {
-     scanf("%d",&a[i]);
+    scanf("%d",&a[i]);
    }
-   scanf("%d",&k);
-   int result = subarray(a,k,n);
-   printf("The longest subarray with sum k is:%d",result);
-   return 0 ;
+   int *res[] = missing_repeating(a,n);
+   printf("Missing number is %d\nRepeating number is %d",res[0],res[1]);
+   return 0;
  }
 
 
