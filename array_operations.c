@@ -256,39 +256,70 @@
 
 
 //missing and repeating number
- int  missing_repeating(int a[100],int n)
- {
-  // int result;
-   int sn= (n*(n+1))/2;
-   int s2n = (n*(n+1)*(2*n+1))/6;
-   int s1=0,s2=0;
-       for(int i=0;i<n;i++)
-       {
-             s1+=a[i];
-             s2+=a[i]*a[i];    
-       }
-       int val1=s1-sn;
-       int val2=s2-s2n;
-         int x= (val1+val2)/2;
-         int y=x-val1;
-         static int result[2];
-         int result[0] = x;
-         int result[1] = y;
-         return result;
- }
- int main()
- {
-   int a[100],n;
-   scanf("%d",&n);
-   for(int i=0;i<n;i++)
-   {
-    scanf("%d",&a[i]);
-   }
-   int *res[] = missing_repeating(a,n);
-   printf("Missing number is %d\nRepeating number is %d",res[0],res[1]);
-   return 0;
- }
+//  int  missing_repeating(int a[100],int n)
+//  {
+//   // int result;
+//    int sn= (n*(n+1))/2;
+//    int s2n = (n*(n+1)*(2*n+1))/6;
+//    int s1=0,s2=0;
+//        for(int i=0;i<n;i++)
+//        {
+//              s1+=a[i];
+//              s2+=a[i]*a[i];    
+//        }
+//        int val1=s1-sn;
+//        int val2=s2-s2n;
+//          int x= (val1+val2)/2;
+//          int y=x-val1;
+//          static int result[2];
+//          int result[0] = x;
+//          int result[1] = y;
+//          return result;
+//  }
+//  int main()
+//  {
+//    int a[100],n;
+//    scanf("%d",&n);
+//    for(int i=0;i<n;i++)
+//    {
+//     scanf("%d",&a[i]);
+//    }
+//    int *res[] = missing_repeating(a,n);
+//    printf("Missing number is %d\nRepeating number is %d",res[0],res[1]);
+//    return 0;
+//  }
 
+
+//Rotate array left by k bits:
+int rotate_array(int a[100],int n,int k)
+{
+   int k= k%n;
+   int greatcd = gcd(k,n);
+     for(int i=0;i<greatcd;i++)
+     {
+      int temp = a[i];
+      int j=i;
+      while(1)
+      {
+        int d=j+k;
+          if(d>=n)
+          d=d-n;
+          if(d==i)
+             break;
+          a[j]=a[k];
+          j=k;
+      }
+      a[j]=temp;
+     }
+}
+
+int gcd(int a,int b)
+{
+  if(a%b==0)
+    return b;
+  else
+    return (b,a%b); 
+}
 
 
       
