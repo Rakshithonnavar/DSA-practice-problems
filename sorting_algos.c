@@ -48,7 +48,7 @@ void wave_sort(int a[],int n)
     return 0;
 }
 
-      Insertion Sort
+      // Insertion Sort
 
       void insertion_sort(int a[],int n)
       {
@@ -148,7 +148,7 @@ int partition(int a[],int low,int high)
   int pivot=a[high];
    
    int i =low-1;
-     for(j=0;j<high-1;j++){
+     for(int j=0;j<high-1;j++){
          if(a[j]<pivot){
              i++;
             swap(&a[i],&a[j]);
@@ -169,11 +169,12 @@ void  qsort(int a[],int low,int high)
    }
  }
 
-//Merge Sort
+// Merge Sort
 
-void merge(int a[],int l,int m,int r)
+int merge(int a[],int l,int m,int r)
 {
-   int i,j,k;
+   int i,j;
+    int k=l;
    int n1=m-l+1;
    int n2= r-m;
 
@@ -183,7 +184,7 @@ void merge(int a[],int l,int m,int r)
       for(j=0;j<n2;j++)
         R[j]=a[m+1+j];
 
-        int i=j=0,k=l;
+      
            while(i<n1 && j<n2)
            {
             if(L[i]<=R[j])
@@ -197,8 +198,7 @@ void merge(int a[],int l,int m,int r)
             }
             k++;
            }
-
-
+           i=0,j=0;
            while(i<n1)
            {
             a[k]=L[i];
@@ -213,7 +213,7 @@ void merge(int a[],int l,int m,int r)
            }
 }
 
-void mergeSort(int a[],int l,int r)
+int  mergeSort(int a[],int l,int r)
 {
   if(l<r)
   {
@@ -224,17 +224,14 @@ void mergeSort(int a[],int l,int r)
        merge(a,l,m,r);
   }
 }
-
-
-
-
 int main()
 {
-  int a[100],i,n;
-  printf("Enter low ")
+  int a[100],i,n,l,r;
+  printf("Enter the number of elements:");
+  scanf("%d",&n);
   printf("Enter the array elements:");
   scanf("%d",&a[i]);
-  int result = quicksort(pivot,left,right);
-  printf("The sorted ")
+  int result = mergeSort(a,l,r);
+  printf("The sorted elements are :%d\n",result);
   return 0;
 }

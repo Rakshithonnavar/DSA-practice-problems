@@ -291,9 +291,17 @@
 
 
 //Rotate array left by k bits:
+
+int gcd(int a,int b)
+{
+  if(a%b==0)
+    return b;
+  else
+    return (b,a%b); 
+}
 int rotate_array(int a[100],int n,int k)
 {
-   int k= k%n;
+    k= k%n;
    int greatcd = gcd(k,n);
      for(int i=0;i<greatcd;i++)
      {
@@ -313,12 +321,25 @@ int rotate_array(int a[100],int n,int k)
      }
 }
 
-int gcd(int a,int b)
+
+
+int main()
 {
-  if(a%b==0)
-    return b;
-  else
-    return (b,a%b); 
+   int a[100],n;
+   scanf("%d",&n);
+   for(int i=0;i<n;i++)
+   {
+    scanf("%d",&a[i]);
+    }
+    int k;
+    scanf("%d",&k);
+    int result = rotate_array(a,n,k);
+    for(int i=0;i<n;i++)
+     {
+      printf("%d ",result);
+      }
+      printf("\n");
+      return 0;
 }
 
 

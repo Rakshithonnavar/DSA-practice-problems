@@ -27,7 +27,7 @@
  int main()
  {
     char str[100];
-    int l=0;
+     int l=0;
     int r= strlen(str)-1;
      printf("Enter the string:");
      scanf("%s",str);
