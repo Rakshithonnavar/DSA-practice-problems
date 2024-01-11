@@ -1,7 +1,7 @@
 #include<stdlib.h>
 #include<stdio.h>
 #include<math.h>
-// 1)Using temporary array
+// 1)Using temporary array by d bits 
 // void rotate_array(int a[100],int d,int n)
 // {
 //     int temp[n],i,k=0;

@@ -1,6 +1,8 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<math.h>
+#include <limits.h>
+
 
 //  int main()
 // {  
@@ -289,63 +291,39 @@
 //    return 0;
 //  }
 
+//Floor and ceil a given value
 
-//Rotate array left by k bits:
-
-int gcd(int a,int b)
+int *floor_ceil(int a[100],int x)
 {
-  if(a%b==0)
-    return b;
-  else
-    return (b,a%b); 
-}
-int rotate_array(int a[100],int n,int k)
-{
-    k= k%n;
-   int greatcd = gcd(k,n);
-     for(int i=0;i<greatcd;i++)
-     {
-      int temp = a[i];
-      int j=i;
-      while(1)
+     int n = sizeof(a)/sizeof(a[0]);
+    int * result = (int*)malloc(2*sizeof(int));
+    int floor = INT_MAX; //floor value will be stored in this array element
+    int ceil =  INT_MIN;
+    for(int i=0;i<n;i++)
+    {
+      if(a[i]<x && a[i]>floor)
       {
-        int d=j+k;
-          if(d>=n)
-          d=d-n;
-          if(d==i)
-             break;
-          a[j]=a[k];
-          j=k;
+         floor =a[i];
+      } 
+      if(a[i]>x && a[i]<ceil)
+      {
+        ceil = a[i];
       }
-      a[j]=temp;
-     }
+    }
+    result[0]=(floor==INT_MAX)? -1:floor;
+    result[1]=(ceil== INT_MIN)? -1:ceil;
+    return result;
 }
-
-
 
 int main()
 {
-   int a[100],n;
-   scanf("%d",&n);
-   for(int i=0;i<n;i++)
-   {
-    scanf("%d",&a[i]);
-    }
-    int k;
-    scanf("%d",&k);
-    int result = rotate_array(a,n,k);
-    for(int i=0;i<n;i++)
-     {
-      printf("%d ",result);
-      }
-      printf("\n");
-      return 0;
-}
-//Floor and ceil a given value
-
-int floor_ceil(int a[100],int n)
-{
-    n = sizeof(a);
-    int[] result =  new int[2];
-    int floor = Intege
-}
+   int a[100],x;
+   scanf("%d",x);
+   int *res = floor_ceil(a,x);
+   if(res[0] == -1)
+   printf("No Number Found");
+   else
+   printf("The Floor Value of the Given Number Is %d \n The Ceiling Value of is %d ",res[0],res[1]);
+   free(res);
+   return 0;
+}  
