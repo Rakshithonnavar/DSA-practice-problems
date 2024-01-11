@@ -341,6 +341,11 @@ int main()
       printf("\n");
       return 0;
 }
+//Floor and ceil a given value
 
-
-      
+int floor_ceil(int a[100],int n)
+{
+    n = sizeof(a);
+    int[] result =  new int[2];
+    int floor = Intege
+}
