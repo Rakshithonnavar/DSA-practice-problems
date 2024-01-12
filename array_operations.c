@@ -178,44 +178,43 @@
 //   }
       
 //Reversing array elements from  the given index position
-
-
-// int reverse_array(int a[100],int n,int pos)
-// {
-//      int n = sizeof(a);
-//      if(pos<0||pos>=n-1)
-//        return -1;
-
-
-// int start = pos+1;
-// int end = n-1;
-
-
-// while(start<end)
-// {
-     
-// }
-// }
-
-// int main()
-// {
+int reverse_array(int n,int a[n],int pos)
+{  
+    int end=n-1,i;
+    for(i=pos;i<(pos+n)/2;i++)  //just reversing the array modify the loop as for(i=0;i<n/2;i++) and modify function accordingly
+     {
+         int temp = a[i];
+          a[i] = a[end];
+          a[end] = temp;
+          end--;
+     }
+     return a[i];
+}
+int main()
+{
         
-//         int n,a[100],min,max,pos;
-//         printf("Enter size");
-//         scanf("%d",&n);
-//         printf("Enter array elements");
-//         for (int i = 0; i < n; i++) {
-//         scanf("%d", &a[i]);
-//         }
-//         int result = reverse_array(a,n,pos);
-//         if(result==-1)
-//         printf("Invalid Position\n");
-//         else
-//         printf("Reverse Array is %d ",result);
-        
-//         return 0;
-    
-// }
+        int n,a[100],pos;
+        printf("Enter size");
+        scanf("%d",&n);
+        printf("Enter array elements");
+
+        for (int i = 0; i < n; i++) {
+        scanf("%d", &a[i]);
+        }
+        printf("Enter the index from where you want to reverse:");
+        scanf("%d",&pos);
+        int result =reverse_array(n,a,pos);
+        if(result==-1)
+        printf("Invalid Position\n");
+        else
+        printf("The reversed arrya from given position is:");
+        printf("\n");
+        for(int i=0;i<n;i++)
+        {
+             printf("%d\t",a[i]);
+        }
+        return 0;
+}
 
 //Subarray with sum k
 // int max(int a,int b)
@@ -257,7 +256,7 @@
 //  }
 
 
-//missing and repeating number
+//missing and repeating number in an array
 //  int  missing_repeating(int a[100],int n)
 //  {
 //   // int result;
@@ -293,37 +292,41 @@
 
 //Floor and ceil a given value
 
-int *floor_ceil(int a[100],int x)
-{
-     int n = sizeof(a)/sizeof(a[0]);
-    int * result = (int*)malloc(2*sizeof(int));
-    int floor = INT_MAX; //floor value will be stored in this array element
-    int ceil =  INT_MIN;
-    for(int i=0;i<n;i++)
-    {
-      if(a[i]<x && a[i]>floor)
-      {
-         floor =a[i];
-      } 
-      if(a[i]>x && a[i]<ceil)
-      {
-        ceil = a[i];
-      }
-    }
-    result[0]=(floor==INT_MAX)? -1:floor;
-    result[1]=(ceil== INT_MIN)? -1:ceil;
-    return result;
-}
+// int *floor_ceil(int a[100],int x)
+// {
+//      int n = sizeof(a)/sizeof(a[0]);
+//     int * result = (int*)malloc(2*sizeof(int));
+//     int floor = INT_MAX; //floor value will be stored in this array element
+//     int ceil =  INT_MIN;
+//     for(int i=0;i<n;i++)
+//     {
+//       if(a[i]<x && a[i]>floor)
+//       {
+//          floor =a[i];
+//       } 
+//       if(a[i]>x && a[i]<ceil)
+//       {
+//         ceil = a[i];
+//       }
+//     }
+//     result[0]=(floor==INT_MAX)? -1:floor;
+//     result[1]=(ceil== INT_MIN)? -1:ceil;
+//     return result;
+// }
 
-int main()
-{
-   int a[100],x;
-   scanf("%d",x);
-   int *res = floor_ceil(a,x);
-   if(res[0] == -1)
-   printf("No Number Found");
-   else
-   printf("The Floor Value of the Given Number Is %d \n The Ceiling Value of is %d ",res[0],res[1]);
-   free(res);
-   return 0;
-}  
+// int main()
+// {
+//    int a[100],x;
+//    scanf("%d",x);
+//    int *res = floor_ceil(a,x);
+//    if(res[0] == -1)
+//    printf("No Number Found");
+//    else
+//    printf("The Floor Value of the Given Number Is %d \n The Ceiling Value of is %d ",res[0],res[1]);
+//    free(res);
+//    return 0;
+// }  
+
+
+
+
