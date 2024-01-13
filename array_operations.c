@@ -178,43 +178,43 @@
 //   }
       
 //Reversing array elements from  the given index position
-int reverse_array(int n,int a[n],int pos)
-{  
-    int end=n-1,i;
-    for(i=pos;i<(pos+n)/2;i++)  //just reversing the array modify the loop as for(i=0;i<n/2;i++) and modify function accordingly
-     {
-         int temp = a[i];
-          a[i] = a[end];
-          a[end] = temp;
-          end--;
-     }
-     return a[i];
-}
-int main()
-{
+// int reverse_array(int n,int a[n],int pos)
+// {  
+//     int end=n-1,i;
+//     for(i=pos;i<(pos+n)/2;i++)  //just reversing the array modify the loop as for(i=0;i<n/2;i++) and modify function accordingly
+//      {
+//          int temp = a[i];
+//           a[i] = a[end];
+//           a[end] = temp;
+//           end--;
+//      }
+//      return a[i];
+// }
+// int main()
+// {
         
-        int n,a[100],pos;
-        printf("Enter size");
-        scanf("%d",&n);
-        printf("Enter array elements");
+//         int n,a[100],pos;
+//         printf("Enter size");
+//         scanf("%d",&n);
+//         printf("Enter array elements");
 
-        for (int i = 0; i < n; i++) {
-        scanf("%d", &a[i]);
-        }
-        printf("Enter the index from where you want to reverse:");
-        scanf("%d",&pos);
-        int result =reverse_array(n,a,pos);
-        if(result==-1)
-        printf("Invalid Position\n");
-        else
-        printf("The reversed arrya from given position is:");
-        printf("\n");
-        for(int i=0;i<n;i++)
-        {
-             printf("%d\t",a[i]);
-        }
-        return 0;
-}
+//         for (int i = 0; i < n; i++) {
+//         scanf("%d", &a[i]);
+//         }
+//         printf("Enter the index from where you want to reverse:");
+//         scanf("%d",&pos);
+//         int result =reverse_array(n,a,pos);
+//         if(result==-1)
+//         printf("Invalid Position\n");
+//         else
+//         printf("The reversed arrya from given position is:");
+//         printf("\n");
+//         for(int i=0;i<n;i++)
+//         {
+//              printf("%d\t",a[i]);
+//         }
+//         return 0;
+// }
 
 //Subarray with sum k
 // int max(int a,int b)
@@ -326,6 +326,58 @@ int main()
 //    free(res);
 //    return 0;
 // }  
+
+
+//First missing positive element in an array
+
+ void swap(int *a,int *b)
+    {
+        int temp = *a;
+        *a = *b;
+        *b = temp;
+    }
+int bubble_sort(int n,int a[n])
+{
+     for(int i=0;i<n;i++)
+     {
+         for(int j=0;j<n-i-1;j++)
+         {
+            if(a[j]>a[j+1])
+            {
+                swap(&a[j],&a[j+1]);
+            }
+         }
+     }
+     return a[0];     
+}
+
+int first_missing(int n,int a[n])
+{
+     int store =1;
+    bubble_sort(n,a);
+    for(int i=0;i<n;i++)
+    {
+         if(a[i]==store)
+         {
+             store++;
+         }
+    }
+    return store;
+}
+
+int main()
+{   int a[100],n;
+    scanf("%d",&n);
+    for(int i=0;i<n;i++)
+    {
+         scanf("%d",&a[i]);
+    }
+    int result = first_missing(n,a);
+    printf("missing positive number is %d\n",result);
+    return 0;
+}
+               
+
 
 
 
