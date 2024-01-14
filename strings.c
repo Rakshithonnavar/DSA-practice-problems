@@ -103,66 +103,66 @@
 
 //     return 0;
 // }
-int romanTodecimal(char str[])
-{
-int sum=0;
-int len = strlen(str);
+// int romanTodecimal(char str[])
+// {
+// int sum=0;
+// int len = strlen(str);
 
-for(int i=0;i<len;i++)
-{
-    switch(str[i])
-    {
-        case 'I': if(i<len-1 && ( str[i+1]=='V'||str[i+1]=='X'))
-                    {
-                        sum-=1;
-                    }
-                    else{
-                        sum+=1;
-                    }
-                    break;
-        case 'V' : sum+=5;
-                    break;
-        case 'X' :if(i<len-1 &&  (str[i+1]=='L'||str[i+1]=='C'))
-                    {
-                        sum-=10;
-                    }
-                    else{
-                        sum+=10;
-                    }
-                    break;
-        case 'L': sum+=50;
-                   break;
-        case 'C': if(i<len-1 &&  (str[i+1]=='D'||str[i+1]=='M'))
-                    {
-                        sum-=100;
-                    }
-                    else{
-                        sum+=100;
-                    }
-                    break;
-        case  'D': sum+=500;
-                   break;
-        case  'M': sum+=1000;
-                    break;
-        default:printf("Invalid case!!");
-        return -1;
-    }       
-    }
+// for(int i=0;i<len;i++)
+// {
+//     switch(str[i])
+//     {
+//         case 'I': if(i<len-1 && ( str[i+1]=='V'||str[i+1]=='X'))
+//                     {
+//                         sum-=1;
+//                     }
+//                     else{
+//                         sum+=1;
+//                     }
+//                     break;
+//         case 'V' : sum+=5;
+//                     break;
+//         case 'X' :if(i<len-1 &&  (str[i+1]=='L'||str[i+1]=='C'))
+//                     {
+//                         sum-=10;
+//                     }
+//                     else{
+//                         sum+=10;
+//                     }
+//                     break;
+//         case 'L': sum+=50;
+//                    break;
+//         case 'C': if(i<len-1 &&  (str[i+1]=='D'||str[i+1]=='M'))
+//                     {
+//                         sum-=100;
+//                     }
+//                     else{
+//                         sum+=100;
+//                     }
+//                     break;
+//         case  'D': sum+=500;
+//                    break;
+//         case  'M': sum+=1000;
+//                     break;
+//         default:printf("Invalid case!!");
+//         return -1;
+//     }       
+//     }
 
-return sum;
-}
-int main()
-{
-    char str[100];
-    printf("Enter the Roman Number:");
-    scanf("%s", str);
-    int result = romanTodecimal(str);
+// return sum;
+// }
+// int main()
+// {
+//     char str[100];
+//     printf("Enter the Roman Number:");
+//     scanf("%s", str);
+//     int result = romanTodecimal(str);
     
-     if(result!=-1){
-    printf("The roman to decimal conversion is:%d",result);
-     }
-    return 0;
-}
+//      if(result!=-1){
+//     printf("The roman to decimal conversion is:%d",result);
+//      }
+//     return 0;
+// }
 
 // int min_dist(char str[10][10],int n,char *word1,char *word2)
 // {
@@ -196,29 +196,29 @@ int main()
 
 /*************************************************************************************************************/
 //reverse string
-void swap(char *a,char*b)
-{
-      char temp;
-      temp = *a;
-       *a=*b;
-       *b=temp;
-   }
-int main()
-{
-char str[100];
+// void swap(char *a,char*b)
+// {
+//       char temp;
+//       temp = *a;
+//        *a=*b;
+//        *b=temp;
+//    }
+// int main()
+// {
+// char str[100];
 
-printf("Enter the String:");
-scanf("%s",str);
-int len = strlen(str);
-int n = len-1;
-for (int i = 0 ; i <len/2; i++)
-{
-  swap(&str[i],&str[n]);
-  n-=1;
-}
-printf("The reversed string is :%s\n",str);
-return 0;
-}
+// printf("Enter the String:");
+// scanf("%s",str);
+// int len = strlen(str);
+// int n = len-1;
+// for (int i = 0 ; i <len/2; i++)
+// {
+//   swap(&str[i],&str[n]);
+//   n-=1;
+// }
+// printf("The reversed string is :%s\n",str);
+// return 0;
+// }
 
 //print fibbonacci using recursion:
  
@@ -240,28 +240,30 @@ return 0;
 int main()
 {
     int n,n1,n2,n3;
-  //printf("Enter the count");
-   printf("The numbers are:");
-   printf("%d%d",0,1);
-   fibonacci(n-2,n1,n2,n3);
+  printf("Enter the count");
+  scanf("%d",&n);
+   int result = fibonacci(n-2,n1,n2,n3);
+//    printf("%d%d\t",0,1);
+   printf("The numbers are:%d\t",result);
+   return 0;
 }
 //palindrome check
-int main()
-{
-    char str[100];
-    int start =0;
-    int end = strlen(str)-1;
-    printf("Enter the string");
-    scanf("%s",&str);
-    if(str[start]==str[end])
-    {
-        printf("Palindrome string");
-    }
-    else{
-        printf("Not palindrome");
-    }
-    return 0;
-}
+// int main()
+// {
+//     char str[100];
+//     int start =0;
+//     int end = strlen(str)-1;
+//     printf("Enter the string");
+//     scanf("%s",&str);
+//     if(str[start]==str[end])
+//     {
+//         printf("Palindrome string");
+//     }
+//     else{
+//         printf("Not palindrome");
+//     }
+//     return 0;
+// }
 //Multiply 2 numbers using russian peasant algorithm
 // int main()
 // {
@@ -279,24 +281,7 @@ int main()
 //     return 0;
 // }
 
-int compare(int p1,int p2)
-{
-    int first,second,p1,p2;
 
-    if(p1.second==p2.second)
-       return p1.first>p2.first;
-    
-    return p1.second>p2.second;
-}
-
-
-void most freq_Number(int a[],int N,int K)
-{
-    int map;
-    for(int i=0;i<N;i++)
-          map[a[i]]++;
-      
-}
 
 
 

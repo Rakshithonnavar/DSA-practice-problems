@@ -330,52 +330,129 @@
 
 //First missing positive element in an array
 
- void swap(int *a,int *b)
-    {
-        int temp = *a;
-        *a = *b;
-        *b = temp;
-    }
-int bubble_sort(int n,int a[n])
+//  void swap(int *a,int *b)
+//     {
+//         int temp = *a;
+//         *a = *b;
+//         *b = temp;
+//     }
+// int bubble_sort(int n,int a[n])
+// {
+//      for(int i=0;i<n;i++)
+//      {
+//          for(int j=0;j<n-i-1;j++)
+//          {
+//             if(a[j]>a[j+1])
+//             {
+//                 swap(&a[j],&a[j+1]);
+//             }
+//          }
+//      }
+//      return a[0];     
+// }
+
+// int first_missing(int n,int a[n])
+// {
+//      int store =1;
+//     bubble_sort(n,a);
+//     for(int i=0;i<n;i++)
+//     {
+//          if(a[i]==store)
+//          {
+//              store++;
+//          }
+//     }
+//     return store;
+// }
+
+// int main()
+// {   int a[100],n;
+//     scanf("%d",&n);
+//     for(int i=0;i<n;i++)
+//     {
+//          scanf("%d",&a[i]);
+//     }
+//     int result = first_missing(n,a);
+//     printf("missing positive number is %d\n",result);
+//     return 0;
+// }
+
+
+void swap(int *a,int *b)
 {
+   int temp= *a;
+    *a=*b;
+    *b=temp;
+}
+
+int partition(int a[],int low,int high)
+{
+ 
+ int pivot = a[high];
+ int i=low-1;
+  for(int j=low;j<=high;j++)
+  {
+    if(a[j]<pivot)
+    {
+      i++;
+      swap(&a[i],&a[j]);
+    }
+  }  
+  swap(&a[i+1],&a[high]);
+  return i+1;
+}
+
+void quickSort(int a[],int low,int high)
+{
+  if(low<high)
+  {
+    int pi=partition(a,low,high);
+     quickSort(a,low,pi-1);
+     quickSort(a,pi+1,high);
+  }
+}
+//Checkinf for Kth largest and smallest element in array:  
+int kthlargest(int n,int a[n],int k)
+{    
+     int low=0,high=n-1;
+     quickSort(a,low,high);  
+     int end =n-1;
+     for(int i=0;i<n/2;i++)// <==Comment from this line while finding kth smallest
+     {
+         int temp = a[i];
+         a[i] = a[end];
+         a[end] = temp;
+         end--;
+     }
+     return a[n-k]; // ==>largest element in array---till here==>
+//      return a[k-1]; //==>smallest element in array.
+ }
+int main()
+{
+     int a[100],n,k;
+     printf("Enter the number of elements");
+     scanf("%d",&n);
+     printf("Enter the elements:\n");
      for(int i=0;i<n;i++)
      {
-         for(int j=0;j<n-i-1;j++)
-         {
-            if(a[j]>a[j+1])
-            {
-                swap(&a[j],&a[j+1]);
-            }
-         }
+     scanf("%d",&a[i]);
      }
-     return a[0];     
+     printf("Enter the valye of k");
+     scanf("%d",&k);
+     int result = kthlargest(n,a,k);
+     printf("The kth largest element in arrays is:%d",result);
+     return 0 ;
 }
 
-int first_missing(int n,int a[n])
-{
-     int store =1;
-    bubble_sort(n,a);
-    for(int i=0;i<n;i++)
-    {
-         if(a[i]==store)
-         {
-             store++;
-         }
-    }
-    return store;
-}
 
-int main()
-{   int a[100],n;
-    scanf("%d",&n);
-    for(int i=0;i<n;i++)
-    {
-         scanf("%d",&a[i]);
-    }
-    int result = first_missing(n,a);
-    printf("missing positive number is %d\n",result);
-    return 0;
-}
+//First and last occurence of element in array:
+// int firstLast(int n,int arr[n],int k)
+// {
+// static int result[2];
+// result[0]=-1;
+// result[1]=-1;
+
+// }
                
 
 
