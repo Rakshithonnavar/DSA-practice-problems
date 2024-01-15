@@ -378,73 +378,106 @@
 // }
 
 
-void swap(int *a,int *b)
-{
-   int temp= *a;
-    *a=*b;
-    *b=temp;
-}
+// void swap(int *a,int *b)
+// {
+//    int temp= *a;
+//     *a=*b;
+//     *b=temp;
+// }
 
-int partition(int a[],int low,int high)
-{
+// int partition(int a[],int low,int high)
+// {
  
- int pivot = a[high];
- int i=low-1;
-  for(int j=low;j<=high;j++)
-  {
-    if(a[j]<pivot)
-    {
-      i++;
-      swap(&a[i],&a[j]);
-    }
-  }  
-  swap(&a[i+1],&a[high]);
-  return i+1;
+//  int pivot = a[high];
+//  int i=low-1;
+//   for(int j=low;j<=high;j++)
+//   {
+//     if(a[j]<pivot)
+//     {
+//       i++;
+//       swap(&a[i],&a[j]);
+//     }
+//   }  
+//   swap(&a[i+1],&a[high]);
+//   return i+1;
+// }
+
+// void quickSort(int a[],int low,int high)
+// {
+//   if(low<high)
+//   {
+//     int pi=partition(a,low,high);
+//      quickSort(a,low,pi-1);
+//      quickSort(a,pi+1,high);
+//   }
+// }
+//Checkinf for Kth largest and smallest element in array:  
+// int kthlargest(int n,int a[n],int k)
+// {    
+//      int low=0,high=n-1;
+//      quickSort(a,low,high);  
+//      int end =n-1;
+//      for(int i=0;i<n/2;i++)// <==Comment from this line while finding kth smallest
+//      {
+//          int temp = a[i];
+//          a[i] = a[end];
+//          a[end] = temp;
+//          end--;
+//      }
+//      return a[n-k]; // ==>largest element in array---till here==>
+//      return a[k-1]; //==>smallest element in array.
+//  }
+// int main()
+// {
+//      int a[100],n,k;
+//      printf("Enter the number of elements");
+//      scanf("%d",&n);
+//      printf("Enter the elements:\n");
+//      for(int i=0;i<n;i++)
+//      {
+//      scanf("%d",&a[i]);
+//      }
+//      printf("Enter the valye of k");
+//      scanf("%d",&k);
+//      int result = kthlargest(n,a,k);
+//      printf("The kth largest element in arrays is:%d",result);
+//      //printf("The kth smallest element in arrays is:%d",result);
+//      return 0 ;
+// }
+
+//Eliminate duplicate elements in array:
+
+int removeDuplicate(int n,int arr[n]) 
+{
+  // int store[100];
+    int j=0;
+    if(n==0||n==1)
+    return n;
+   for(int i=0;i<n-1;i++)
+   {
+     if(arr[i]!=arr[i+1])
+           arr[j++]=arr[i];
+       arr[j++] = arr[n-1];
+   }
+   return j;
 }
 
-void quickSort(int a[],int low,int high)
-{
-  if(low<high)
-  {
-    int pi=partition(a,low,high);
-     quickSort(a,low,pi-1);
-     quickSort(a,pi+1,high);
-  }
-}
-//Checkinf for Kth largest and smallest element in array:  
-int kthlargest(int n,int a[n],int k)
-{    
-     int low=0,high=n-1;
-     quickSort(a,low,high);  
-     int end =n-1;
-     for(int i=0;i<n/2;i++)// <==Comment from this line while finding kth smallest
-     {
-         int temp = a[i];
-         a[i] = a[end];
-         a[end] = temp;
-         end--;
-     }
-     return a[n-k]; // ==>largest element in array---till here==>
-//      return a[k-1]; //==>smallest element in array.
- }
 int main()
 {
-     int a[100],n,k;
-     printf("Enter the number of elements");
-     scanf("%d",&n);
-     printf("Enter the elements:\n");
-     for(int i=0;i<n;i++)
-     {
-     scanf("%d",&a[i]);
-     }
-     printf("Enter the valye of k");
-     scanf("%d",&k);
-     int result = kthlargest(n,a,k);
-     printf("The kth largest element in arrays is:%d",result);
-     return 0 ;
+   int n, arr[n];
+   printf("Enter number of elements you want to give :\n");
+   scanf("%d",&n);
+   printf("Enter the array elements");
+    for(int i=0;i<n;i++)
+    {
+       scanf("%d",&arr[i]);
+    }
+  int result = removeDuplicate(n,arr);
+  printf("the newly formed array is:",result);
+    for(int i=0;i<n;i++)
+     printf("%d\t",arr[i]);
+       return 0;
 }
-
-
 //First and last occurence of element in array:
 // int firstLast(int n,int arr[n],int k)
 // {
