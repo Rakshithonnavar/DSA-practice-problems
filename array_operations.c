@@ -446,7 +446,6 @@
 // }
 
 //Eliminate duplicate elements in array:
-
 int removeDuplicate(int n,int arr[n]) 
 {
   // int store[100];
@@ -472,10 +471,10 @@ int main()
     {
        scanf("%d",&arr[i]);
     }
-  int result = removeDuplicate(n,arr);
-  printf("the newly formed array is:",result);
-    for(int i=0;i<n;i++)
-     printf("%d\t",arr[i]);
+  // int result = removeDuplicate(n,arr);
+  // printf("the newly formed array is:",result);
+  //   for(int i=0;i<n;i++)
+  //    printf("%d\t",arr[i]);
        return 0;
 }
 //First and last occurence of element in array:
@@ -486,7 +485,23 @@ int main()
 // result[1]=-1;
 
 // }
-               
+
+//Sum of 2 arrays:
+int sumOfArrays(int n,int a[n],int m,int b[m])
+{
+   int carry=0;
+   int res[n+m];
+   int i=n-1,j=m-1;
+    for(int i,j;i>=0||j>=0||carry>0;i--,j--)
+    {
+       int sum = (i>=0? a[i]:0)+(j>=0? b[j]:0)+carry;
+       int digit = sum%10;
+       carry = sum/10;
+       
+       }
+       return printArr(n+m,res);
+}
+   
 
 
 
