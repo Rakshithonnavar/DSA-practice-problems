@@ -448,7 +448,7 @@
 //Eliminate duplicate elements in array:
 // int removeDuplicate(int n,int arr[n]) 
 // {
-//   // int store[100];
+//   
 //     int j=0;
 //     if(n==0||n==1)
 //     return n;
@@ -487,43 +487,52 @@
 // }
 
 //Sum of 2 arrays:
-int sumOfArrays(int n,int a[n],int m,int b[m])
+int* sumOfArrays(int n,int a[n],int m,int b[m],int *size)
 {
    int carry=0;
-   int res[n+m];
-   int i=n-1,j=m-1;
-    for(int i,j;i>=0||j>=0||carry>0;i--,j--)
-    {
+   int maxSize = (n>m)?n:m;
+   int *result = malloc((maxSize+1)*sizeof(int));
+   int i=n-1,j=m-1,k=maxSize;
+   while(i >= 0 || j >= 0 || carry > 0){
        int sum = (i>=0? a[i]:0)+(j>=0? b[j]:0)+carry;
        int digit = sum%10;
        carry = sum/10;
-       
+       result[k--]=digit;
+       i--;
+       j--;
        }
-       return printArr(n+m,res);
-       }
-       //Printing array function:
-       int printArr(int size,int arr[])
-       {
-         for(int i=size-1;i>=0;i--)
-         printf("%d ",arr[i]);
-         }
-int main()
-{
-    int n,a[n];
-    int m,b[m];
-    printf("\nEnter size of array A: ");
-    scanf("%d",&n);
-    printf("\nEnter elements of array A:\n");
-    inputArray(n,a);
-    printf("\nEnter size of array B: ");
-    scanf("%d",&m);
-    printf("\nEnter elements of array B:\n");
-    inputArray(m,b);
-    printf("\nThe sum of both arrays is :\n");
-    printArray(sumOfArrays(n,a,m,b));
-    return 0;
+       *size = maxSize +1;
+        return result;
+ }
+
+ void printResult(int result[], int size) {
+    int leadingZero = 1;
+    for (int i = 0; i < size; i++) {
+        if (result[i] != 0) {
+            leadingZero = 0;
+        }
+        if (!leadingZero || i == size - 1) {
+            printf("%d ", result[i]);
+        }
+    }
+    printf("\n");
 }
 
+   int main() {
+    int a[] = {1, 2, 3};
+    int b[] = {1,2,3};
+    int n = sizeof(a) / sizeof(a[0]);
+    int m = sizeof(b) / sizeof(b[0]);
+    int size;
+
+    int* result = sumOfArrays(n, a, m, b, &size);
+
+    printf("Sum of arrays: ");
+    printResult(result, size);
+
+    free(result); 
+    return 0;
+}    
 
 
 
