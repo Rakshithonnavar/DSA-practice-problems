@@ -446,37 +446,37 @@
 // }
 
 //Eliminate duplicate elements in array:
-int removeDuplicate(int n,int arr[n]) 
-{
-  // int store[100];
-    int j=0;
-    if(n==0||n==1)
-    return n;
-   for(int i=0;i<n-1;i++)
-   {
-     if(arr[i]!=arr[i+1])
-           arr[j++]=arr[i];
-       arr[j++] = arr[n-1];
-   }
-   return j;
-}
+// int removeDuplicate(int n,int arr[n]) 
+// {
+//   // int store[100];
+//     int j=0;
+//     if(n==0||n==1)
+//     return n;
+//    for(int i=0;i<n-1;i++)
+//    {
+//      if(arr[i]!=arr[i+1])
+//            arr[j++]=arr[i];
+//        arr[j++] = arr[n-1];
+//    }
+//    return j;
+// }
 
-int main()
-{
-   int n, arr[n];
-   printf("Enter number of elements you want to give :\n");
-   scanf("%d",&n);
-   printf("Enter the array elements");
-    for(int i=0;i<n;i++)
-    {
-       scanf("%d",&arr[i]);
-    }
+// int main()
+// {
+//    int n, arr[n];
+//    printf("Enter number of elements you want to give :\n");
+//    scanf("%d",&n);
+//    printf("Enter the array elements");
+//     for(int i=0;i<n;i++)
+//     {
+//        scanf("%d",&arr[i]);
+//     }
   // int result = removeDuplicate(n,arr);
   // printf("the newly formed array is:",result);
   //   for(int i=0;i<n;i++)
   //    printf("%d\t",arr[i]);
-       return 0;
-}
+//        return 0;
+// }
 //First and last occurence of element in array:
 // int firstLast(int n,int arr[n],int k)
 // {
@@ -500,8 +500,29 @@ int sumOfArrays(int n,int a[n],int m,int b[m])
        
        }
        return printArr(n+m,res);
+       }
+       //Printing array function:
+       int printArr(int size,int arr[])
+       {
+         for(int i=size-1;i>=0;i--)
+         printf("%d ",arr[i]);
+         }
+int main()
+{
+    int n,a[n];
+    int m,b[m];
+    printf("\nEnter size of array A: ");
+    scanf("%d",&n);
+    printf("\nEnter elements of array A:\n");
+    inputArray(n,a);
+    printf("\nEnter size of array B: ");
+    scanf("%d",&m);
+    printf("\nEnter elements of array B:\n");
+    inputArray(m,b);
+    printf("\nThe sum of both arrays is :\n");
+    printArray(sumOfArrays(n,a,m,b));
+    return 0;
 }
-   
 
 
 
