@@ -531,7 +531,11 @@ int* sumOfArrays(int n,int a[n],int m,int b[m],int *size)
 
     free(result); 
     return 0;
-}    
+} 
+//Check if subarray sum is equals to target value.
+bool subarray(int n,int a[n],int k)
+{
+        int sum=0;
 
 
 
