@@ -448,7 +448,6 @@
 //Eliminate duplicate elements in array:
 // int removeDuplicate(int n,int arr[n]) 
 // {
-//   
 //     int j=0;
 //     if(n==0||n==1)
 //     return n;
