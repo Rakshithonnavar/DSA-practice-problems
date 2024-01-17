@@ -486,57 +486,82 @@
 // }
 
 //Sum of 2 arrays:
-int* sumOfArrays(int n,int a[n],int m,int b[m],int *size)
-{
-   int carry=0;
-   int maxSize = (n>m)?n:m;
-   int *result = malloc((maxSize+1)*sizeof(int));
-   int i=n-1,j=m-1,k=maxSize;
-   while(i >= 0 || j >= 0 || carry > 0){
-       int sum = (i>=0? a[i]:0)+(j>=0? b[j]:0)+carry;
-       int digit = sum%10;
-       carry = sum/10;
-       result[k--]=digit;
-       i--;
-       j--;
-       }
-       *size = maxSize +1;
-        return result;
- }
+// int* sumOfArrays(int n,int a[n],int m,int b[m],int *size)
+// {
+//    int carry=0;
+//    int maxSize = (n>m)?n:m;
+//    int *result = malloc((maxSize+1)*sizeof(int));
+//    int i=n-1,j=m-1,k=maxSize;
+//    while(i >= 0 || j >= 0 || carry > 0){
+//        int sum = (i>=0? a[i]:0)+(j>=0? b[j]:0)+carry;
+//        int digit = sum%10;
+//        carry = sum/10;
+//        result[k--]=digit;
+//        i--;
+//        j--;
+//        }
+//        *size = maxSize +1;
+//         return result;
+//  }
 
- void printResult(int result[], int size) {
-    int leadingZero = 1;
-    for (int i = 0; i < size; i++) {
-        if (result[i] != 0) {
-            leadingZero = 0;
-        }
-        if (!leadingZero || i == size - 1) {
-            printf("%d ", result[i]);
-        }
-    }
-    printf("\n");
-}
+//  void printResult(int result[], int size) {
+//     int leadingZero = 1;
+//     for (int i = 0; i < size; i++) {
+//         if (result[i] != 0) {
+//             leadingZero = 0;
+//         }
+//         if (!leadingZero || i == size - 1) {
+//             printf("%d ", result[i]);
+//         }
+//     }
+//     printf("\n");
+// }
 
-   int main() {
-    int a[] = {1, 2, 3};
-    int b[] = {1,2,3};
-    int n = sizeof(a) / sizeof(a[0]);
-    int m = sizeof(b) / sizeof(b[0]);
-    int size;
+//    int main() {
+//     int a[] = {1, 2, 3};
+//     int b[] = {1,2,3};
+//     int n = sizeof(a) / sizeof(a[0]);
+//     int m = sizeof(b) / sizeof(b[0]);
+//     int size;
 
-    int* result = sumOfArrays(n, a, m, b, &size);
+//     int* result = sumOfArrays(n, a, m, b, &size);
 
-    printf("Sum of arrays: ");
-    printResult(result, size);
+//     printf("Sum of arrays: ");
+//     printResult(result, size);
 
-    free(result); 
-    return 0;
-} 
+//     free(result); 
+//     return 0;
+// } 
 //Check if subarray sum is equals to target value.
-bool subarray(int n,int a[n],int k)
+ int subarray_sum(int n,int a[n],int k)
 {
         int sum=0;
-
-
+   for(int i=0;i<n;i++)
+   {
+     int sum=0;
+       for(int j=i;j<n;j++)
+       {
+            sum=+a[j];
+            if(sum==k)
+            return 1;
+       }
+   }
+   return  0;
+}
+int main()
+{
+     int n,a[100];
+     printf("goooooo");
+     scanf("%d",&n);
+     for(int i=0;i<n;i++)
+     scanf("%d",&a[i]);
+     int k;
+     scanf("%d",&k);
+     if(subarray_sum(n,a,k))
+     printf("Yes\n");
+     else
+     printf("No\n");
+     return 0;
+}
 
 
