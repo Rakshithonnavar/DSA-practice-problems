@@ -1203,7 +1203,10 @@ int main()
       //   printf("%d\n",result);
       //   return 0;
       //  }
-      //
+      //  //swap arrays elements
+           int swap(int n,int a[n],int b,int a[b])
+           {
+            
 
 
 
