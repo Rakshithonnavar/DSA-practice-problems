@@ -80,6 +80,19 @@
 //                l++;
 //            }
 //   }
+  // int main()
+  // {
+  //    int a[N][N] ,i ,j;
+  //    printf("Enter the Matrix elements");                         
+     // for (i=0 ; i < N ; ++i){
+     //      for(j=0;j<N;j++){
+     //      scanf("%d",&a[i][j]);  
+     // }
+     // }
+  //    printf("The Matrix elements after performing spiral rotation are:");
+  //     spiral_print(a);
+  //      return 0;
+  // }
 
 void missing(int a[],int n)
 {
@@ -109,7 +122,7 @@ int main()
         return 0;   
 }
 //Find element in rotated array
-void rotate(int n,int **a[n],int k)
+void findRotate(int n,int m,int k)
 {      
       int  m = sizeof(a)/sizeof(a[0]);
        for(int i=0;i<n;i++)
@@ -121,19 +134,24 @@ void rotate(int n,int **a[n],int k)
        }
        return -1;
 }
-//   int main()
-//   {
-//      int a[N][N] ,i ,j;
-//      printf("Enter the Matrix elements");                         
-//      for (i=0 ; i < N ; ++i){
-//           for(j=0;j<N;j++){
-//           scanf("%d",&a[i][j]);  
-//      }
-//      }
-//      printf("The Matrix elements after performing spiral rotation are:");
-//       spiral_print(a);
-//        return 0;
-//   }
+int main()
+{
+        int m,n,target;
+        scanf(%d,&n);
+         scanf(%d,&m);
+     for (i=0 ; i <n; i++){
+          for(j=0;j<m;j++){
+          scarf("%d",&a[i][j]);  
+     }
+             
+     }
+        
+        
+
+ 
+        
+        
+        
 
 
 
