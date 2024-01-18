@@ -294,7 +294,7 @@
 
 // int *floor_ceil(int a[100],int x)
 // {
-//      int n = sizeof(a)/sizeof(a[0]);
+//      int n = of(a)/sizeof(a[0]);
 //     int * result = (int*)malloc(2*sizeof(int));
 //     int floor = INT_MAX; //floor value will be stored in this array element
 //     int ceil =  INT_MIN;
@@ -563,5 +563,7 @@ int main()
      printf("No\n");
      return 0;
 }
+
+
 
 

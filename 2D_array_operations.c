@@ -108,6 +108,19 @@ int main()
         missing(a,n);
         return 0;   
 }
+//Find element in rotated array
+void rotate(int n,int **a[n],int k)
+{      
+      int  m = sizeof(a)/sizeof(a[0]);
+       for(int i=0;i<n;i++)
+       {
+           for(int j=0;j<m;j++){
+              if(a[i][j]==k)
+               return i*m+j;
+           }
+       }
+       return -1;
+}
 //   int main()
 //   {
 //      int a[N][N] ,i ,j;
@@ -121,6 +134,10 @@ int main()
 //       spiral_print(a);
 //        return 0;
 //   }
+
+
+
+
 
 
 
