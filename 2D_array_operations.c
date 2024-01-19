@@ -108,47 +108,57 @@ int i;
       printf("The missing number is: %d\n",sum);
 }
 
-int main()
-{
-     int a[100],i,n,sum;
-     printf("Enter the size:");
-     scanf("%d",&n);
-     printf("Enter array elements:");
-        for(i=0;i<n;i++)
-        {
-          scanf("%d",&a[i]);
-        }
-        missing(a,n);
-        return 0;   
-}
+// int main()
+// {
+//      int a[100],i,n,sum;
+//      printf("Enter the size:");
+//      scanf("%d",&n);
+//      printf("Enter array elements:");
+//         for(i=0;i<n;i++)
+//         {
+//           scanf("%d",&a[i]);
+//         }
+//         missing(a,n);
+//         return 0;   
+// }
 //Find element in rotated array
-void findRotate(int n,int m,int k)
+int findRotate(int** a,int n,int m,int k)
 {      
-      int  m = sizeof(a)/sizeof(a[0]);
+      // int  m = sizeof(a)/sizeof(a[0]);
        for(int i=0;i<n;i++)
        {
            for(int j=0;j<m;j++){
-              if(a[i][j]==k)
+              if(a[n][m]==k)
                return i*m+j;
            }
        }
        return -1;
 }
-int main()
-{
-        int m,n,target;
-        scanf(%d,&n);
-         scanf(%d,&m);
-     for (i=0 ; i <n; i++){
-          for(j=0;j<m;j++){
-          scarf("%d",&a[i][j]);  
-     }
-             
-     }
-        
-        
 
- 
+int main() {
+    int n, m, target;
+    scanf("%d", &n);
+    scanf("%d", &m);
+
+    int a[100][100];
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < m; j++) {
+            scanf("%d", &a[i][j]);
+        }
+    }
+
+    scanf("%d", &target);
+
+    int result = findRotate((int**)a, n, m, target);
+
+    if (result != -1) {
+        printf("The element is found at position: %d\n", result);
+    } else {
+        printf("Element not found!\n");
+    }
+
+    return 0;
+}
         
         
         
