@@ -619,8 +619,6 @@ int flipBits(int a[100],int n)
   int originalzeros = 0;
   int curMax=0;
   int max_diff=0;
-
-
   for(int i=0;i<n;i++)
   {
      if(a[i]==0)

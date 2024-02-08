@@ -94,19 +94,19 @@
   //      return 0;
   // }
 
-void missing(int a[],int n)
-{
-int i;
+// void missing(int a[],int n)
+// {
+// int i;
 
-     int sum;
-     sum = (n+1)*(n+2)/2;
-     for(i=0;i<n;i++)
-     {
-       sum-=a[i];
-     }
+//      int sum;
+//      sum = (n+1)*(n+2)/2;
+//      for(i=0;i<n;i++)
+//      {
+//        sum-=a[i];
+//      }
 
-      printf("The missing number is: %d\n",sum);
-}
+//       printf("The missing number is: %d\n",sum);
+// }
 
 // int main()
 // {
@@ -122,41 +122,65 @@ int i;
 //         return 0;   
 // }
 //Find element in rotated array
-int findRotate(int** a,int n,int m,int k)
-{      
-      // int  m = sizeof(a)/sizeof(a[0]);
-       for(int i=0;i<n;i++)
-       {
-           for(int j=0;j<m;j++){
-              if(a[n][m]==k)
-               return i*m+j;
-           }
-       }
-       return -1;
+// int findRotate(int** a,int n,int m,int k)
+// {      
+//       // int  m = sizeof(a)/sizeof(a[0]);
+//        for(int i=0;i<n;i++)
+//        {
+//            for(int j=0;j<m;j++){
+//               if(a[n][m]==k)
+//                return i*m+j;
+//            }
+//        }
+//        return -1;
+// }
+
+// int main() {
+//     int n, m, target;
+//     scanf("%d", &n);
+//     scanf("%d", &m);
+
+//     int a[100][100];
+//     for (int i = 0; i < n; i++) {
+//         for (int j = 0; j < m; j++) {
+//             scanf("%d", &a[i][j]);
+//         }
+//     }
+
+//     scanf("%d", &target);
+
+//     int result = findRotate((int**)a, n, m, target);
+
+//     if (result != -1) {
+//         printf("The element is found at position: %d\n", result);
+//     } else {
+//         printf("Element not found!\n");
+//     }
+
+//     return 0;
+// }
+//Factorial of a number
+
+int Factorial(int n)
+{    
+
+    return (n==0)? 1: n*(Factorial(n-1));
 }
 
-int main() {
-    int n, m, target;
-    scanf("%d", &n);
-    scanf("%d", &m);
 
-    int a[100][100];
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < m; j++) {
-            scanf("%d", &a[i][j]);
-        }
+int main()
+{  
+    int n;
+    printf("Enter number:");
+    scanf("%d",&n);
+    if(n<0)
+    {
+     printf("please enter a non negetive number");
     }
-
-    scanf("%d", &target);
-
-    int result = findRotate((int**)a, n, m, target);
-
-    if (result != -1) {
-        printf("The element is found at position: %d\n", result);
-    } else {
-        printf("Element not found!\n");
+    else{
+    int result = Factorial(n);
+    printf("The factorial is %d",result);
     }
-
     return 0;
 }
         
