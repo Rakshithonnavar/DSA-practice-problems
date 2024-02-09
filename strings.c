@@ -222,31 +222,31 @@
 
 //print fibbonacci using recursion:
  
- int fibonacci(int n,int n1,int n2,int n3)
-{
-  if(n==0){
-    return 1;
-  }
-  else
-  {
-    n3=n1+n2;
-    n1=n2;
-    n2=n3;
-  }
-  printf("%d",n3);
-  fibonacci(n-1,n1,n2,n3); 
-}
+//  int fibonacci(int n,int n1,int n2,int n3)
+// {
+//   if(n==0){
+//     return 1;
+//   }
+//   else
+//   {
+//     n3=n1+n2;
+//     n1=n2;
+//     n2=n3;
+//   }
+//   printf("%d",n3);
+//   fibonacci(n-1,n1,n2,n3); 
+// }
 
-int main()
-{
-    int n,n1,n2,n3;
-  printf("Enter the count");
-  scanf("%d",&n);
-   int result = fibonacci(n-2,n1,n2,n3);
-//    printf("%d%d\t",0,1);
-   printf("The numbers are:%d\t",result);
-   return 0;
-}
+// int main()
+// {
+//     int n,n1,n2,n3;
+//   printf("Enter the count");
+//   scanf("%d",&n);
+//    int result = fibonacci(n-2,n1,n2,n3);
+//   printf("%d%d\t",0,1);
+//    printf("The numbers are:%d\t",result);
+//    return 0;
+// }
 //palindrome check
 // int main()
 // {
@@ -281,7 +281,32 @@ int main()
 //     return 0;
 // }
 
+//Reverse word in a given string
+void reverseString(char *str) {
+    int len = strlen(str);
+    char *words[len];
+    int wordCount = 0;
+
+    // Split the string into words
+    char *token = strtok(str, " ");
+    while (token != NULL) {
+        words[wordCount++] = token;
+        token = strtok(NULL, " ");
+    }
+
+    // Reverse the words in the array
+    for (int i = wordCount - 1; i >= 0; i--) {
+        printf("%s ", words[i]);
+    }
+    printf("\n");
+}
 
 
+int main() {
+    char str[] = "reversed words in string";
+    reverseString(str);
+    printf("The reversed atring is %s");
+       return 0;
+}
 
 
