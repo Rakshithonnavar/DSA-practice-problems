@@ -169,7 +169,7 @@
 // {
 //   scanf("%d",&a[i]);
 // }
-// merge_sort(a,0,n-1,mid); 
+// merge_sort(a,0,n-1,m4id); 
 // printf("The array elements after sorting are :");
 // for(i=0;i<n;i++)
 // {
@@ -180,57 +180,57 @@
 
 //Quick sort
 
-void swap(int *a,int *b)
-{
-   int temp= *a;
-    *a=*b;
-    *b=temp;
-}
+// void swap(int *a,int *b)
+// {
+//    int temp= *a;
+//     *a=*b;
+//     *b=temp;
+// }
 
-int partition(int a[],int low,int high)
-{
+// int partition(int a[],int low,int high)
+// {
  
- int pivot = a[high];
- int i=low-1;
-  for(int j=low;j<=high;j++)
-  {
-    if(a[j]<pivot)
-    {
-      i++;
-      swap(&a[i],&a[j]);
-    }
-  }  
-  swap(&a[i+1],&a[high]);
-  return i+1;
-}
+//  int pivot = a[high];
+//  int i=low-1;
+//   for(int j=low;j<=high;j++)
+//   {
+//     if(a[j]<pivot)
+//     {
+//       i++;
+//       swap(&a[i],&a[j]);
+//     }
+//   }  
+//   swap(&a[i+1],&a[high]);
+//   return i+1;
+// }
 
-void quickSort(int a[],int low,int high)
-{
-  if(low<high)
-  {
-    int pi=partition(a,low,high);
-     quickSort(a,low,pi-1);
-     quickSort(a,pi+1,high);
-  }
-}
-int main()
-{
-  int a[100],i,n;
-  printf("Enter no elements: ");
-   scanf("%d",&n);
-  printf("Enter array elements");
-   for(i=0;i<n;i++)
-   {
-     scanf("%d",&a[i]);
-   }
-   quickSort(a,0,n-1);
-  printf("Then elements after sorting are:");
-    for(i=0;i<n;i++)
-    {
-      printf("%d\t",a[i]);
-    }
-    return 0;
-}
+// void quickSort(int a[],int low,int high)
+// {
+//   if(low<high)
+//   {
+//     int pi=partition(a,low,high);
+//      quickSort(a,low,pi-1);
+//      quickSort(a,pi+1,high);
+//   }
+// }
+// int main()
+// {
+//   int a[100],i,n;
+//   printf("Enter no elements: ");
+//    scanf("%d",&n);
+//   printf("Enter array elements");
+//    for(i=0;i<n;i++)
+//    {
+//      scanf("%d",&a[i]);
+//    }
+//    quickSort(a,0,n-1);
+//   printf("Then elements after sorting are:");
+//     for(i=0;i<n;i++)
+//     {
+//       printf("%d\t",a[i]);
+//     }
+//     return 0;
+// }
 
 //insertion Sort
 // void swap(int *a,int *b)
@@ -918,7 +918,7 @@ int main()
 // }
 
 
-#include<math.h>
+// #include<math.h>
 //Majority of element apparing graeter thean n/2 elements
 // int majority(int a[100],int n)
 // {
@@ -1208,69 +1208,81 @@ int main()
           //  {
             
 //Intersection of 2 arrays sorted in non-decreasing order:
-#include <stdio.h>
-#include <stdlib.h>
-/* Function to merge the two array */
-void merge(int *A, int m, int B[], int n)
-{
-  int i = 0, j = 0;
-  while (i < m && j < n)
-  {
-    /* Pick the smallest element from A and B */
-    if (A[i] <= B[j])
-    {
-      printf("%d ", A[i]);
-      i++;
-      }
-      else
-      {
-        printf("%d ",B[j]);
-        j++;
-        }
-        }
+// #include <stdio.h>
+// #include <stdlib.h>
+// /* Function to merge the two array */
+// void merge(int *A, int m, int B[], int n)
+// {
+//   int i = 0, j = 0;
+//   while (i < m && j < n)
+//   {
+//     /* Pick the smallest element from A and B */
+//     if (A[i] <= B[j])
+//     {
+//       printf("%d ", A[i]);
+//       i++;
+//       }
+//       else
+//       {
+//         printf("%d ",B[j]);
+//         j++;
+//         }
+//         }
         /* Print remaining elements of A */
-        while (i < m)
-        {
-          printf("%d ", A[i]);
-          i++;
-          }
-          /* Print remaining elements of B */
-          while (j < n)
-          {
-            printf("%d ", B[j]);
-            j++;
-            }
-            }
-            void sort(int arr[], int n)
-            {
-              int i, temp, min_index;
-              for (i = 1; i < n; i++)
-              {
-                min_index = i;
-                temp = arr[i];
-                /* Check the element is smaller than or equal to previous elements
-                If yes then compare with the element before that because it is already sorted */
-                while (min_index > 0 && arr[min_index - 1] >
-                temp)
-                min_index--;
-                /* Swap the element at 'min_index' with the element at 'i'.
-                This brings the 'smallest' element in front of 'arr[i]' */
-                arr[i] = arr[min_index];
-                arr[min_index] = temp;
-                }
-                // Implementing Insertion Sort
-                insertionSort(&arr[i], n-i);
-            }
-            int main()
-            {
-              int A[] = {3,5,2,8};
-              int B[] = {7,9,4,6};
-              int m = sizeof(A)/sizeof(A[0]);
-              int n = sizeof(B)/sizeof(B[0]);
-              merge(A, B, &m, &n);
-              return 0;
-              }
-         
+        // while (i < m)
+        // {
+        //   printf("%d ", A[i]);
+        //   i++;
+        //   }
+        //   /* Print remaining elements of B */
+        //   while (j < n)
+        //   {
+        //     printf("%d ", B[j]);
+        //     j++;
+        //     }
+        //     }
+        //     void sort(int arr[], int n)
+        //     {
+        //       int i, temp, min_index;
+        //       for (i = 1; i < n; i++)
+        //       {
+        //         min_index = i;
+        //         temp = arr[i];
+        //         /* Check the element is smaller than or equal to previous elements
+        //         If yes then compare with the element before that because it is already sorted */
+        //         while (min_index > 0 && arr[min_index - 1] >
+        //         temp)
+        //         min_index--;
+        //         /* Swap the element at 'min_index' with the element at 'i'.
+        //         This brings the 'smallest' element in front of 'arr[i]' */
+        //         arr[i] = arr[min_index];
+        //         arr[min_index] = temp;
+        //         }
+        //         // Implementing Insertion Sort
+        //         insertionSort(&arr[i], n-i);
+        //     }
+        //     int main()
+        //     {
+        //       int A[] = {3,5,2,8};
+        //       int B[] = {7,9,4,6};
+        //       int m = sizeof(A)/sizeof(A[0]);
+        //       int n = sizeof(B)/sizeof(B[0]);
+        //       merge(A, B, &m, &n);
+        //       return 0;
+        //       }
+
+
+  int main()
+  {
+    int a,b;
+    printf("Enter the numbers:");
+    scanf("%d%d",&a,&b);
+     a=a+b;
+     b=a-b;
+     a=a-b;
+     printf("The numbers after swapping are: %d\n%d",a,b);
+     return 0;
+  }         
 
               
 
