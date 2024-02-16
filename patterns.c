@@ -25,13 +25,10 @@
 //Priting star pattern
 int main()
 {
-// int i;
-// while(i<=10)
-// {
-//     i++;
-// }
-// printf("%d",i);
-// return 0;
-printf("Jai Shree Ram!");
+while(1)
+{
+    printf("Jai Shree Ram!\t");
+}
 return 0;
 }
+
