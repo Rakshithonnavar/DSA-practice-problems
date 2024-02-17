@@ -1272,17 +1272,46 @@
         //       }
 
 
-  int main()
-  {
-    int a,b;
-    printf("Enter the numbers:");
-    scanf("%d%d",&a,&b);
-     a=a+b;
-     b=a-b;
-     a=a-b;
-     printf("The numbers after swapping are: %d\n%d",a,b);
-     return 0;
-  }         
+//Basic Interview problems
+//Prime number 
+int main()
+{
+int n;
+scanf("%d",&n);
+if((n<0)&&(n%2==0))
+{
+  printf("prime number!");
+}
+else
+{
+  printf("Its not prime number.");
+}
+return 0;
+}
+
+//Fibonacci Series
+int Fibonacci(int n,int n1,int n2,int n3)
+{
+   n3=n1+n2;
+   n1=n2;
+   n2=n3;
+   printf("%d",n3);
+   Fibonacci(n-1,n1,n2,n3);
+}
+int main()
+{
+  int n,n1,n2,n3;
+  scanf("%d",&n);
+  int result = Fibonacci(n-1,n1,n2,n3);
+  printf("%d%d\t",0,1);
+  printf("The result is %d",result);
+  return 0;
+}
+
+
+
+
+       
 
               
 
