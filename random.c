@@ -1347,7 +1347,67 @@ int main()
   return 0;
 }
 
-//
+//Sum of digits in a program.
+int sum_of_digits(int n)
+{
+  int rem,sum=0;
+  while(n!=0)
+  {
+    rem=n%10;
+    sum+=rem;
+    n/=10;
+    }
+    return sum;
+}
+int main()
+{
+  int n;
+  scanf("%d",&n);
+  int result = sum_of_digits(n);
+  printf("The sum of digits is %d",result);
+  return 0;
+}
+
+//Check weather number is palindrome
+int palindrome_number(int n)
+{
+  int rem,rev=0;
+  while(n>0)
+  {
+    rem=n%10;
+    rev=(rev*10)+rem;
+    n/=10;
+  }
+  if (n==rev)
+  return 1;
+  else 
+  return 0;
+}
+int main()
+{
+  int n;
+  scanf("%d",&n);
+  int result = palindrome_number(n);
+  if(result==1)
+  {
+      printf("The number is palindrome");
+  }
+  else
+  {
+      printf("The number is not palindrome");
+  }
+
+  return 0;
+}
+
+
+
+
+
+  
+
+
+
 
 
 
