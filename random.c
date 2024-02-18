@@ -1308,6 +1308,51 @@ int main()
   return 0;
 }
 
+//Factorial of a num
+int factorial(int n)
+{
+   if(n<0)
+     {
+      printf("Enter number greater than zero!");
+      exit;
+     }
+  else if (n==0)
+    return 1;
+   else
+   return n*(factorial(n-1));
+}
+int main()
+{
+   int n;
+  scanf("%d",&n);
+  int result = factorial(n);
+  printf("The factorial of number is:%d",result);
+  return 0;
+}
+
+//program to check weather the year is leap year or not
+int leap(int year)
+{
+  return ((year%4 == 0 && year%100 != 0) || year%400 == 0)?1:0;
+}
+int main()
+{
+  int year;
+  scanf("%d",&year);
+  int result = leap(year);
+  if(result == 1)
+  printf("The year %d is leap year",year);
+  else
+  printf("The year %d is not leap year",year);
+  return 0;
+}
+
+//
+
+
+
+
+
 
 
 
