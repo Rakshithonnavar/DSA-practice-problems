@@ -1399,9 +1399,20 @@ int main()
 
   return 0;
 }
-
-
-
+//Find the lucky number
+int lucky(int n)
+{
+   return (n%9)==0?9:n%9;
+}
+//Driver code:
+int main()
+{
+  int n;
+  scanf("%d",&n);
+  int result = lucky(n);
+  printf("The lucky number is %d",lucky);
+  return 0;
+}
 
 
   
