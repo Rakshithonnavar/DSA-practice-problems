@@ -1404,6 +1404,17 @@ int lucky(int n)
 {
    return (n%9)==0?9:n%9;
 }
+//Pattern printing
+int main()
+{
+  int n;
+   for(int i=0;i<n;i++)
+   {
+     for(int j=i;j<n-i-1;j++)
+       printf("*\t");
+     printf("\n");
+   }
+}
 //Driver code:
 int main()
 {
