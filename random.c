@@ -1425,6 +1425,24 @@ int main()
   return 0;
 }
 
+//Reverse a string:
+int main()
+{
+  char str[100];
+  int len = strlen(str);
+  int start=0,end=len-1;
+  printf("Enter the string:");
+  scanf("%s",str);
+  for(int i=0;i<len/2;i++)
+  {
+    while(start<end)
+    {
+
+    }
+  } 
+return 0;
+}
+
 
 
   

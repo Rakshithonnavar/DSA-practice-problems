@@ -25,10 +25,8 @@
 //Priting star pattern
 int main()
 {
-while(1)
-{
     printf("Jai Shree Ram!\t");
-}
 return 0;
 }
+
 
