@@ -1425,23 +1425,25 @@ int main()
   return 0;
 }
 
-//Reverse a string:
+//Reverse a string using recursion:
+void revstr(char *str)
+{
+  int len = strlen(str),i;
+  if(i<len/2)
+  {
+     int temp = str[i];
+     str[i] = str[len-i-1];
+     str[len-i-1]=temp;
+      i++;
+      revstr(str);
+  }
+}
+
 int main()
 {
-  char str[100];
-  int len = strlen(str);
-  int start=0,end=len-1;
-  printf("Enter the string:");
-  scanf("%s",str);
-  for(int i=0;i<len/2;i++)
-  {
-    while(start<end)
-    {
-      
-    }
-  } 
-return 0;
+   
 }
+ 
 
 
 
