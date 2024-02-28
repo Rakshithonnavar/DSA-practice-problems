@@ -1441,7 +1441,12 @@ void revstr(char *str)
 
 int main()
 {
-   
+   char str[100];
+   printf(" Enter the String:");
+   scanf("%s",str);
+   revstr(str);
+   printf("The reversed string is :%s\n",str);
+   return 0;
 }
  
 
