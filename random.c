@@ -1,3 +1,5 @@
+//*************THIS FILE CONSISTS OF RANDOMLY SOLVED CODING PROBLEMS FROM INTERVIEW'S AND OTHER TICKY PROBLEMS:**************
+
 #include<stdlib.h>
 #include<stdio.h>
 #include<string.h>
@@ -1274,185 +1276,250 @@
 
 //Basic Interview problems
 //Prime number 
+// int main()
+// {
+// int n;
+// scanf("%d",&n);
+// if((n<0)&&(n%2==0))
+// {
+//   printf("prime number!");
+// }
+// else
+// {
+//   printf("Its not prime number.");
+// }
+// return 0;
+// }
+
+// //Fibonacci Series
+// int Fibonacci(int n,int n1,int n2,int n3)
+// {
+//    n3=n1+n2;
+//    n1=n2;
+//    n2=n3;
+//    printf("%d",n3);
+//    Fibonacci(n-1,n1,n2,n3);
+// }
+// int main()
+// {
+//   int n,n1,n2,n3;
+//   scanf("%d",&n);
+//   int result = Fibonacci(n-1,n1,n2,n3);
+//   printf("%d%d\t",0,1);
+//   printf("The result is %d",result);
+//   return 0;
+// }
+
+// //Factorial of a num
+// int factorial(int n)
+// {
+//    if(n<0)
+//      {
+//       printf("Enter number greater than zero!");
+//       exit;
+//      }
+//   else if (n==0)
+//     return 1;
+//    else
+//    return n*(factorial(n-1));
+// }
+// int main()
+// {
+//    int n;
+//   scanf("%d",&n);
+//   int result = factorial(n);
+//   printf("The factorial of number is:%d",result);
+//   return 0;
+// }
+
+// //program to check weather the year is leap year or not
+// int leap(int year)
+// {
+//   return ((year%4 == 0 && year%100 != 0) || year%400 == 0)?1:0;
+// }
+// int main()
+// {
+//   int year;
+//   scanf("%d",&year);
+//   int result = leap(year);
+//   if(result == 1)
+//   printf("The year %d is leap year",year);
+//   else
+//   printf("The year %d is not leap year",year);
+//   return 0;
+// }
+
+// //Sum of digits in a program.
+// int sum_of_digits(int n)
+// {
+//   int rem,sum=0;
+//   while(n!=0)
+//   {
+//     rem=n%10;
+//     sum+=rem;
+//     n/=10;
+//     }
+//     return sum;
+// }
+// int main()
+// {
+//   int n;
+//   scanf("%d",&n);
+//   int result = sum_of_digits(n);
+//   printf("The sum of digits is %d",result);
+//   return 0;
+// }
+
+// //Check weather number is palindrome
+// int palindrome_number(int n)
+// {
+//   int rem,rev=0;
+//   while(n>0)
+//   {
+//     rem=n%10;
+//     rev=(rev*10)+rem;
+//     n/=10;
+//   }
+//   if (n==rev)
+//   return 1;
+//   else 
+//   return 0;
+// }
+// int main()
+// {
+//   int n;
+//   scanf("%d",&n);
+//   int result = palindrome_number(n);
+//   if(result==1)
+//   {
+//       printf("The number is palindrome");
+//   }
+//   else
+//   {
+//       printf("The number is not palindrome");
+//   }
+
+//   return 0;
+// }
+// //Find the lucky number
+// int lucky(int n)
+// {
+//    return (n%9)==0?9:n%9;
+// }
+// //Pattern printing
+// int main()
+// {
+//   int n;
+//    for(int i=0;i<n;i++)
+//    {
+//      for(int j=i;j<n-i-1;j++)
+//        printf("*\t");
+//      printf("\n");
+//    }
+// }
+// //Driver code:
+// int main()
+// {
+//   int n;
+//   scanf("%d",&n);
+//   int result = lucky(n);
+//   printf("The lucky number is %d",lucky);
+//   return 0;
+// }
+
+// //Reverse a string using recursion:
+// void revstr(char *str)
+// {
+//   int len = strlen(str),i;
+//   if(i<len/2)
+//   {
+//      int temp = str[i];
+//      str[i] = str[len-i-1];
+//      str[len-i-1]=temp;
+//       i++;
+//       revstr(str);
+//   }
+// }
+
+// int main()
+// {
+//    char str[100];
+//    printf(" Enter the String:");
+//    scanf("%s",str);
+//    revstr(str);
+//    printf("The reversed string is :%s\n",str);
+//    return 0;
+// }
+
 int main()
 {
-int n;
-scanf("%d",&n);
-if((n<0)&&(n%2==0))
-{
-  printf("prime number!");
-}
-else
-{
-  printf("Its not prime number.");
-}
-return 0;
+   int a,b;
+   scanf("%d%d",&a,&b);
+   a=a+b;
+   b=a+b;
+   a=a-b;
+   printf("The numbers after swapping are : a=%d and b=%d",a,b);
+   return 0;
 }
 
-//Fibonacci Series
-int Fibonacci(int n,int n1,int n2,int n3)
+int Print(n)
 {
-   n3=n1+n2;
-   n1=n2;
-   n2=n3;
-   printf("%d",n3);
-   Fibonacci(n-1,n1,n2,n3);
-}
-int main()
-{
-  int n,n1,n2,n3;
-  scanf("%d",&n);
-  int result = Fibonacci(n-1,n1,n2,n3);
-  printf("%d%d\t",0,1);
-  printf("The result is %d",result);
-  return 0;
+ if(n>=0)
+ {
+  Print(n-1);
+  printf("%d",n);
+ }
 }
 
-//Factorial of a num
-int factorial(int n)
+//Fibonacci using recursion 
+int fibonacci(int n)
 {
-   if(n<0)
-     {
-      printf("Enter number greater than zero!");
-      exit;
-     }
-  else if (n==0)
+  if(n==0)
+    return 0;
+  if(n==1)
     return 1;
-   else
-   return n*(factorial(n-1));
+  else
+     return (fibonacci(n-1)+fibonacci(n-2));
 }
 int main()
 {
    int n;
-  scanf("%d",&n);
-  int result = factorial(n);
-  printf("The factorial of number is:%d",result);
-  return 0;
-}
-
-//program to check weather the year is leap year or not
-int leap(int year)
-{
-  return ((year%4 == 0 && year%100 != 0) || year%400 == 0)?1:0;
-}
-int main()
-{
-  int year;
-  scanf("%d",&year);
-  int result = leap(year);
-  if(result == 1)
-  printf("The year %d is leap year",year);
-  else
-  printf("The year %d is not leap year",year);
-  return 0;
-}
-
-//Sum of digits in a program.
-int sum_of_digits(int n)
-{
-  int rem,sum=0;
-  while(n!=0)
-  {
-    rem=n%10;
-    sum+=rem;
-    n/=10;
-    }
-    return sum;
-}
-int main()
-{
-  int n;
-  scanf("%d",&n);
-  int result = sum_of_digits(n);
-  printf("The sum of digits is %d",result);
-  return 0;
-}
-
-//Check weather number is palindrome
-int palindrome_number(int n)
-{
-  int rem,rev=0;
-  while(n>0)
-  {
-    rem=n%10;
-    rev=(rev*10)+rem;
-    n/=10;
-  }
-  if (n==rev)
-  return 1;
-  else 
-  return 0;
-}
-int main()
-{
-  int n;
-  scanf("%d",&n);
-  int result = palindrome_number(n);
-  if(result==1)
-  {
-      printf("The number is palindrome");
-  }
-  else
-  {
-      printf("The number is not palindrome");
-  }
-
-  return 0;
-}
-//Find the lucky number
-int lucky(int n)
-{
-   return (n%9)==0?9:n%9;
-}
-//Pattern printing
-int main()
-{
-  int n;
-   for(int i=0;i<n;i++)
-   {
-     for(int j=i;j<n-i-1;j++)
-       printf("*\t");
-     printf("\n");
-   }
-}
-//Driver code:
-int main()
-{
-  int n;
-  scanf("%d",&n);
-  int result = lucky(n);
-  printf("The lucky number is %d",lucky);
-  return 0;
-}
-
-//Reverse a string using recursion:
-void revstr(char *str)
-{
-  int len = strlen(str),i;
-  if(i<len/2)
-  {
-     int temp = str[i];
-     str[i] = str[len-i-1];
-     str[len-i-1]=temp;
-      i++;
-      revstr(str);
-  }
-}
-
-int main()
-{
-   char str[100];
-   printf(" Enter the String:");
-   scanf("%s",str);
-   revstr(str);
-   printf("The reversed string is :%s\n",str);
+   scanf("%d",&n);
+   int result = fibonacci(n);
+   printf("the fibonnaci series are :%d\n",result);
    return 0;
 }
- 
 
+//
+void swap(int *a,int *b)
+{
+   int temp = *a;
+   *a=*b;
+   *b=temp;
+}
+void sort(int a[100],int n)
+{
+   for(int i=0;i<n;i++)
+   {
+     for(int j=0;j<n;j++)
+     {
+       if(a[j]>a[j+1])
+         swap(&a[i],&a[j]);
+     }
+   }
+}
 
+int large_small(int arr[100],int n)
+{
+    sort(arr,n);
+    int max = arr[0];
+    int min = arr[n-1];
+}
 
+int main()
+{
   
+}
 
 
 
