@@ -2,29 +2,43 @@
 #include<stdio.h>
 #include<string.h>
 #include<limits.h>
+#define  MAX 100
 
-int push(int ele)
-{
-    int stack[100];
+int stack[100];
 int top=-1;
+void push(int ele)
+{
+   if(top==MAX-1)
+   {
+      printf("Stack Overflow");
+   }
+   else{
 top++;
 stack[top] = ele;
 }
+}
 
-int pop(int ele)
+void pop(int ele)
 {   
-int stack[100];
-   int top;
-   if(top==-1)
+   if(top==-1){
    printf("Underflow");
-   else
+   return -1;
+   }
+   else{
    ele = stack[top];
    top--;
+   return ele;
 }
+}
+
 
 int main()
 {
   int ele;
    push(3);
-   pop(4);
+   push(4);
+   push(5);
+   push(4);
+   // printf("%d",stack[top]);
+   return 0;
 }

@@ -1451,44 +1451,44 @@
 //    return 0;
 // }
 
-int main()
-{
-   int a,b;
-   scanf("%d%d",&a,&b);
-   a=a+b;
-   b=a+b;
-   a=a-b;
-   printf("The numbers after swapping are : a=%d and b=%d",a,b);
-   return 0;
-}
+// int main()
+// {
+//    int a,b;
+//    scanf("%d%d",&a,&b);
+//    a=a+b;
+//    b=a+b;
+//    a=a-b;
+//    printf("The numbers after swapping are : a=%d and b=%d",a,b);
+//    return 0;
+// }
 
-int Print(n)
-{
- if(n>=0)
- {
-  Print(n-1);
-  printf("%d",n);
- }
-}
+// int Print(n)
+// {
+//  if(n>=0)
+//  {
+//   Print(n-1);
+//   printf("%d",n);
+//  }
+// }
 
-//Fibonacci using recursion 
-int fibonacci(int n)
-{
-  if(n==0)
-    return 0;
-  if(n==1)
-    return 1;
-  else
-     return (fibonacci(n-1)+fibonacci(n-2));
-}
-int main()
-{
-   int n;
-   scanf("%d",&n);
-   int result = fibonacci(n);
-   printf("the fibonnaci series are :%d\n",result);
-   return 0;
-}
+// //Fibonacci using recursion 
+// int fibonacci(int n)
+// {
+//   if(n==0)
+//     return 0;
+//   if(n==1)
+//     return 1;
+//   else
+//      return (fibonacci(n-1)+fibonacci(n-2));
+// }
+// int main()
+// {
+//    int n;
+//    scanf("%d",&n);
+//    int result = fibonacci(n);
+//    printf("the fibonnaci series are :%d\n",result);
+//    return 0;
+// }
 
 //
 void swap(int *a,int *b)
@@ -1509,16 +1509,21 @@ void sort(int a[100],int n)
    }
 }
 
-int large_small(int arr[100],int n)
-{
-    sort(arr,n);
-    int max = arr[0];
-    int min = arr[n-1];
-}
-
 int main()
 {
-  
+  int arr[100],n;
+  printf("Enter the elements");
+  scanf("%d",&n);
+  printf("Array elements");
+  for(int i=0;i<n;i++)
+  {
+     scanf("%d",&arr[i]);
+  }
+     sort(arr,n);
+    int min = arr[0];
+    int max = arr[n-1];
+  printf("Maximum element is %d and minimum element is %d",max,min);
+  return 0;
 }
 
 
