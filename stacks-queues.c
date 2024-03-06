@@ -161,7 +161,6 @@ int top=-1;
 
 void push(int ele)
 {  
-   count=0;
    if(top==size-1)
    {
       printf("Stack overflow");
@@ -190,9 +189,8 @@ int pop()
 
 int nextGreater(int arr[100],int n)
 {
-
-   for(int i=0;i<n;i++)
-   {
+for(int i=0;i<n;i++)
+{
    while(top!=-1 && arr[i] > arr[stack[top]])
    {
     nge[stack[top]] = arr[i];
@@ -200,12 +198,84 @@ int nextGreater(int arr[100],int n)
    }
    push(i);
 }
-   while(top !=-1)
+   while(top!=-1)
    {
       nge[stack[top]] =-1;
       pop;
    }
+}
+
+//Largest Rectangle in Histogram:
+
+#define size 100
+int stack[100];
+int top=-1;
+void push(int ele)
+{
+    if(top=size-1)
+    {
+       printf("Stack is full");
+    }
+    else
+    {
+      top=top+1;
+      stack[top]=ele;
+    }
+}
+
+int pop()
+{
+   int ele;
+   if(top==-1)
+   {
+       printf("Stack is empty");
+       return -1;
    }
+   else
+   {
+      ele = stack[top];
+      top--;
+      return ele; 
+   }
+    
+}
+int max(int a,int b)
+{
+    return (a>b)?a:b;
+}
+int largestRectangle(int n,int hist[n])
+{
+   int maxA=0;
+   for(int i=0;i<=n;i++)
+   {
+      while(top!=-1 &&(i==n || hist[i]>=hist[stack[top]]))
+      {
+          int height = hist[stack[top]];
+          pop;
+          int width;
+          if(top==-1)
+            width=i;
+         else 
+           width= i-top-1;
+           maxA = max(maxA,width*height);
+      }
+      push(i);
+   }
+   return maxA;
+}
+int main()
+{    
+    int hist[100],n;
+    printf("Enter the count");
+    scanf("%d",&n);
+    printf("Enter the array elements");
+    for(int i=0;i<n;i++){
+        scanf("%d",&hist[i]);
+    }
+    int result = largestRectangle(n,hist);
+    printf("Largest area of the rectangle in histogram is: %d\n",result);
+    return 0;
+}
 
 
    
