@@ -4,6 +4,8 @@
 #include<stdio.h>
 #include<string.h>
 #include<limits.h>
+#include<math.h>
+
 
 // int a[100],i,n,low,high,key,mid,pos=-1;
 // printf("Enter the number of elements ");
@@ -1491,40 +1493,91 @@
 // }
 
 //
-void swap(int *a,int *b)
+// void swap(int *a,int *b)
+// {
+//    int temp = *a;
+//    *a=*b;
+//    *b=temp;
+// }
+// void sort(int a[100],int n)
+// {
+//    for(int i=0;i<n;i++)
+//    {
+//      for(int j=0;j<n;j++)
+//      {
+//        if(a[j]>a[j+1])
+//          swap(&a[i],&a[j]);
+//      }
+//    }
+// }
+
+// int main()
+// {
+//   int arr[100],n;
+//   printf("Enter the elements");
+//   scanf("%d",&n);
+//   printf("Array elements");
+//   for(int i=0;i<n;i++)
+//   {
+//      scanf("%d",&arr[i]);
+//   }
+//      sort(arr,n);
+//     int min = arr[0];
+//     int max = arr[n-1];
+//   printf("Maximum element is %d and minimum element is %d",max,min);
+//   return 0;
+// }
+
+
+int  isPowerofTwo(int n)
 {
-   int temp = *a;
-   *a=*b;
-   *b=temp;
-}
-void sort(int a[100],int n)
-{
-   for(int i=0;i<n;i++)
+   if(n==0)
+      return 0;
+   else 
    {
-     for(int j=0;j<n;j++)
-     {
-       if(a[j]>a[j+1])
-         swap(&a[i],&a[j]);
-     }
+    return (ceil(log2(n))==floor(log2(n)));
    }
 }
-
 int main()
 {
-  int arr[100],n;
-  printf("Enter the elements");
+  int n;
   scanf("%d",&n);
-  printf("Array elements");
-  for(int i=0;i<n;i++)
-  {
-     scanf("%d",&arr[i]);
-  }
-     sort(arr,n);
-    int min = arr[0];
-    int max = arr[n-1];
-  printf("Maximum element is %d and minimum element is %d",max,min);
+  return isPowerofTwo?1:0;
   return 0;
 }
+
+//buy and sell stocks to maximize profit:
+int stockBuySell(int price[100],int n)
+{
+     if(n==1);
+       return 0;
+      int i=0;
+      while(i<n-1)  //Local Minima 
+      {
+        while(i<n-1 && price[i+1]<=price[i])
+        {
+          i++;
+        }
+        if(i==n-1);
+         break;
+      }
+      int buy = i++;
+      while(i<n && price[i]<=price[i+1])
+      {
+        i++;
+      }
+      int sell =i-1;
+      printf("Buy on %d, Sell on %d\n",buy,sell);  
+}
+
+//Count pairs in given array:
+// #define size 100
+// int countPairs(int arr[100],int n)
+// {
+//   int count=0;
+//   int map[100];
+// }
+
 
 
 
