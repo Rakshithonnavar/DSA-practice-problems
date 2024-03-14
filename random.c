@@ -1529,46 +1529,46 @@
 // }
 
 
-int  isPowerofTwo(int n)
-{
-   if(n==0)
-      return 0;
-   else 
-   {
-    return (ceil(log2(n))==floor(log2(n)));
-   }
-}
-int main()
-{
-  int n;
-  scanf("%d",&n);
-  return isPowerofTwo?1:0;
-  return 0;
-}
+// int  isPowerofTwo(int n)
+// {
+//    if(n==0)
+//       return 0;
+//    else 
+//    {
+//     return (ceil(log2(n))==floor(log2(n)));
+//    }
+// }
+// int main()
+// {
+//   int n;
+//   scanf("%d",&n);
+//   return isPowerofTwo?1:0;
+//   return 0;
+// }
 
 //buy and sell stocks to maximize profit:
-int stockBuySell(int price[100],int n)
-{
-     if(n==1);
-       return 0;
-      int i=0;
-      while(i<n-1)  //Local Minima 
-      {
-        while(i<n-1 && price[i+1]<=price[i])
-        {
-          i++;
-        }
-        if(i==n-1);
-         break;
-      }
-      int buy = i++;
-      while(i<n && price[i]<=price[i+1])
-      {
-        i++;
-      }
-      int sell =i-1;
-      printf("Buy on %d, Sell on %d\n",buy,sell);  
-}
+// int stockBuySell(int price[100],int n)
+// {
+//      if(n==1);
+//        return 0;
+//       int i=0;
+//       while(i<n-1)  //Local Minima 
+//       {
+//         while(i<n-1 && price[i+1]<=price[i])
+//         {
+//           i++;
+//         }
+//         if(i==n-1);
+//          break;
+//       }
+//       int buy = i++;
+//       while(i<n && price[i]<=price[i+1])
+//       {
+//         i++;
+//       }
+//       int sell =i-1;
+//       printf("Buy on %d, Sell on %d\n",buy,sell);  
+// }
 
 //Count pairs in given array:
 // #define size 100
@@ -1579,6 +1579,38 @@ int stockBuySell(int price[100],int n)
 // }
 
 
+//Sorting elements using quick sort:
+int swap(int *a,int*b)
+{
+  int temp = *a;
+  *a=*b;
+  *b=temp;
+}
+
+int partition(int arr[100],int low,int high)
+{
+   int pivot = arr[high];
+    int i=low-1;
+    for(int j=low;j<=high;j++)
+    {
+      if(arr[j]<pivot)
+      {
+        swap(&arr[i],&arr[j]);
+      }
+    }
+    swap(&arr[i+1],arr[high]);
+    return i+1;
+}
+
+void quick_sort(int arr[],int low,int high)
+{
+  if(low<high)
+  {
+    int pi= partition(arr,low,high);
+    quick_sort(arr,low,pi-1);
+    quick_sort(arr,pi+1,high);
+  }
+}
 
 
 
