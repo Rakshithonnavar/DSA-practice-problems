@@ -1,5 +1,6 @@
-#include<stdlib.h>
+
 #include<stdio.h>
+
 void right_rotate(int a[], int n, int outofplace);
 
 void negetive_positive(int a[],int n)
