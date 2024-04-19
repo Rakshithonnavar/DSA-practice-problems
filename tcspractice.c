@@ -1,13 +1,16 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<limits.h>
+
 
 
 
 
 //Highest Factor or  kth largest factor of n, problem
-int highestfactor(int k,int k)
-    int store[100];
+int highestfactor(int n,int k)
+    // int store[100];
 {
+    int i;
     for(int i=n;i>0;i--)
     {
         if(n%i==0)
@@ -36,7 +39,7 @@ int difference(int arr[100],int k,int n)
 
 int main()
 {
-    int arr[100],n;
+    int a[100],n;
     printf("Enter the number of elements");
     scanf("%d",&n);
     printf("Enter the array elements");
@@ -82,6 +85,7 @@ int main()
 int main()
 {
     int v,w;
+    float ans;
     printf("Enter the vehicle count");
     scanf("%d",&v);
     printf("Enter the wheels count");
@@ -91,9 +95,9 @@ int main()
         printf("Invalid Inputs");
     }
     else{
-        float ans  = ((4*v)-w)/2; //Main logic line 
+        ans  = ((4*v)-w)/2; //Main logic line 
     }
-    printf("The two wheeers & four heel that can be mad are %d & %d ",ans,v-ans);
+    printf("The two wheeers & four heel that can be mad are %d & %d",ans,v-ans);
     return 0;
 }
 
@@ -144,5 +148,68 @@ int main()
    return 0;
 }
 
+//Understanding entactment:
 
+int main()
+{
+ int n,z;
+ int arr[100];
+ printf("Enter the number of elements");
+ scanf("%d",&n);
+ printf("Enter the array elements:");
+   for(int i=0;i<n;i++)
+   {
+     scanf("%d",&arr[i]);
+   }
+  for(int i=1;i<n;i++)
+  {
+     if(arr[0]==arr[i])
+     {
+        z++;
+     }
+  }
+  prinf("%d",n-z-1);
+  return 0;
+}
+//Finding horses problem:
+int find_horses(int a[100],int n,int k)
+{
+    int sum=0,m;
+    int max1= INT_MIN;
+    for(int i=1;i<n;i++)
+    {
+        sum+=a[i];
+      for(int j=1;j<m;j++)
+      {
+        sum+=a[j];
+        if(sum<=k)
+        {
+            m=j-i+1;
+            max1 = max(max1,m);
+
+        }
+        else{
+            break;
+        }
+      }
+    }
+    return max1;
+}
+    // int len  =  strlen();
+
+int main()
+{
+     int a[100],n,k;
+     printf("Enter the number of horses:");
+     scanf("%d",&n);
+     printf("Enter the counts:");
+     for(int i=0;i<n;i++)
+     {
+        scanf("%d",&a[i]);
+     }
+     printf("Enter the reward money:");
+     scanf("%d",&k);
+     int result = find_horses(int n,int k);
+
+}
 
