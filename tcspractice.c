@@ -2,10 +2,6 @@
 #include<stdlib.h>
 #include<limits.h>
 
-
-
-
-
 //Highest Factor or  kth largest factor of n, problem
 int highestfactor(int n,int k)
     // int store[100];
@@ -20,9 +16,10 @@ int highestfactor(int n,int k)
       return i;
     return -1;
 }
+
 //target difference problem
 int count=0;
-int difference(int arr[100],int k,int n)
+int difference(int a[100],int k,int n)
 {
    for(int i=0;i<n;i++)
    {
@@ -39,7 +36,7 @@ int difference(int arr[100],int k,int n)
 
 int main()
 {
-    int a[100],n;
+    int a[100],n,k;
     printf("Enter the number of elements");
     scanf("%d",&n);
     printf("Enter the array elements");
@@ -47,7 +44,7 @@ int main()
     {
         scanf("%d",&a[i]);
     }
-     int result = difference(arr,k,n);
+     int result = difference(a,k,n);
      printf("The total of possible pairs are:%d",result);
     return 0;
 }
@@ -171,6 +168,7 @@ int main()
   prinf("%d",n-z-1);
   return 0;
 }
+
 //Finding horses problem:
 int find_horses(int a[100],int n,int k)
 {
@@ -186,16 +184,16 @@ int find_horses(int a[100],int n,int k)
         {
             m=j-i+1;
             max1 = max(max1,m);
-
         }
-        else{
+        else
+        {
             break;
         }
       }
     }
     return max1;
 }
-    // int len  =  strlen();
+    
 
 int main()
 {
@@ -209,7 +207,124 @@ int main()
      }
      printf("Enter the reward money:");
      scanf("%d",&k);
-     int result = find_horses(int n,int k);
-
+     int result = find_horses(a,n,k);
+     printf("The maximum lengh is %d",result);
+     return 0;
 }
+
+//Fiding rooms problems:
+int main()
+{
+    int k,n,arr[100];
+    printf("Enter the number of rooms:");
+    scanf("%d",&n);
+    printf("Enter the target sum:");
+    scanf("%d",&k);
+    for(int i=0;i<n;i++)
+    { 
+        int sum=0;
+        for(int j=i;j<n;j++)
+        {
+            sum+=arr[j];
+            if(sum==k)
+            {
+                printf("The value are %d & %d",i+1,j+1);
+                return ;
+            }
+        }
+    }
+}
+
+//Pattern problems for tcs nqt:
+//Right half pyramid:
+int main()
+{
+    int i,j,rows;
+    printf("Enter the no of rows:");
+    scanf("%d",&rows);
+    for(int i=1;i<=rows;++i)
+    {
+        for(int j=1;j<=i;++j)
+        {
+            printf("*");
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+//Priting numbers from 1-10:
+int main()
+{
+    int rows;
+    scanf("%d",&rows);
+    for(int i=0;i<=rows;i++)
+    {
+        for(int j=1;j<=i;j++)
+        {
+            printf("%d",j);
+        }
+    }
+    return 0;
+}
+
+//Inverse pyramid of numbers:
+  int main()
+  {
+    int rows;
+    printf("Enter the numb er of rows:");
+    scanf("%d",&rows);
+    for(int i=rows;i<=1;--i)
+    {
+        for(int j=1;j<i;++j)
+        {
+            printf("*");
+        }
+        printf("\n");
+    }
+    return 0;
+  }
+
+//Full Pyraamid 
+int main()
+{
+    int rows,space,k;
+    for(int i=1;i<=rows;++i, k=0)
+    {
+         for(space=1;space<=rows-1;++space)
+         {
+            printf(" ");
+         }
+         while(k!=2*i-1)
+         {
+            printf("*");
+            ++k;
+         }
+         printf("\n");
+    }
+    return 0;
+}
+
+
+//Full pyramid of numbers :
+
+int main()
+{
+    int rows,space,k;
+    for(int i=1;i<=rows;--i,k=0)
+    {
+        for(space=1;space<=rows-1;--space)
+        {
+           printf(" ");
+        }
+        while(k!=2*i-1)
+        {
+            printf("%d",i);
+            ++k;
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
 
