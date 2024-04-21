@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<limits.h>
+#include<limits.h>
 
 //Highest Factor or  kth largest factor of n, problem
 int highestfactor(int n,int k)
@@ -429,3 +430,58 @@ int main()
 }
 
 
+//Coverting a string A to B by performig some operations:
+void swap(char a[100],char b[100])
+{
+   int temp = a;
+      a = b;
+      b = temp;
+}
+
+int main()
+{
+    char A[100];
+    char B[100]; 
+    int cost = 0;
+    int len = strlen(A);
+    for(int i=0;i<len;i++)
+    {
+       if(A[i]!=B[i])
+       {
+           if(i<len-1 && A[i+1]!=B[i+1])
+           {
+            swap(A[i],A[i+1]);
+            cost++;
+           }
+           else{
+               cost++;
+           }
+       }
+    }
+    return cost;  
+}
+
+//Risk rating in array elements:
+int main()
+{
+ int n, arr[100],l=0,m=0,high=n-1;
+ printf("Enter the number of elemenets:");
+ scanf("%d",&n);
+ printf("Entre the arrya elements in range of 0-2:");
+ for(int i=0;i<n;i++){
+    scanf("%d",&arr[i]);
+ }
+ while(m<=high)
+ if(arr[m]==0)
+ {
+    swap(arr[l++],arr[m++]);
+ }
+ else if(arr[m]==1)
+ {
+   m++;
+ }
+ else 
+ {
+ swap(arr[m],arr[high--]);
+ }
+}
