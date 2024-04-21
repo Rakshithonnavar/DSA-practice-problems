@@ -310,20 +310,121 @@ int main()
 
 int main()
 {
-    int rows,space,k;
+    int rows,space,k,count1;
+    printf("Enter the no of rows:");
+    scanf("%d",&rows);
     for(int i=1;i<=rows;--i,k=0)
     {
-        for(space=1;space<=rows-1;--space)
+        for(space=1;space<=rows-1;++space)
         {
            printf(" ");
+           ++count;
         }
         while(k!=2*i-1)
         {
-            printf("%d",i);
-            ++k;
+            if(count<=rows-1){
+            printf("%d",i+k);
+            ++count;
         }
+        else{
+            ++count;
+            printf("%d",(i+k-2*count1));
+        }
+        ++k;
+        }
+        count1 = count=k=0;
         printf("\n");
     }
+    return 0;
+}
+
+//Pascal'triangle:
+int main()
+{
+    int rows,space,count=1;
+    printf("Enter the no of rows:");
+    scanf("%d",&rows);
+    for(int i=0;i<rows;i++)
+    {
+        for(space=1;space<=rows-1;space++)
+        {
+           printf("*");
+        }
+        for(int j=0;j<=i;j++)
+        {
+            if(j==0||i==0)
+            {
+               count=1;
+            }
+            else
+            {
+                count*=(i-j+1)/j;
+                printf("%4d",count);
+            }
+            printf("\n");
+        }
+    }
+    return 0;
+}
+
+//Floyd's Triangle:
+
+int main()
+{
+   int rows,i,j,number=1;
+   printf("Enter the number of rows:");
+   scanf("%d",&rows);
+   for(int i=1;i<=rows;i++)
+   {
+    for(j=1;j<i;j++)
+    {
+        printf("%d",&number);
+        ++number;
+    }
+    printf("\n");
+   } 
+   return 0;
+}
+
+//Arranging accordig to the board numbers :
+
+int main()
+{
+    int n,arr[100],b[100],ans=0;
+    printf("Enter the student count:");
+    scanf("%d",&n);
+    printf("Enter the Jersey numbers in increasing order");
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+    printf("Enter the board numbers:");
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&b[i]);
+    }
+    while(1){
+    int store[100];
+    ans++;
+    for(int i=0;i<=n;i++)   //looping throug the elements and then sring the shifed arrya in another arryay
+    {
+       store[i]==arr[b[i]-1];
+    }
+     int sorted =1;
+      for(int i=0;i<n-1;i++)
+      {
+        if(store[i]>store[i+1])
+        {
+            sorted=0;
+            break;
+        }
+      }
+      if(sorted)
+      {
+        break;
+      }
+    }
+    printf("Number of iterations needed are %d\n",ans);
     return 0;
 }
 
