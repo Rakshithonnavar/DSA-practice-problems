@@ -485,3 +485,20 @@ int main()
  swap(arr[m],arr[high--]);
  }
 }
+
+//Finding  the priduct price n:
+int main()
+{  
+    int  n;
+    int  product=1;
+    printf("Enter the value of n");
+    scanf("%d",&n);
+    while(n>0)
+    {
+        int digit = n%10;
+        product*= digit;
+        n/=10;
+    }
+    printf("The result value is %d",product);
+    return 0;
+}
