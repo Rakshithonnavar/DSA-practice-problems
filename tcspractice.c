@@ -502,3 +502,12 @@ int main()
     printf("The result value is %d",product);
     return 0;
 }
+
+//Program to priting consecutive prime numbef within an array:
+int msin()
+{
+    int prime[100];
+    int store[200];
+     int ans =0;
+     
+}
