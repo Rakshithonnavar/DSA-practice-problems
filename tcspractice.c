@@ -504,10 +504,164 @@ int main()
 }
 
 //Program to priting consecutive prime numbef within an array:
-int msin()
+int main()
 {
     int prime[100];
     int store[200];
-     int ans =0;
-     
+    int ans =0;
+    int n;
+
+   prime[0]=prime[1] = true;
+   for(int p=2;p<=n;p++)
+   {
+    if(!prime[p])
+    {
+       store[ans++]=p;
+       for(int i= p*p;i<=n;i+=p)
+       {
+        prime[i] = true;
+       }        
+    }
+   }
+     int sum=2;
+     for(int i=1;i<ans;i++)
+     {
+        sum+=store[i];
+        if(sum>n)
+          break;
+        if(!prime[sum])
+        {
+            ans++;
+        }
+     }
+     printf("%d\n",ans);
+     return 0;
+    }
+
+    //Choosimg the right option:
+    int main()
+    {
+        int offer[2],installments,year,roi,principle,sum=0,square;
+        printf("Entre the principle value");
+        scanf("%d",&principle);
+        printf("Enter the year");
+        scanf("%d",&year);
+        printf("Enter the installaments");
+        scanf("%d",&installments);
+        for(int i=0;i<2;i++)
+        {
+           for(int j=0;j<installments;j++)
+           {
+               square = pow((1+roi),year*12);
+               int emi = (principle*(roi)/(1-1/square));
+                sum +=emi;
+           } 
+           offer[i]=sum;
+        }
+        if(offer[0]<offer[1])
+        {
+            printf("Bank A");
+        }
+        else{
+            printf("Bank B");
+        }
+    }
+
+//Counting The number of rock samples falling into each range:
+#define size 100
+int stack[100];
+void push(int ele){
+int top=-1;
+if(top==size-1)
+{
+    printf("Stack overflow");
 }
+top++;
+stack[top]=ele;
+}
+
+int main()
+{
+    int s[50],r,a,b,ans,store[100],ansv,i;
+    printf("Enter the number of samples:");
+    scanf("%d",&s);
+    printf("Enter the Range values");
+
+    printf("Entre the samples values:");
+     for(int i=0;i<s;i++)
+     {
+        scanf("%d",&a);
+        store[a]++;
+     }
+    printf("Enter the count of range:");
+    for(int i=0;i<r;i++)
+    {
+    scanf("%d%d",&a,&b);
+    ans=0;
+    for(int j=a;j<=b;j++)
+    if(store[j])
+    {
+        ans++;
+    
+        push(ans);
+    }
+    for(auto i:ansv)
+    printf("%d",i);
+return 0;
+} 
+}
+
+//Kth largest factor of n:
+int main()
+{
+     int i,n,k;
+     printf("Enter the number");
+     scanf("%d",&n);
+     printf("Enter the value of k");
+     scanf("%d",&k);
+     for(int i=1;i>n;i--)
+     {
+        if(n%i==0)
+        k--;         
+     }
+     if(k==0)
+       return i;
+       return -1;
+}
+
+//Minimum time required tpo collect candies:
+#define max_size 100000
+#include <limits.h>
+
+int main()
+{
+    int i,n,k,a,t;
+    printf("Enter the number of test cases");
+    scanf("%d",&t);
+    int ans[max_size];
+    for(int i=0;i<t;i++)
+    {
+        printf("Enter the number of boxes for test case %d"i+1);
+        scanf("%d",&n);
+    }
+    int pq[max_size];
+    printf("Enter the number of candies in each boxes");
+    for(int j=0;j<n;j++)
+    {
+    scanf("%d",&a);
+    pq[j]=a;
+    }
+    for(int j=0;j<n-1;j++)
+    {
+        for(int k=j+1;k<n;k++){
+            if(pq[j]>pq[k])
+            {
+                int temp = pq[j];
+                pq[j]=pq[k];
+                pq[k]=temp;
+            }
+        }
+    }
+}
+
+     
