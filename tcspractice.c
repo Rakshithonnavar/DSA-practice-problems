@@ -511,7 +511,7 @@ int main()
     int ans =0;
     int n;
 
-   prime[0]=prime[1] = true;
+   prime[0]=prime[1] = true;`
    for(int p=2;p<=n;p++)
    {
     if(!prime[p])
@@ -641,7 +641,7 @@ int main()
     int ans[max_size];
     for(int i=0;i<t;i++)
     {
-        printf("Enter the number of boxes for test case %d"i+1);
+        printf("Enter the number of boxes for test case %d",i+1);
         scanf("%d",&n);
     }
     int pq[max_size];
@@ -768,4 +768,27 @@ int main()
     printf("%d",ans);
     return 0;
 }
-     
+
+//Count number of elements after last element:
+int main()
+{
+    int n,count=0,a,arr[100];
+    int m= INT_MIN;
+    printf("Enter the number of elements:");
+    scanf("%d",&n);
+    printf("Enter the elements:");
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+    while(n--)
+    {
+    if(a>=m)
+    {
+        m=a;
+        count++;
+    }
+    }
+    printf("The output is %d",count);
+    return 0;
+}
