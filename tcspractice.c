@@ -809,3 +809,115 @@ int  main()
     printf("Product of all the digits in the input number is:%d",product);
     return 0;
 }
+//Findin the maximum number of aqua coloured curtains
+int main()
+{
+   
+    char str[100];
+     int l,n=strlen(str),max=0;
+    printf("Enter the value of string: combination a and b");
+    scanf("%s",str);
+    printf("Enter the value of partition to be performed");
+    scanf("%d",&l);
+    for(int i=0;i<n;i++)
+    {
+          if(n%i==0)
+          {
+            if(count>max)
+            {
+                max=count;
+                count=0;
+            }
+          }
+          if(str[i]=='a')
+            count++;
+    }
+    if(count>max)
+       max=count;
+    printf("%d",&max);
+    return 0;
+}
+//Possible way of arranging the people:
+int factorial(int n)
+{
+    if(n==0)
+     return 1;
+    else
+     n*factorial(n-1);
+}
+int main()
+{
+   int n;
+    printf("Enter the count");
+    scanf("%d",&n);
+    int arrange = factorial(n-1)*2;
+    printf("The possible ways to arrangement are %d",arrange);
+    return 0;
+}
+
+//Performing sum of digits r number of times:
+int main()
+{
+    int n,r,sum=0,rem;
+    printf("Enter the digit");
+    scanf("%d",&n);
+    printf("Enter the reapeatation value");
+    scanf("%d",&r);
+  for(int i=0;i<=r;i++)
+  {
+    while(n!=0)
+    {
+        n= rem%10;
+        sum+=rem;
+        n=n%10;
+    }
+    return  sum;
+  }
+}
+//
+int main()
+{
+    int n,arr[100],d,x;
+    printf("Enter the count:");
+    scanf("%d",&n);
+    printf("Enter the array elements:");
+    for(int i=0;i<n;i++)
+    {
+    scanf("%d",&arr[i]);
+    }
+    printf("Enter the date:");
+    scanf("%d",&d);
+    printf("Enter the value of fine:");
+    scanf("%d",&x);
+    int evencount=0,oddcount=0;
+    for(int i=0;i<n;i++){
+    if(arr[i]%2==0)
+    {
+        evencount++;
+    }
+    else
+    {
+       oddcount++;
+    }
+    }
+    if(d%2!=0)
+    {
+        if(evencount==0)
+        {
+            printf("0\n");
+        }
+        else
+        {
+            printf("%d\n",evencount*x);
+        }
+       } else{
+            if(oddcount==0)
+            {
+                printf("0\n");
+            }
+            else{
+                printf("%d\n",oddcount*x);
+            }
+        }
+    return 0;
+}
