@@ -511,7 +511,7 @@ int main()
     int ans =0;
     int n;
 
-   prime[0]=prime[1] = true;`
+   prime[0]=prime[1] = 1;
    for(int p=2;p<=n;p++)
    {
     if(!prime[p])
@@ -519,7 +519,7 @@ int main()
        store[ans++]=p;
        for(int i= p*p;i<=n;i+=p)
        {
-        prime[i] = true;
+        prime[i] = 1;
        }        
     }
    }
@@ -790,5 +790,22 @@ int main()
     }
     }
     printf("The output is %d",count);
+    return 0;
+}
+
+
+//Product of digits
+int  main()
+{
+    int n,product=1,r;
+    printf( "Input a positive integer : ");
+    scanf("%d", &n );
+    while(n>0)
+    {
+          int digit = n%10;
+          product*=digit;
+          n /= 10;
+    }
+    printf("Product of all the digits in the input number is:%d",product);
     return 0;
 }
