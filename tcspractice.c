@@ -147,7 +147,6 @@ int main()
 }
 
 //Understanding entactment:
-
 int main()
 {
  int n,z;
@@ -308,7 +307,6 @@ int main()
 
 
 //Full pyramid of numbers :
-
 int main()
 {
     int rows,space,k,count1;
@@ -858,21 +856,30 @@ int main()
 //Performing sum of digits r number of times:
 int main()
 {
-    int n,r,sum=0,rem;
-    printf("Enter the digit");
-    scanf("%d",&n);
-    printf("Enter the reapeatation value");
+    int r,sum=0;
+    char str[100];
+    printf("Enter the digit:");
+    scanf("%s",&str);
+    printf("Enter the repeatition to be performed");
     scanf("%d",&r);
-  for(int i=0;i<=r;i++)
-  {
-    while(n!=0)
+    int n=strlen(str);
+    for(int i=0;i<n;i++)
     {
-        n= rem%10;
-        sum+=rem;
-        n=n%10;
+        sum+=str[i]-'0';
     }
-    return  sum;
-  }
+    sum*=r;
+    sprintf(str,"%d",sum);
+    while(strlen(str)>1)
+    {
+  
+        for(int i=0;i<n;i++)
+        {
+            sum+=str[i]-'0';
+        }
+        sprintf(str,"%d",sum);
+    }
+    printf("%s",str);
+  return 0;
 }
 //
 int main()
