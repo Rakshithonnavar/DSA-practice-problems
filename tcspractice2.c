@@ -119,3 +119,56 @@ int main()
  }
  return 0;
 }
+
+//Average of numbers:
+int main()
+{
+    int n,a,b;
+    printf("Enter the number:");
+    scanf("%d%d",&a,&b);
+    float average = (a+b)/2.0;
+    printf("The Average is %f",average);
+    return 0;
+}
+
+//GCD of 2 numbers using eucleadian theorem 
+int gcd(int a,int b)
+{
+     if(a==0)
+       return b;
+    if(a==b&&b==0)
+      return a;
+    else
+      return (a>b)? gcd(a-b,b):gcd(a,b-a);
+}
+int main()
+{   
+    int a,b;
+    printf("Enter 2 numbers:");
+    scanf("%d%d",&a,&b);
+    int result =  gcd(a,b);
+    printf("The gcd of 2 numbers is %d",result);
+    return 0;
+}
+
+//find LCM of 2 numbers:
+//Formula for lcm of 2 numbers:
+int gcd(int a,int b)
+{
+    if(a==0)
+      return b;
+    return gcd(b%a,a);
+}
+int lcm(int a,int b)
+{
+    return (a/gcd(a,b))*b;
+}
+int main()
+{
+   int a,b; 
+   printf("Enter the number:");
+   scanf("%d%d",&a,&b);
+   int result = lcm(a,b);
+   printf("The lcm of 2 numbers is:%d",result);
+   return 0;
+}

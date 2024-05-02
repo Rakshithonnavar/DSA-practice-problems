@@ -791,7 +791,6 @@ int main()
     return 0;
 }
 
-
 //Product of digits
 int  main()
 {
@@ -835,6 +834,7 @@ int main()
     printf("%d",&max);
     return 0;
 }
+
 //Possible way of arranging the people:
 int factorial(int n)
 {
@@ -881,6 +881,7 @@ int main()
     printf("%s",str);
   return 0;
 }
+
 //
 int main()
 {
