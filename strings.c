@@ -196,29 +196,29 @@
 
 /*************************************************************************************************************/
 //reverse string
-// void swap(char *a,char*b)
-// {
-//       char temp;
-//       temp = *a;
-//        *a=*b;
-//        *b=temp;
-//    }
-// int main()
-// {
-// char str[100];
+void swap(char *a,char*b)
+{
+      char temp;
+      temp = *a;
+       *a=*b;
+       *b=temp;
+   }
+int main()
+{
+char str[100];
 
-// printf("Enter the String:");
-// scanf("%s",str);
-// int len = strlen(str);
-// int n = len-1;
-// for (int i = 0 ; i <len/2; i++)
-// {
-//   swap(&str[i],&str[n]);
-//   n-=1;
-// }
-// printf("The reversed string is :%s\n",str);
-// return 0;
-// }
+printf("Enter the String:");
+scanf("%s",str);
+int len = strlen(str);
+int n = len-1;
+for (int i = 0 ; i <len/2; i++)
+{
+  swap(&str[i],&str[n]);
+  n-=1;
+}
+printf("The reversed string is :%s\n",str);
+return 0;
+}
 
 //print fibbonacci using recursion:
  

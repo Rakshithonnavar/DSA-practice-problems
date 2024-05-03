@@ -172,3 +172,25 @@ int main()
    printf("The lcm of 2 numbers is:%d",result);
    return 0;
 }
+
+//Code to check weather a number is palindrome:
+int main()
+{
+  int n,rev=0,rem;
+  printf("Enter the number:");
+  scanf("%d",&n);
+  while(n>0)
+  {
+    rem = n%10;
+    rev = rev*(10+rem);
+    n/=10;
+  }
+  if(rev==n)
+  {
+    printf("Palindrome number");
+  }
+  else{
+    printf("Not a palindrome number");
+  }
+  return 0;
+}
