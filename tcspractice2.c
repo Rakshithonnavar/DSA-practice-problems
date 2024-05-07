@@ -241,4 +241,100 @@ int main()
         }
         return 0;
 }
-//
+//Concatneation of 2 strings:
+int main()
+{
+    char str1[100],str2[100];
+    printf("Enter the two strings");
+    scanf("%s%s",str1,str2);
+    printf("The concatenated strings are :%s",strcat(str1,str2));
+    return 0;
+}
+
+//Print prime numbers upto n:
+void sieveOferato(int n)
+{
+    bool prime[n+1];
+    memeset(prime, true, sizeof(prime));
+
+    for(int p=2;p*p<=n;p++)
+    {
+        if(prime[p]==true)
+        {
+            for(int i=p*p;i<=n;i+=p)
+              prime[i]=false;
+        }
+    }
+
+    for(int p=2;p<=n;p++)
+    {
+        if(prime[p])
+          printf("%d",p);
+    }
+}
+//Chocolates on conveyor belt:
+int main()
+{
+    int arr[100],n,j;
+    printf("Enter the number of elements");
+    scanf("%d",&n);
+    printf("Enter the number of elements:");
+    for(int i=0;i<n;i++)
+    {
+       scanf("%d",&arr[i]);
+    }
+    if(arr[j]!=0)
+    {
+        j++;
+    }
+    for(int i=0;i<j;i++)
+    {
+        printf("%d",arr[i]);
+    }
+    return 0;
+}
+
+//Reverse an array:
+void swap(int a,int b)
+{
+    int temp = a;
+     a = b;
+     b = temp;
+}
+int main()
+{
+    int n,arr[100];
+    printf("Enter the number of elements:");
+    scanf("%d",&n);
+    printf("Enter the value of elements");
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+}
+int reverse_array(int n,int a[n],int pos)
+{
+    int end=n-1,i;
+    for(int i=0;i<(pos+n)/2;i++)
+    {
+        int temp = a[i];
+        a[i] = a[end];
+        a[end] = temp;
+        end--;
+    }
+    return a[i];
+}
+int main()
+{
+    int arr[100],n,pos;
+    printf("Enter the number of elements");
+    scanf("%d",&n);
+    printf("\nElements are:\n");
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+    int result = reverse_array(n,arr,pos);
+    printf("\nReversed array is :\n",result);
+    return 0;
+}
