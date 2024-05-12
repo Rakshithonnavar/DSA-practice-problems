@@ -338,3 +338,34 @@ int main()
     printf("\nReversed array is :\n",result);
     return 0;
 }
+//print armstrong number in the arrayy:
+int main()
+{
+    int arr[100],n,origin_num;
+    printf("Enter the number of elements");
+    scanf("%d",&n);
+    printf("Enter the array of elements");
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+    while(origin_num!=0) //count and store the digits in the numbers:
+    {
+        origin_num/=10;
+        ++n;
+    }
+    while(origin_num!=0)
+    {
+       int rem=origin_num%10;
+       int result+=pow(remainder,n);
+       origin_num/=10;
+    }
+    if(result==origin_num)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
