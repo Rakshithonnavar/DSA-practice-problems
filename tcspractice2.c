@@ -339,6 +339,7 @@ int main()
     return 0;
 }
 //print armstrong number in the arrayy:
+#include<math.h>
 int main()
 {
     int arr[100],n,origin_num;
@@ -357,7 +358,7 @@ int main()
     while(origin_num!=0)
     {
        int rem=origin_num%10;
-       int result+=pow(remainder,n);
+       int result+= pow(rem,n);
        origin_num/=10;
     }
     if(result==origin_num)
@@ -369,3 +370,4 @@ int main()
         return 0;
     }
 }
+//
