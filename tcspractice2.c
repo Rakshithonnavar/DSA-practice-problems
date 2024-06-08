@@ -417,3 +417,84 @@ int main()
     printf("The second largest element in an array is %d",result);
     return 0;
 }
+<<<<<<< HEAD
+
+//Reverse an array:
+void swap(int a,int b)
+{
+    int temp = a;
+     a = b;
+     b = temp;
+}
+int main()
+{
+    int n,arr[100];
+    printf("Enter the number of elements:");
+    scanf("%d",&n);
+    printf("Enter the value of elements");
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+}
+int reverse_array(int n,int a[n],int pos)
+{
+    int end=n-1,i;
+    for(int i=0;i<(pos+n)/2;i++)
+    {
+        int temp = a[i];
+        a[i] = a[end];
+        a[end] = temp;
+        end--;
+    }
+    return a[i];
+}
+int main()
+{
+    int arr[100],n,pos;
+    printf("Enter the number of elements");
+    scanf("%d",&n);
+    printf("\nElements are:\n");
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+    int result = reverse_array(n,arr,pos);
+    printf("\nReversed array is :\n",result);
+    return 0;
+}
+//print armstrong number in the arrayy:
+#include<math.h>
+int main()
+{
+    int arr[100],n,origin_num;
+    printf("Enter the number of elements");
+    scanf("%d",&n);
+    printf("Enter the array of elements");
+    for(int i=0;i<n;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+    while(origin_num!=0) //count and store the digits in the numbers:
+    {
+        origin_num/=10;
+        ++n;
+    }
+    while(origin_num!=0)
+    {
+       int rem=origin_num%10;
+       int result+= pow(rem,n);
+       origin_num/=10;
+    }
+    if(result==origin_num)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+//
+=======
+>>>>>>> 615e8a86a02aa73ee5f65888d50b82e55d02517a
