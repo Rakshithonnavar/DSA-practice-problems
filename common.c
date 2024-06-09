@@ -95,21 +95,92 @@ int factorial(int n)
 {
  return n==0?1:n*factorial(n-1);
 }
+//8.Reversing Strings
+
+  void reverse_string(char *a,char *z)
+  {
+   char temp;
+   while(*a<*z)
+   {
+      temp = *a;
+      *a++ = *z;
+      *z-- = temp;
+   }
+  }
+//9.Removing repeated elements:
+int duplicates(int arr[100],int n)
+{
+  if(n==0||n==1){
+     return n;
+  }
+     int j=0;
+     for(int i=0;i<n-1;i++)
+     {
+      if(arr[i]!=arr[i+1])
+      {
+         arr[j+1] = arr[i];
+      }
+     }
+     arr[j+1] = arr[n-1];
+     return j;
+}
+//Seperate driver code for 9th program:
+int main()
+{
+    int arr[100],n,i;
+    printf("Enter the number");
+    scanf("%d",&n);
+    printf("Enter the array of elements:");
+      for(int i=0;i<n;i++)
+      {
+           scanf("%d",&arr[i]);
+      }
+      for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+     int new_length = remove_duplicates(arr, n);
+
+    printf("Array after removing duplicates:\n");
+    for (int i = 0; i < new_length; i++) {
+        printf("%d\t", arr[i]);
+    }
+    printf("\n");
+
+    return 0;
+}
 // THIS IS A DRIVER CODE WHICH ALL PROGRAMS:
 int main()
 {
-    int n,i;
-    char str[100];
+    int arr[100], n,i;
+
+   //  char str[100],a,z;
     printf("Enter the number");
    //  printf("Enter the string");
    //  scanf("%s",str);
     scanf("%d",&n);
-    int result5 = armrstrong();
+    printf("Enter the array elements");
+    for(i=0;i<n;i++)
+    {
+      scanf("%d",&arr[i]);
+    }
+   //  int result5 = armrstrong();
+   //  reverse_string(a,z);
    //  int result3 = palindrome(str,i);
    //  int result1 = Isprime(n);
    //  int result7 = factorial(n);
-   printf("The result is %d",result5);
+   // printf("The result is %d",result5);
    //  printf("The result is %d",result3);
+   // printf("The result is: %s\n",str);
    //  printf("The factorial is:%d",result7); //Factorial o/p
     return 0;
 }
+
+
+
+  
