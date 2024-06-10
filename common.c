@@ -154,13 +154,40 @@ int main()
 
     return 0;
 }
+//11. Printing repetitive characters:
+int  repetitive(int arr[100],int n)
+{
+   for(int i=0;i<n;i++)
+   {
+      for(int j=i+1;j<n;j++)
+      {
+         if(arr[i]==arr[j])
+         printf("%d\n",arr[j]);
+      }
+   }
+}
+//12. LCM and GCD of 2 numbers:
+int gcd(int a,int b)
+{
+   if(b==0)
+     return a;
+   return gcd(a,a%b);
+}
+int lcm(int a,int b)
+{
+    return (a/gcd(a,b))*b;
+}
+
 // THIS IS A DRIVER CODE WHICH ALL PROGRAMS:
 int main()
 {
     int arr[100], n,i;
 
    //  char str[100],a,z;
+   int a,b;
     printf("Enter the number");
+    printf("Enter the 2 numbers");
+    scanf("%d%d",&a,&b);
    //  printf("Enter the string");
    //  scanf("%s",str);
     scanf("%d",&n);
@@ -174,6 +201,9 @@ int main()
    //  int result3 = palindrome(str,i);
    //  int result1 = Isprime(n);
    //  int result7 = factorial(n);
+      //  repetitive(arr,n);
+      //int result12 = gcd(a,b);
+      // int result12a = lcm(a,b);
    // printf("The result is %d",result5);
    //  printf("The result is %d",result3);
    // printf("The result is: %s\n",str);
