@@ -200,16 +200,50 @@ if(n<2)
    return high;
 }
 }
+
+//14.Reversing array in place:
+int array_reverse(int arr[100],int n,int pos)
+{
+   int end = n-1,i;
+   for(int i=pos;i<(pos+n)/2;i++)
+   {
+      int temp =  arr[i];
+        arr[i] = arr[end];
+        arr[end] = temp;
+        end--;
+   }
+   return arr[i];
+}
+
+//15.Reversing the order of words
+int reverse(int arr[100],int n)
+{
+   
+}
+//16.Determining the leap year:
+int leapOrNot(int year)
+{
+   if((year%4==0)&&(year%100!=0)||(year%400==0))
+   {
+      return 1;
+   }
+   else{
+      return 0;
+   }
+  
+}
 // THIS IS A DRIVER CODE WHICH ALL PROGRAMS:
 int main()
 {
-    int arr[100], n,i;
+    int arr[100], n,i,pos;
    //  char str[100],a,z;
-   int a,b;
+   int a,b,year,result;
     printf("Enter the number");
     scanf("%d",&n);
     printf("Enter the 2 numbers");
     scanf("%d%d",&a,&b);
+    printf("Enter the position");
+    scanf("%d",&pos);
    //  printf("Enter the string");
    //  scanf("%s",str);
     scanf("%d",&n);
@@ -218,6 +252,8 @@ int main()
     {
       scanf("%d",&arr[i]);
     }
+    printf("Enter the year");
+     scanf("%d",&year);
    //  int result5 = armrstrong();
    //  reverse_string(a,z);
    //  int result3 = palindrome(str,i);
@@ -226,14 +262,24 @@ int main()
       //  repetitive(arr,n);
       //int result12 = gcd(a,b);
       // int result12a = lcm(a,b);
+       int result14 = array_reverse(arr,n,pos);
    //     int result = sqqrt(n);
+   // int result17 = leapOrNot(year);
    //  printf("The sqaure of %d is %d",n,result);
    // printf("The result is %d",result5);
    //  printf("The result is %d",result3);
    // printf("The result is: %s\n",str);
    //  printf("The factorial is:%d",result7); //Factorial o/p
+   printf("The revsered array in the given position %d is :",pos);
+     for(int i=0;i<n;i++)
+     {
+      printf("%d ",arr[i]);
+     }
+      printf("The result17 is %d",result);
     return 0;
 }
+
+
 
 
 
