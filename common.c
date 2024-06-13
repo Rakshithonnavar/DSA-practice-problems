@@ -230,8 +230,8 @@ int leapOrNot(int year)
    else{
       return 0;
    }
-  
 }
+
 // THIS IS A DRIVER CODE WHICH ALL PROGRAMS:
 int main()
 {
@@ -275,7 +275,7 @@ int main()
      {
       printf("%d ",arr[i]);
      }
-      printf("The result17 is %d",result);
+   printf("The result17 is %d",result);
     return 0;
 }
 
