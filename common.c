@@ -234,9 +234,27 @@ int leapOrNot(int year)
 <<<<<<< HEAD
 
 =======
-//17. Performing Binary search:
 
 
+//17.Performing binary search
+int binary_search(int arr[100],int n)
+{
+    int low=0,high=n-1,mid=(low+high)/2,key;
+    while(low<=high)
+    {
+        if(arr[mid]==key)
+          return mid;
+        else if(arr[mid]>key)
+        {
+          low=mid-1;
+        }
+         else
+         {
+          high=mid+1;
+         }
+    }
+    return high;
+}
 //18.Checking for anagrams:
 int anagram(char s1[],char s2[],int n)
 {
