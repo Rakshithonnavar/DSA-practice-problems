@@ -232,18 +232,77 @@ int leapOrNot(int year)
    }
   
 }
+//17. Performing Binary search:
+
+
+//18.Checking for anagrams:
+int anagram(char s1[],char s2[],int n)
+{
+   int k;
+   int count=0;
+   if(strlen(s1==s2))
+     {
+      char MAX_CHAR;
+      int count1[MAX_CHAR];
+      int count2[MAX_CHAR];
+     for(int i=0;i<MAX_CHAR;i++)
+     {
+        count1[i]=0;
+        count2[i]=0;
+     }
+      for(int i=0;i<n;i++)
+        count1[s1[i]-'a']++;
+      for(int i=0;i<n;i++)
+         count1[s1[i]-'a']--;
+
+        for(int i=0;i<MAX_CHAR;i++)
+        {
+          if(count1[i]>count2[i])
+          {
+            count+=abs(count1[i]-count2[i]);
+          }
+        }
+       
+  return(count<=k);
+     }
+}
+
+//20 Reversing a number:
+int reverse(int n)
+{
+    int rev=0,rem=0;
+    while(n!=0)
+    {
+    
+    rem = n%10;
+    rev=rev*10+rem;
+    n/=10;
+    }
+    return rev;
+}
 // THIS IS A DRIVER CODE WHICH ALL PROGRAMS:
 int main()
 {
     int arr[100], n,i,pos;
    //  char str[100],a,z;
    int a,b,year,result;
+   char str1[100],str2[100];
     printf("Enter the number");
     scanf("%d",&n);
     printf("Enter the 2 numbers");
     scanf("%d%d",&a,&b);
     printf("Enter the position");
     scanf("%d",&pos);
+    printf("Enter the two strings:");
+    scanf("%s%s",str1,str2);
+   
+    if(anagram(str1,str2,n))
+    {
+    return 1;
+    }
+    else{
+      return 0;
+    }
    //  printf("Enter the string");
    //  scanf("%s",str);
     scanf("%d",&n);
@@ -264,6 +323,7 @@ int main()
       // int result12a = lcm(a,b);
        int result14 = array_reverse(arr,n,pos);
    //     int result = sqqrt(n);
+   //  int result20 = reverse(n);
    // int result17 = leapOrNot(year);
    //  printf("The sqaure of %d is %d",n,result);
    // printf("The result is %d",result5);
