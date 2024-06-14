@@ -273,13 +273,14 @@ int reverse(int n)
     int rev=0,rem=0;
     while(n!=0)
     {
-    
     rem = n%10;
     rev=rev*10+rem;
     n/=10;
     }
     return rev;
 }
+//21 First non repeating character of string:
+
 // THIS IS A DRIVER CODE WHICH ALL PROGRAMS:
 int main()
 {
