@@ -230,11 +230,29 @@ int leapOrNot(int year)
    else{
       return 0;
    }
-  
 }
-//17. Performing Binary search:
 
 
+
+//17.Performing binary search
+int binary_search(int arr[100],int n)
+{
+    int low=0,high=n-1,mid=(low+high)/2,key;
+    while(low<=high)
+    {
+        if(arr[mid]==key)
+          return mid;
+        else if(arr[mid]>key)
+        {
+          low=mid-1;
+        }
+         else
+         {
+          high=mid+1;
+         }
+    }
+    return high;
+}
 //18.Checking for anagrams:
 int anagram(char s1[],char s2[],int n)
 {
@@ -279,7 +297,43 @@ int reverse(int n)
     }
     return rev;
 }
+
 //21 First non repeating character of string:
+int min(int a,int b)
+{
+   return a<b? a:b;
+}
+int fnon_reapeating(char str[100])
+{
+   int f[256];
+   for(int i=0;i<256;i++)
+   {
+      f[i]=-1;
+   
+   for(int i=0;i<strlen(str);i++)
+   {
+      if(f[str[i]]==-1)
+      {
+        f[str[i]]=i;
+      }
+      else
+      {
+         f[str[i]]=-2;
+      }
+   }
+   int res = INT_MAX;//storing min value.
+   for(int i=0;i<256;i++)
+   {
+      if(f[i]>0)
+        res = min(res,f[i]);
+   }
+   if(res == INT_MAX)
+     return -1;
+     else 
+      return res;
+   }
+}
+
 
 // THIS IS A DRIVER CODE WHICH ALL PROGRAMS:
 int main()
@@ -288,6 +342,7 @@ int main()
    //  char str[100],a,z;
    int a,b,year,result;
    char str1[100],str2[100];
+   char str[100];
     printf("Enter the number");
     scanf("%d",&n);
     printf("Enter the 2 numbers");
@@ -296,7 +351,10 @@ int main()
     scanf("%d",&pos);
     printf("Enter the two strings:");
     scanf("%s%s",str1,str2);
-   
+     printf("Enter the string");
+     scanf("%s",str);
+     int result21 = fnon_reapeating(str);
+     
     if(anagram(str1,str2,n))
     {
     return 1;
@@ -306,14 +364,14 @@ int main()
     }
    //  printf("Enter the string");
    //  scanf("%s",str);
-    scanf("%d",&n);
-    printf("Enter the array elements");
-    for(i=0;i<n;i++)
-    {
-      scanf("%d",&arr[i]);
-    }
-    printf("Enter the year");
-     scanf("%d",&year);
+   //  scanf("%d",&n);
+   //  printf("Enter the array elements");
+   //  for(i=0;i<n;i++)
+   //  {
+   //    scanf("%d",&arr[i]);
+   //  }
+   //  printf("Enter the year");
+   //   scanf("%d",&year);
    //  int result5 = armrstrong();
    //  reverse_string(a,z);
    //  int result3 = palindrome(str,i);
@@ -322,24 +380,30 @@ int main()
       //  repetitive(arr,n);
       //int result12 = gcd(a,b);
       // int result12a = lcm(a,b);
-       int result14 = array_reverse(arr,n,pos);
+   //int result14 = array_reverse(arr,n,pos);
    //     int result = sqqrt(n);
    //  int result20 = reverse(n);
    // int result17 = leapOrNot(year);
+   if (result21 == -1) {
+        printf("No non-repeating character found.\n");
+    } else {
+        printf("First non-repeating character is %c index %d.\n",str[result21],result21);
+    }
+
    //  printf("The sqaure of %d is %d",n,result);
    // printf("The result is %d",result5);
    //  printf("The result is %d",result3);
    // printf("The result is: %s\n",str);
    //  printf("The factorial is:%d",result7); //Factorial o/p
-   printf("The revsered array in the given position %d is :",pos);
-     for(int i=0;i<n;i++)
-     {
-      printf("%d ",arr[i]);
-     }
-      printf("The result17 is %d",result);
-    return 0;
-}
+   // printf("The revsered array in the given position %d is :",pos);
+   //   for(int i=0;i<n;i++)
+   //   {
+   //    printf("%d ",arr[i]);
+   //   }
+   // printf("The result17 is %d",result);
+   //  return 0;
 
+}
 
 
 
