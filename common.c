@@ -231,12 +231,8 @@ int leapOrNot(int year)
       return 0;
    }
 }
-<<<<<<< HEAD
 
 
-
-=======
->>>>>>> 4c3b1fa (changes done)
 //17.Performing binary search
 int binary_search(int arr[100],int n)
 {
@@ -300,7 +296,7 @@ int reverse(int n)
     }
     return rev;
 }
-<<<<<<< HEAD
+
 
 //21 First non repeating character of string:
 int min(int a,int b)
@@ -339,8 +335,8 @@ int fnon_reapeating(char str[100])
 }
 
 
-=======
->>>>>>> 4c3b1fa (changes done)
+
+
 // THIS IS A DRIVER CODE WHICH ALL PROGRAMS:
 int main()
 {
