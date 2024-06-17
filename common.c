@@ -9,7 +9,7 @@
 //      n1=n2;
 //      n2=n3;
 //      printf("%d%d ",0,1,n3);
-// }
+//
 
 //2.Checking for a prime number:
 int Isprime(int n)
@@ -216,36 +216,10 @@ int array_reverse(int arr[100],int n,int pos)
 }
 
 //15.Reversing the order of words
-int reverse(char* start,char* end)
+int reverse(int arr[100],int n)
 {
-  char temp;
-  while(start<end)
-  {
-   temp = *start;
-   *start++ = *end;
-   *end-- = temp;
-  }
+   
 }
-void reverse_words(char* str)
-{
-    char* word_begin =str;
-    char* temp = str;
-   while(*temp)
-   {
-      temp++;
-      if(*temp=='\0')
-      {
-         reverse(word_begin,temp-1);
-      }
-      else if (*temp==' ')
-      {
-         reverse(word_begin,temp-1);
-         word_begin=temp+1;
-      }
-   }
-   reverse(str,temp-1);
-}
-
 //16.Determining the leap year:
 int leapOrNot(int year)
 {
