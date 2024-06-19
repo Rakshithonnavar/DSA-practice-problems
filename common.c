@@ -359,6 +359,7 @@ int fnon_reapeating(char str[100])
       return res;
    }
 }
+//22 
 
 
 
@@ -412,6 +413,7 @@ int main()
    //     int result = sqqrt(n);
    //  int result20 = reverse(n);
    // int result17 = leapOrNot(year);
+   
    if (result21 == -1) {
         printf("No non-repeating character found.\n");
     } else {
