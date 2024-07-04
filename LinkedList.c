@@ -58,3 +58,45 @@ void append(struct node** head_ref,int new_data)
             last->next = new_node;
             return;
 }
+//Insering node at the middle of linked list
+//If n is even insert node after n/2th node,
+//else insert the new node after the (n+1)/2th node
+struct Node{
+    int data;
+    Node* next;
+}
+
+//create and return node:
+Node* getNode(int data)
+{
+    Node* newNode = (Node*)malloc(sizeof(Node));
+    newNode->data=data;
+    newNode->next=NULL;
+    return newNode;
+}
+void insert_middle(Node** head_ref,int x)
+{
+  if(*head_ref == NULL)
+    *head_ref = getNode(x);
+  else{
+      Node* newNode = getNode(x);
+      Node* ptr = *head_ref;
+       int len=0;
+  
+ //Calculating length of linked list:
+   while(ptr!=NULL)
+   {
+    len++;
+    ptr=ptr->next;
+   }
+
+   int count = ((len %2)==0)?(len/2):(len+1)/2;
+   ptr = *head_ref;
+
+     while(count-- >1)
+      ptr = ptr->next;
+
+    newNode->next = ptr->next;
+    ptr->next = newNode;
+}
+}
