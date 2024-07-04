@@ -372,7 +372,8 @@ int bubble_sort(int arr[100],int n)
       }
    }
  }
-//31  performing 
+//31  performing quick sort:
+
 
 
 
