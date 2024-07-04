@@ -352,6 +352,28 @@ void insertion_sort(int arr[],int n)
    }
 }
 
+//Random bubble sort:
+void swap(int *a,int *b)
+{
+   int temp = *a;
+   *a=*b;
+   *b = temp;
+}
+int bubble_sort(int arr[100],int n)
+{
+   for(int i=0;i<n;i++)
+   {
+      for(int j=0;j<n-i-1;j++)
+      {
+         if(arr[j]>arr[j+1])
+         {
+               swap(&arr[j],&arr[j+1]);
+         }
+      }
+   }
+ }
+//31  performing 
+
 
 
 
