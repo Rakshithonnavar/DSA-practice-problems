@@ -374,6 +374,64 @@ int bubble_sort(int arr[100],int n)
  }
 //31  performing quick sort:
 
+int partition(int a[],int low,int high)
+{
+   int pivot =  a[high];
+   int i=low-1;
+  for(int j=0;j<high-1;j++)
+  {
+    i++;
+    if(a[j]<pivot)
+      {
+      swap(&a[i],&a[j]);
+    }
+  }
+  swap(&a[i+1],&a[high]);
+  return i+1;
+}
+
+int quick_sort(int arr[100],int low,int high)
+{
+   int part = partition(arr,low,high);
+   if(low<high)
+   {
+      quick_sort(arr,low,part-1);
+      quick_sort(arr,part+1,high);
+      }
+      return 0;
+}
+//32 Printing all the permutations of the string:
+void permute(char*input,int start,int end)
+{
+      
+      if(start==end)
+      printf("%s\n",input);
+      else
+      {
+         for(int i=start;i<=end;i++)
+         {
+            swap((input+start),(input+i));
+            permute(input,start+1,end);
+            swap((input+start),(input+i));
+         }
+      }
+}
+//33 Transposing of the matrix:
+
+int transpose_matrix(int n,int A[n][n],int B[n][n])
+{
+  for(int i=0;i<n;i++)
+  {
+   for(int j=0;j<n;j++)
+   {
+       B[j][i]=A[i][j];
+   }
+
+  }
+}
+
+
+
 
 
 
