@@ -502,7 +502,7 @@ void remove_spaces(char str[100])
 {
    int count=0;
    int n =  strlen(str);
-     for(int i=0;i<n;i++)
+     for(int i=0;str[i];i++)
      {
       if(str[i]!=' ')
       {
@@ -522,6 +522,20 @@ void transpose(int A[][N],int B[][N])
       B[i][j] = A[j][i];
    }
   }
+}
+
+//40 Count Sort
+#define range 255 
+int countSort(int arr[100],int n)
+{
+    char op[strlen(arr)];
+
+    //creating count array:
+     int count[range + 1], i;
+    memset(count, 0, sizeof(count));
+
+    for(int i=0;arr[i];++i)
+      ++count[arr[i]];
 }
 
 
