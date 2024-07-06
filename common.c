@@ -430,6 +430,104 @@ int transpose_matrix(int n,int A[n][n],int B[n][n])
   }
 }
 
+//34 Reversing a string in a place:
+void reverse_in_place(char str[100])
+{
+   int n =strlen(str);
+   int start=0,end=n-1;
+   int temp;
+   while(start<end)
+   {
+
+      temp = str[start];
+      str[start]=str[end];
+      str[end]=temp;
+      start++;
+      end--;
+   }
+}
+
+int main()
+{
+   char str[100];
+   printf("Enter the string");
+   scanf("%s",str);
+   reverse_in_place(str);
+   printf("The reversed string is %s",str);
+   return 0;
+
+}
+//36 Adding Matrices 
+#define N 4
+int add_matrices(int A[][N],int B[][N],int C[][N])
+{
+   for(int i=0;i<N;i++)
+   {
+      for(int j=0;j<N;j++)
+      {
+         C[i][j] = A[i][j] + B[i][j];
+      }
+   }
+}
+
+void printmatrix(int D[][N])
+{
+  int i,j;
+  for(int i=0;i<N;i++)
+  {
+   for(int j=0;j<N;j++)
+   {
+    printf("%d",D[i][j]);
+   }
+  }
+}
+//37 Multiplying Matrices:
+#define N 4
+
+int multiply_matrices(int A[][N],int B[][N],int C[][N])
+{
+   for(int i=0;i<N;i++)
+   {
+      for(int j=0;j<N;j++)
+      {
+         C[i][j] = A[i][j] * B[i][j];
+      }
+   }
+}
+
+//38 Removing Spaces in the string:
+//keeping count of non space:
+
+void remove_spaces(char str[100])
+{
+   int count=0;
+   int n =  strlen(str);
+     for(int i=0;i<n;i++)
+     {
+      if(str[i]!=' ')
+      {
+         str[count++] = str[i];
+         str[count]= '\0';
+      }
+     }
+}
+//39 Transpose of the Matrix:
+#define N 4
+void transpose(int A[][N],int B[][N])
+{
+  for(int i=0;i<N;i++)
+  {
+   for(int j=0;j<N;j++)
+   {
+      B[i][j] = A[j][i];
+   }
+  }
+}
+
+
+
+
+
 
 
 
