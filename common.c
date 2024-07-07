@@ -536,6 +536,106 @@ int countSort(int arr[100],int n)
 
     for(int i=0;arr[i];++i)
       ++count[arr[i]];
+    for(int i=1;i<=range;++i)
+      count[i] +=count[i-1];
+    for(int i=0;arr[i];++i)
+    {
+      op[count[arr[i]]-1] = arr[i];
+      --count[arr[i]];
+    }
+    for(int i=0;arr[i];i++)
+        arr[i] = op[i];
+
+}
+//Merge sort:
+void merge(int arr[],int l,int m,int r)
+{
+   int i,j,k;
+   int n1 = m-l+1;
+   int n2 = r-m;
+
+   int L[n1],R[n2];
+   for(int i=0;i<n1;i++)
+      L[i] = arr[l+i];
+   for(int j=0;j<n2;j++)
+      R[j] = arr[m+1+j];
+
+      int i=0,j=0,k=l;
+    while(i<n1 && j<n2)
+    {
+      if(L[i]<R[j])
+      {
+        arr[k]=L[i];
+        i++;
+    }
+    else{
+      arr[k]=R[j];
+      j++;
+    }
+    k++;
+
+}
+while(i<n1)
+{
+   arr[k]=L[i];
+   i++;
+   k++;
+
+}
+while(j<n2)
+{
+   arr[k]=R[j];
+   j++;
+   k++;
+}
+}
+int merge_sort(int arr[100],int l,int r)
+{
+   if(l<r)
+   {
+      int m = l + (r-l)/2;
+
+      merge_sort(arr,l,m);
+      merge_sort(arr,m+l,r);
+      merge(arr,l,m,r);
+   }
+}
+
+void printarray(int arr[],int n)
+{
+   for(int i=0;i<n;i++)
+   {
+      printf("%d ",arr[i]);
+      printf("\n");
+   }
+}
+//50 Check if 2 strings are rotation or not:
+int rotation_strings(char *str1,char *str2)
+{
+   int n1 = strlen(str1);
+   int n2 = strlen(str2);
+   char *temp;
+   char *ptr;
+
+   if(n1!=n2)
+   {
+      return 0;
+   }
+   temp = (char*)malloc(sizeof(char)*(n1*2+1));
+   temp[0]=" ";
+   strcat(temp,str1);
+   strcat(temp,str1);
+
+   ptr = strstr(temp,str2);
+   free(str2);
+    if(ptr!=NULL)
+    {
+      return 1;
+    }
+    else{
+      return 0;
+    }
+
 }
 
 
