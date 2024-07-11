@@ -1612,6 +1612,54 @@
 //   }
 // }
 
+//Accenture 
+int rat_count(int n,int arr[n],int unit,int r)
+{
+  if(n==0)
+   return -1;
+  int totalfoodreq = r*unit;
+  int foodtillnow = 0;
+  int house = 0;
+  for(house=0;house<n; ++house)
+  {
+    foodtillnow += arr[house];
+    if(foodtillnow>=totalfoodreq)
+    {
+      break;
+    }
+  }
+  if(totalfoodreq>foodtillnow)
+  {
+    return 0;
+    return house+1;
+  }
+}
+
+int OperationsBinaryString(char *str)
+{
+  if(str==NULL)
+    return -1;
+   int a = *str - '0';
+   str++;
+   while(*str!= '\0')
+   {
+      char p = *str;
+      str++;
+      if(p == 'A')
+        a &=(*str - '0');
+      else if (p=='B')
+        a |= (*str - '0');
+      else
+        a ^= (*str - '0');
+        str++;
+   }
+   return a;
+}
+
+
+
+  
+
 
 
 

@@ -635,19 +635,7 @@ int rotation_strings(char *str1,char *str2)
     else{
       return 0;
     }
-
 }
-
-
-
-
-
-
-
-
-
-
-
 // THIS IS A DRIVER CODE WHICH ALL PROGRAMS:
 int main()
 {
