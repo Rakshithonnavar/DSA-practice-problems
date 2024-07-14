@@ -417,7 +417,7 @@ int main()
     printf("The second largest element in an array is %d",result);
     return 0;
 }
-<<<<<<< HEAD
+
 
 //Reverse an array:
 void swap(int a,int b)
@@ -467,6 +467,7 @@ int main()
 #include<math.h>
 int main()
 {
+    int result=0;
     int arr[100],n,origin_num;
     printf("Enter the number of elements");
     scanf("%d",&n);
@@ -483,7 +484,7 @@ int main()
     while(origin_num!=0)
     {
        int rem=origin_num%10;
-       int result+= pow(rem,n);
+        result+= pow(rem,n);
        origin_num/=10;
     }
     if(result==origin_num)
@@ -496,5 +497,4 @@ int main()
     }
 }
 //
-=======
->>>>>>> 615e8a86a02aa73ee5f65888d50b82e55d02517a
+

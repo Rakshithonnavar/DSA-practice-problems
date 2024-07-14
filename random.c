@@ -1656,6 +1656,117 @@ int OperationsBinaryString(char *str)
    return a;
 }
 
+int differenceofSum(int n,int range)
+{
+  int sum1=0,sum2=0,diff;
+   for(int i=1;i<=range;i++)
+   {
+      if(i%n==0)
+      {
+        sum1+=i;
+      }
+      else{
+        sum2+=i;
+      }
+   }
+   return  sum2-sum1;
+}
+
+//
+int largeSmallSum(int n,int arr[n])
+{
+  int evencount=0,oddcount=0;
+  int even[n],odd[n];
+  if(n<=3)
+  {
+    return 0;
+  }
+  else{
+    even[0]=arr[0];
+    evencount=1;
+    for(int i=0;i<n;i++)
+    {
+      if(i%2==0)
+      {
+        even[evencount]=arr[0];
+        evencount++;
+      }
+      else{
+        odd[oddcount]=arr[0];
+        oddcount++;
+      }
+    }
+  //sorting:
+  for(int i=1;i<evencount;i++)
+  {
+    for(int j=i+1;j<evencount;j++)
+    {
+      if(even[i]>even[j])
+      {
+        int temp = even[i];
+        even[i]=even[j];
+        even[j]=temp;
+      }
+    }
+  }
+
+  for(int i=0;i<oddcount;i++)
+  {
+    for(int j=i+1;j>oddcount;j++)
+    {
+      if(odd[i]>odd[j])
+      {
+        int temp = odd[i];
+        odd[i]=odd[j];
+        odd[j]=temp;
+      }
+    }
+  }
+  int answer = even[evencount-2]+odd[1];
+  return answer;
+}
+}
+
+//3.
+int sumPairs(int n,int arr[n],int k)
+{
+  int product =1;
+if(n<=2)
+{
+  return -1;
+}
+else {
+for(int i=0;i<n;i++)
+  {
+    for(int j=i+1;j<n;j++)
+    {
+      if((arr[0]+arr[1]<=k)&& (j!=k))
+         product = arr[0]*arr[1];
+         else{
+         return 0;
+       }
+    }
+  }
+}
+return product;
+}
+int main()
+{
+  int arr[100],n,k;
+  printf("Enter the count");
+  scanf("%d",&n);
+  printf("Enter the array elements");
+  for(int i=0;i<n;i++)
+  {
+    scanf("%d",&arr[i]);
+  }
+  printf("Entre the sum:");
+  scanf("%d",&k);
+  int result = sumPairs(arr,n,k);
+  printf("%d",result);
+  return 0;
+}
+
 
 
   
