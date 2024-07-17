@@ -1767,6 +1767,46 @@ int main()
   return 0;
 }
 
+//
+# define size 100
+int rem[100];
+int top = -1;
+void push(int ele)
+{
+  if(top==-1)
+  {
+    return -1;
+  }
+  else{
+    top+=1;
+    rem[top]=ele;
+  }
+}
+void DectoNBase(int n,int num)
+{
+  char res[100];
+  int quotient = num/n;
+  int rem = num%10;
+  push(rem);
+  while(quotient!=0)
+  {
+    push(quotient%n); 
+    quotient/=n;
+  }
+  for(int i=0;i<sizeof(rem);i++)
+  {
+    if(rem[i]>9)
+    {
+       char res = (char)(rem[i]-9+64) + res;
+    }
+    else{
+       char res = (char)(rem[i]+48) + res;
+    }
+  }
+  return res;
+}
+
+
 
 
   
