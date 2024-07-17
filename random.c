@@ -1793,18 +1793,70 @@ void DectoNBase(int n,int num)
     push(quotient%n); 
     quotient/=n;
   }
-  for(int i=0;i<sizeof(rem);i++)
-  {
-    if(rem[i]>9)
-    {
-       char res = (char)(rem[i]-9+64) + res;
-    }
-    else{
-       char res = (char)(rem[i]+48) + res;
-    }
-  }
+  // for(int i=0;i<sizeof(rem);i++)
+  // {
+  //   if(rem[i]>9)
+  //   {
+  //      char res = (char)(rem[i]-9+64) + res;
+  //   }
+  //   else{
+  //      char res = (char)(rem[i]+48) + res;
+  //   }
+  // }
   return res;
 }
+//Corrceted Quick sort practice:
+void swap(int *a,int  *b)
+{
+  int temp = *a;
+  *a=*b;
+  *b=temp;
+}
+
+int partition(int arr[100],int low,int high)
+{
+  int pivot = arr[high];
+   int i=low-1;
+  for(int j=low;j<high;j++)
+  {
+    if( arr[j]<=pivot)
+    {
+      swap(&arr[i],&arr[j]);
+    }
+  }
+  swap(&arr[i+1],&arr[high]);
+  return i+1;
+}
+
+void quick_sort(int arr[100],int low,int high)
+{
+  int pi = partition(arr,low,high);
+  quick_sort(arr,low,pi-1);
+  quick_sort(arr,pi+1,high);
+}
+
+int main()
+{
+  int arr[100],n,low,high;
+  printf("Enter the count:");
+  scanf("%d",&n);
+  printf("Enter the array elements:");
+    for(int i=0;i<n;i++)
+    {
+       swap("%d",&arr[i]);
+    }
+    low=0;
+    high=n-1;
+    quick_sort(arr,low,high);
+  printf("The array elements are:");
+   for(int i=0;i<n;i++)
+   {
+    printf("%d ",arr[i]);
+   }
+   return 0;
+}
+
+
 
 
 
