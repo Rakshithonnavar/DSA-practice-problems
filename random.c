@@ -1856,6 +1856,86 @@ int main()
    return 0;
 }
 
+//Finding the missing number: -1,0,1,3
+int find_missing(int arr[100],int k,int n)
+{
+  int i,sum=0;
+   if(arr[i]==NULL)
+     return -1;
+  else{
+    int sum = n*(n+1)/2;
+  }
+  int diff = sum-n;
+    return diff;
+}
+
+//IBM Developer questions:
+int hcf(int m,int n)
+{
+    while(m!=n)
+  {
+      if(m>n)
+        m-=n;
+      else
+        n-=m;
+  }
+  return m;
+}
+
+int main()
+{
+  int m,n;
+  printf("Enter the two numbers:");
+  scanf("%d %d",&m,&n);
+  int res = hcf(m,n);
+  printf("the hcf of 2 numbers is %d",res);
+  return 0;
+}
+//Convert decimal to binary
+int decToBin(int n,int arr[n])
+{
+  for(int i=0;i>=0;i++)
+  {
+     arr[i] = n % 2;
+     n = n/2;
+  }  
+}
+
+int main()
+{
+    int n,arr[100];
+    printf("Enter the number");
+    scanf("%d",&n);
+    printf("The converted binary value is:");
+    int res = decToBin(n,arr);
+    for (int i = i - 1; i >= 0; i--)
+    {
+      printf("%d",arr[i]);
+    }
+    return 0;
+}
+
+//Fibonacci numbers in triangle;
+
+int triFibb(int r)
+{
+  int n1=0,n2=1,n3,n;
+  printf("Enter the limits");
+  scanf("%d",&r);
+  for(int i=1;i<=n;i++)
+  {
+     printf("%d",n2);
+     for(int j=1;j<i;j++)
+     {
+        n3=n1+n2;
+         printf("%d",n3);
+         n1=n2;
+         n2=n3;
+     }
+  }
+ 
+  printf("\n");
+}
 
 
 
