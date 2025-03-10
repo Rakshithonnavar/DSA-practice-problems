@@ -171,11 +171,37 @@ void sunny(int n)
             break;
         }
     }
-    if(i>n)
+    if(i*i != n || (n-1) != (i-1)*(i-1))
     {
         printf("It is not a sunny number");
     }
 }
+//Code to generate neon number:
+//definition of neon number: A number is called neon number if the sum of the digits of the square of the number is equal to the number itself.
+//for example: 9 is a neon number because 9^2=81 and 8+1=9
+void neon(int n)
+{
+    int sum=0,temp=n;
+    n=n*n;
+    while(n>0)
+    {
+        sum+=n%10;
+        n=n/10;
+    }
+    if(sum==temp)
+    {
+        printf("It is a neon number");
+    }
+    else
+    {
+        printf("It is not a neon number");
+}
+}
+//Code to generate a xylem number:
+//definition of xylem number: A number is called xylem number if the sum of the digits of the number is equal to the sum of the digits of the square of the number.
+//for example: 59 is not a xylem number because 5+9=14 and 59^2=3481 and 3+4+8+1=16
+// A correct example of a xylem number is 89 because 8+9=17 and 89^2=7921 and 7+9+2+1=19
+
 
 int main()
 {
@@ -204,6 +230,8 @@ int main()
     armstrong(n); //function call to check weather it is a armstrong number or not
     printf("\n");
     sunny(n); //function call to check weather it is a sunny number or not
+    printf("\n");
+    neon(n); //function call to check weather it is a neon number or not
     return 0;
 }
 
