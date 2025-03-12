@@ -1,6 +1,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
+#include<math.h>
 
 //Code to find factors of a number:
 void factors(int n)
@@ -201,6 +202,117 @@ void neon(int n)
 //definition of xylem number: A number is called xylem number if the sum of the digits of the number is equal to the sum of the digits of the square of the number.
 //for example: 59 is not a xylem number because 5+9=14 and 59^2=3481 and 3+4+8+1=16
 // A correct example of a xylem number is 89 because 8+9=17 and 89^2=7921 and 7+9+2+1=19
+void xylem(int n)
+{
+    int sum=0,temp=n;
+    while(n>0)
+    {
+        sum+= n%10;
+        n= n/10;   //sum of digits of a number
+    }
+    int square = temp*temp;
+    int sum1=0;
+    while(square>0)
+    {
+        sum1+= square%10;
+        square= square/10;
+    }
+    if(sum==sum1)
+    {
+        printf("It is a xylem number\n");
+    }
+    else
+    {
+        printf("It is not a xylem number\n");
+    }
+} 
+//code to check weather a number is Automorphic number or not
+//defination of automorphic number: A number is called automorphic number if the square of the number ends with the number itself.
+//for example: 5 is a automorphic number because 5^2=25 and 25 ends with 5
+void automorphic(int n)
+{
+    int square = n*n;
+    int temp=n;
+    int count=0;
+    while(temp>0)
+    {
+        count++;
+        temp=temp/10; 
+    }
+    int last = square%(10^count);
+    if(last==n)
+    {
+        printf("It is a automorphic number");
+    }
+    else
+    {
+        printf("It is not a automorphic number");
+    }
+}
+//code to check weather a number is Happy Number or not
+//defination of happy number: A number is called happy number if the sum of the square of its digits is equal to 1.
+//for example: 19 is a happy number because 1^2+9^2=82 and 8^2+2^2=68 and 6^2+8^2=100 and 1^2+0^2+0^2=1
+int happy(int n)
+{
+    int sum=0;
+    while(n>0)
+    {
+        int digit = n%10;
+        sum+=digit*digit;
+        n=n/10;
+    }
+    return sum;
+}
+
+void isHappy(int n) {
+    int slow, fast;
+    slow = fast = n;
+    do {
+        slow = happy(slow);
+        fast = happy(happy(fast));
+    } while (slow != fast);
+    if (slow == 1) {
+        printf("It is a happy number");
+    } else {
+        printf("It is not a happy number");
+    }
+}
+//code to find the number is Abundant Number
+//defination of abundant number: A number is called abundant number if the sum of its proper divisors is greater than the number itself.
+//for example: 12 is a abundant number because 1+2+3+4+6=16 and 16>12
+void abundant(int n)
+{
+    int i,sum=0;
+    for(i=1;i<=n;i++)
+    {
+        if(n%i==0)
+        {
+            sum+=i;
+        }
+    }
+    if(sum>n)
+    {
+        printf("It is a abundant number");
+    }
+    else
+    {
+        printf("It is not a abundant number");
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 int main()
@@ -232,6 +344,15 @@ int main()
     sunny(n); //function call to check weather it is a sunny number or not
     printf("\n");
     neon(n); //function call to check weather it is a neon number or not
+    printf("\n");
+    xylem(n); //function call to check weather it is a xylem number or not
+    printf("\n");
+    automorphic(n); //function call to check weather it is a automorphic number or not
+    printf("\n");
+    isHappy(n); //function call to check weather it is a happy number or not
+    printf("\n");
+    abundant(n); //function call to check weather it is a abundant number or not
+    printf("\n");
     return 0;
 }
 
